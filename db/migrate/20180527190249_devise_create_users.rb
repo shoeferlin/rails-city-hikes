@@ -6,9 +6,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## Database authenticatable
       ## SH: Added first_name and admin
       t.string :first_name,         null: false, default: ""
+      t.string :username,           null: false, default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
       t.boolean :admin, default: false
+      t.string :picture_url
 
       ## Recoverable
       t.string   :reset_password_token

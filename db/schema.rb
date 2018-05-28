@@ -10,16 +10,70 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_27_190249) do
+ActiveRecord::Schema.define(version: 2018_05_28_135325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.string "picture_url"
+    t.float "lat"
+    t.float "lng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hiked_routes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "route_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["route_id"], name: "index_hiked_routes_on_route_id"
+    t.index ["user_id"], name: "index_hiked_routes_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.bigint "route_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["route_id"], name: "index_reviews_on_route_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.boolean "public"
+    t.bigint "user_id"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_routes_on_city_id"
+    t.index ["user_id"], name: "index_routes_on_user_id"
+  end
+
+  create_table "sights", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "category"
+    t.string "picture_url"
+    t.float "lat"
+    t.float "lng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name", default: "", null: false
+    t.string "username", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.boolean "admin", default: false
+    t.string "picture_url"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -34,4 +88,21 @@ ActiveRecord::Schema.define(version: 2018_05_27_190249) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "waypoints", force: :cascade do |t|
+    t.bigint "route_id"
+    t.bigint "sight_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["route_id"], name: "index_waypoints_on_route_id"
+    t.index ["sight_id"], name: "index_waypoints_on_sight_id"
+  end
+
+  add_foreign_key "hiked_routes", "routes"
+  add_foreign_key "hiked_routes", "users"
+  add_foreign_key "reviews", "routes"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "routes", "cities"
+  add_foreign_key "routes", "users"
+  add_foreign_key "waypoints", "routes"
+  add_foreign_key "waypoints", "sights"
 end
