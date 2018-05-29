@@ -2,19 +2,6 @@
 import GMaps from 'gmaps/gmaps.js';
 
 function autocomplete() {
-  // console.log("JS autocomplete active")
-  // document.addEventListener("DOMContentLoaded", function() {
-  //   var userAddress = document.getElementById('city_name');
-
-  //   if (userAddress) {
-  //     var autocomplete = new google.maps.places.Autocomplete(userAddress, { types: [ 'geocode' ] });
-  //     google.maps.event.addDomListener(userAddress, 'keydown', function(e) {
-  //       if (e.key === "Enter") {
-  //         e.preventDefault(); // Do not submit the form on Enter.
-  //       }
-  //     });
-  //   }
-  // });
 
   function initializeAutocomplete(id) {
     var element = document.getElementById(id);
@@ -44,12 +31,29 @@ function autocomplete() {
   google.maps.event.addDomListener(window, 'load', function() {
     initializeAutocomplete('city_search');
     initializeAutocomplete('sight_search');
-
   });
 }
 
 export { autocomplete };
 
 
+
+  // console.log("JS autocomplete active")
+  // document.addEventListener("DOMContentLoaded", function() {
+  //   var userAddress = document.getElementById('city_name');
+
+  //   if (userAddress) {
+  //     var autocomplete = new google.maps.places.Autocomplete(userAddress, { types: [ 'geocode' ] });
+  //     google.maps.event.addDomListener(userAddress, 'keydown', function(e) {
+  //       if (e.key === "Enter") {
+  //         e.preventDefault(); // Do not submit the form on Enter.
+  //       }
+  //     });
+  //   }
+  // });
+
+ // outputs.forEach((output) => {
+ //        listitems.insertAdjacentHTML("afterbegin", `<li>${output}</li>`);
+ //      });
 
 
