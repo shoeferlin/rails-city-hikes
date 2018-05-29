@@ -1,2 +1,10 @@
-<h1>Routes#new</h1>
-<p>Find me in app/views/routes/new.html.erb</p>
+<div class="container">
+  <h1>Add your route for the community</h1>
+
+  <%= simple_form_for(@route) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :city, collection: @cities %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
