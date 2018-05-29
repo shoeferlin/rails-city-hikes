@@ -1,17 +1,19 @@
 <h1>Routes#index</h1>
 <p>Find me in app/views/routes/index.html.erb</p>
-<% count = 1 %>
-<% @routes.each do |route| %>
-  <h4>Nr.: <%= count %>, Route id: <%= route.id %></h4>
-  <h5>Route name:  <%= route.name %></h5>
-  <h5>Route description: <%= route.description %></h5>
-  <h5>Route owner <%= route.user.first_name %> </h5>
-  <% Waypoint.where(route_id: route.id).each do |w| %>
-    <ul>
-      <li><%=w.sight.name %></li>
-    </ul>
-  <% end %>
-  <% count += 1 %>
-  <%= link_to "show", route_path(route) %>
-<% end %>
 
+<div class="container">
+  <div class="row">
+    <% @routes.each do |route| %>
+      <%= link_to(route_path(route)) do %>
+        <div class="card">
+          <div class="col-sm-4 col-sm-offset-0">
+            <h4>Route id: <strong> <%= route.id %></strong></h4>
+            <h5 class="card-name">Route name:  <strong><%= route.name %></strong></h5>
+            <p class="card-description">Route description: <strong><%= route.description %></strong></p>
+            <h5 class="card-owner">Route owner: <strong><%= route.user.first_name %> </strong></h5>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
