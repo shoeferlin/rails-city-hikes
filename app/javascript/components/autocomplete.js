@@ -2,7 +2,7 @@
 import GMaps from 'gmaps/gmaps.js';
 
 function autocomplete() {
-  console.log("JS autocomplete active")
+  // console.log("JS autocomplete active")
   // document.addEventListener("DOMContentLoaded", function() {
   //   var userAddress = document.getElementById('city_name');
 
@@ -27,7 +27,8 @@ function autocomplete() {
   function onPlaceChanged() {
     var place = this.getPlace();
 
-    console.log(place);  // Uncomment this line to view the full object returned by Google API.
+    // debugger
+    // console.log(place);  // Uncomment this line to view the full object returned by Google API.
 
     for (var i in place.address_components) {
       var component = place.address_components[i];
@@ -42,6 +43,8 @@ function autocomplete() {
 
   google.maps.event.addDomListener(window, 'load', function() {
     initializeAutocomplete('city_search');
+    initializeAutocomplete("sight_search");
+
   });
 }
 

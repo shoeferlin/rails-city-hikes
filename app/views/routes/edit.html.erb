@@ -13,9 +13,9 @@
           <% end %>
       </div>
       <div class="search-sights edit-card">
-        <%= form_tag(edit_route_path(@route)) do %>
-          <%= text_field_tag :term %>
-          <%= submit_tag 'Search' %>
+        <%= simple_form_for(@sight) do |f| %>
+          <%= f.input :search %>
+          <%= f.button :submit %>
         <% end %>
       </div>
       <div class="info-sights edit-card">

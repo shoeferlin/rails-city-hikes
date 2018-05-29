@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'profiles/show'
-  get 'exports/index'
   devise_for :users
   root to: 'pages#home'
   resources :routes do
@@ -8,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :dashboards, only: [:index, :show]
   resources :cities, only: [:new, :create]
+  resources :sights, only: [:new, :create]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

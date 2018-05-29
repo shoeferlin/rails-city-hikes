@@ -4,7 +4,7 @@ class RoutesController < ApplicationController
 
   def index
    @routes = policy_scope(Route).order(created_at: :asc)
-   @routes = Route.all
+   # @routes = Route.all
   end
 
   def show
@@ -30,6 +30,7 @@ class RoutesController < ApplicationController
   end
 
   def edit
+    @sight = Sight.new()
   end
 
   def update
@@ -39,10 +40,6 @@ class RoutesController < ApplicationController
   end
 
   def export
-  end
-
-  def search
-
   end
 
   private
@@ -58,5 +55,9 @@ class RoutesController < ApplicationController
 
   def params_city
     params.require(:route).permit(:city)
+  end
+
+  def params_sight
+   params.require(:sight).permit(:locality, :country, :photo, :photo_cache)
   end
 end
