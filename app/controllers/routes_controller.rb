@@ -32,10 +32,19 @@ class RoutesController < ApplicationController
   def export
   end
 
+  def search
+
+  end
+
   private
 
   def set_route
     @route = Route.find(params[:id])
     authorize @route
+  end
+
+  def route_params
+    params.require(:route).permit(:term)
+
   end
 end
