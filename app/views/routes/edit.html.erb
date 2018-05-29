@@ -7,19 +7,28 @@
       <div class="current-sights edit-card">
         <h4>Sightseeing items:</h4>
           <% Waypoint.where(route_id: @route.id).each do |w| %>
-            <ul>
+            <ul class="list-inline">
               <li><%=w.sight.name %></li>
+              <li><%= button_to "delete" %></li>
             </ul>
           <% end %>
       </div>
       <div class="search-sights edit-card">
         <%= simple_form_for(@sight) do |f| %>
           <%= f.input :search %>
+          <!-- f.input :locality, as: :hidden -->
+          <!--  f.input :country, as: :hidden  -->
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
           <%= f.button :submit %>
         <% end %>
+        <ul id="results">
+          <li>Resultat 1 </li>
+          <li>Resultat 2 </li>
+        </ul>
       </div>
       <div class="info-sights edit-card">
-
+        <h4>Info</h4>
       </div>
     </div>
   </div>
