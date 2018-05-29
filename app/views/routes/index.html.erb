@@ -1,16 +1,13 @@
-<h1>Routes#index</h1>
-<p>Find me in app/views/routes/index.html.erb</p>
-
 <div class="container">
   <div class="row">
     <% @routes.each do |route| %>
       <%= link_to(route_path(route)) do %>
-        <div class="card">
-          <div class="col-sm-4 col-sm-offset-0">
-            <h4>Route id: <strong> <%= route.id %></strong></h4>
-            <h5 class="card-name">Route name:  <strong><%= route.name %></strong></h5>
-            <p class="card-description">Route description: <strong><%= route.description %></strong></p>
-            <h5 class="card-owner">Route owner: <strong><%= route.user.first_name %> </strong></h5>
+        <div class="col-sm-6 col-sm-offset-0">
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.6) 0%, rgba(0,36,80,0.6) 50%), url('<%= image_url 'card-example.jpg' %>');">
+            <h4 class="card-id"><%= route.id %></h4>
+            <h5 class="card-name"><%= route.name %></h5>
+            <p class="card-description"><%= route.description %></p>
+            <h5 class="card-owner"><%= route.user.first_name %></h5>
           </div>
         </div>
       <% end %>
