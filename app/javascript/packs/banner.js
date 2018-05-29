@@ -35,7 +35,7 @@ function initBannerVideoSize(element){
 
 }
 
-function scaleBannerVideoSize(element){
+function (element){
 
     var windowWidth = $(window).width(),
     windowHeight = $(window).height() + 5,

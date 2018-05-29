@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-require 'faker'
 puts "Seeding"
 
 puts "Generate users"
@@ -18,12 +17,12 @@ end
 User.create(first_name: "Magic", username: "magicmike", email: "magic@mike.com", password: "123456", picture_url: "https://avatarfiles.alphacoders.com/547/54795.jpg")
 
 puts "Generating cities"
-  berlin = City.create(name: "Berlin", lng: Faker::Address.longitude, lat: Faker::Address.latitude, picture_url: "http://www.6am-group.com/wp-content/uploads/2016/08/Berlin.jpg")
+berlin = City.create(locality: "Berlin", country: "DE", longitude: Faker::Address.longitude, latitude: Faker::Address.latitude, picture_url: "http://www.6am-group.com/wp-content/uploads/2016/08/Berlin.jpg", photo: "")
 
 puts "Generating sights"
 sights = []
 20.times do
-  sights << Sight.create(name: Faker::Ancient.god, description: Faker::ChuckNorris.fact, category: Faker::Ancient.titan, picture_url: "https://picsum.photos/200/300/?random", lng: Faker::Address.longitude, lat: Faker::Address.latitude)
+  sights << Sight.create(name: Faker::Ancient.god, description: Faker::ChuckNorris.fact, category: Faker::Ancient.titan, picture_url: "https://picsum.photos/200/300/?random", longitude: Faker::Address.longitude, latitude: Faker::Address.latitude)
 end
 
 puts "Generating routes"

@@ -17,6 +17,10 @@ class RoutePolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    true
+  end
+
   def update?
     user?
   end
