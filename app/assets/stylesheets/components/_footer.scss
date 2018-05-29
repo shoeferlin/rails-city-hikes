@@ -1,19 +1,16 @@
 .footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   height: 250px;
-  padding: 0px 50px;
   color: white;
-  background-color: $dark-green;
   margin-top: 200px;
   min-height: calc(100%-65px);
 }
 .footer-links {
   display: flex;
   align-items: center;
-  color: white;
-  margin-top: 100px;
+  color: #8aae92;
+  margin-top: 50px;
 }
 .footer-links a {
   color: white;
