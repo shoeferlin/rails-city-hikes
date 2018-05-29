@@ -1,2 +1,6 @@
 import "bootstrap";
-import "navbar";
+import changeNavbarScroll from "./navbar";
+
+
+
+window.addEventListener("scroll", changeNavbarScroll);
