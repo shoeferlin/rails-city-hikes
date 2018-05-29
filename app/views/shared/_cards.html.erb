@@ -1,30 +1,13 @@
-<div class="container">
-<h2>Recommended Cities:</h2>
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <div class="card-description">
-          <h2>Berlin</h2>
+
+    <% @routes.each do |route| %>
+      <%= link_to(route_path(route)) do %>
+        <div class="col-sm-6 col-sm-offset-0">
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.6) 0%, rgba(0,36,80,0.6) 50%), url('<%= image_url 'card-example.jpg' %>');">
+            <h4 class="card-id"><%= route.id %></h4>
+            <h5 class="card-name"><%= route.name %></h5>
+            <p class="card-description"><%= route.description %></p>
+            <h5 class="card-owner"><%= route.user.first_name %></h5>
+          </div>
         </div>
-        <a class="card-link" href="#" ></a>
-      </div>
-    </div>
-    <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <div class="card-description">
-          <h2>Lisbon</h2>
-        </div>
-        <a class="card-link" href="#" ></a>
-      </div>
-    </div>
-    <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-        <div class="card-description">
-          <h2>Prague</h2>
-        </div>
-        <a class="card-link" href="#" ></a>
-      </div>
-    </div>
-</div>
+      <% end %>
+    <% end %>
