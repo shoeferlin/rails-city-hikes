@@ -1,2 +1,21 @@
 <h1>Routes#show</h1>
 <p>Find me in app/views/routes/show.html.erb</p>
+
+<h4>Route id: <strong> <%= @route.id %></strong></h4>
+<h5>Route name:  <strong><%= @route.name %></strong></h5>
+<h5>Route description: <strong><%= @route.description %></strong></h5>
+<h5>Route owner: <strong><%= @route.user.username %> </strong></h5>
+
+<h4>Sightseeing items:</h4>
+  <% Waypoint.where(route_id: @route.id).each do |w| %>
+    <ul>
+      <li><strong><%=w.sight.name %></strong></li>
+    </ul>
+  <% end %>
+
+
+<%= link_to "return", routes_path %>
+<%= link_to "edit", edit_route_path(@route) %>
+
+
+
