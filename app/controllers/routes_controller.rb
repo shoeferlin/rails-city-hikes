@@ -41,6 +41,10 @@ class RoutesController < ApplicationController
   def export
   end
 
+  def search
+
+  end
+
   private
 
   def set_route
