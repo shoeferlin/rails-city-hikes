@@ -1,3 +1,26 @@
 <h1>Routes#edit</h1>
 <p>Find me in app/views/routes/edit.html.erb</p>
 
+<div class="container">
+  <div class="row">
+    <div class="col-xs-5 col-sm-6 col-lg-4 edit-view">
+      <div class="current-sights edit-card">
+        <h4>Sightseeing items:</h4>
+          <% Waypoint.where(route_id: @route.id).each do |w| %>
+            <ul>
+              <li><%=w.sight.name %></li>
+            </ul>
+          <% end %>
+      </div>
+      <div class="search-sights edit-card">
+        <%= simple_form_for(@sight) do |f| %>
+          <%= f.input :search %>
+          <%= f.button :submit %>
+        <% end %>
+      </div>
+      <div class="info-sights edit-card">
+
+      </div>
+    </div>
+  </div>
+</div>
