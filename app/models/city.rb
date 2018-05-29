@@ -3,10 +3,10 @@ class City < ApplicationRecord
 
   has_many :routes
 
-  validates :name, uniqueness: true, presence: true
+  validates :locality, uniqueness: true, presence: true
 
-  geocoded_by :name
-  after_validation :geocode, if: :will_save_change_to_name?
+  geocoded_by :locality
+  after_validation :geocode, if: :will_save_change_to_locality?
 
   mount_uploader :photo, PhotoUploader
 
