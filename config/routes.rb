@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :dashboards, only: [:index, :show]
   resources :cities, only: [:new, :create]
   resources :sights, only: [:new, :create]
+  get 'sights/create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
