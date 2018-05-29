@@ -4,6 +4,7 @@ class RoutesController < ApplicationController
 
   def index
    @routes = policy_scope(Route).order(created_at: :asc)
+   @routes = Route.all
   end
 
   def show
@@ -16,6 +17,7 @@ class RoutesController < ApplicationController
   end
 
   def create
+
   end
 
   def edit

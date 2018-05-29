@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2018_05_28_135325) do
   create_table "routes", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.boolean "public"
+    t.boolean "public", default: false
     t.bigint "user_id"
     t.bigint "city_id"
     t.datetime "created_at", null: false
