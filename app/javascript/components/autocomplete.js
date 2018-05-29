@@ -43,7 +43,7 @@ function autocomplete() {
 
   google.maps.event.addDomListener(window, 'load', function() {
     initializeAutocomplete('city_search');
-    initializeAutocomplete("sight_search");
+    initializeAutocomplete('sight_search');
 
   });
 }
