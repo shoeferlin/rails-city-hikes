@@ -4,6 +4,7 @@ class RoutesController < ApplicationController
 
   def index
    @routes = policy_scope(Route).order(created_at: :asc)
+   @routes = Route.all
   end
 
   def show
@@ -26,7 +27,6 @@ class RoutesController < ApplicationController
     else
       render :new
     end
-
   end
 
   def edit
