@@ -4,6 +4,12 @@ class RoutesController < ApplicationController
 
   def index
    @routes = policy_scope(Route).order(created_at: :asc)
+   @sights = Sight.all
+   @users = User.all
+   @cities = City.all
+   @waypoints = Waypoint.all
+   @routes = Route.all
+
   end
 
   def show
@@ -16,6 +22,7 @@ class RoutesController < ApplicationController
   end
 
   def create
+
   end
 
   def edit
