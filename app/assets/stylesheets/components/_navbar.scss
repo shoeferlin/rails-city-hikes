@@ -6,7 +6,12 @@
   padding: 0px 30px;
   display: flex;
   align-items: center;
+  position: fixed;
+  z-index: 10;
   justify-content: space-between;
+  width: 1374px;
+  text-decoration: none;
+  // transition
 }
 
 /* Logo */
@@ -14,24 +19,20 @@
   height: 50px;
 }
 
-/* User Avatar */
-.navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
-}
 
 /* Right section */
 .navbar-wagon-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  margin-right: 10px;
 }
 
 /* Basic navbar item */
 .navbar-wagon-item {
   cursor: pointer;
   padding: 0 20px;
+  margin: 10px;
 }
 
 /* Navbar link */
@@ -40,13 +41,14 @@
   font-size: 14px;
   height: 39px;
   padding-top: 7px;
+  text-decoration: none;
 }
 .navbar-wagon-link:hover {
   color: #75FCFF;
   text-decoration: none;
   border: 2px solid #75FCFF;
   border-radius: 10px;
-
+  text-decoration: none;
 }
 
 /* Dropdown menu */
@@ -80,4 +82,15 @@
   border-top: 1px solid #E6E6E6;
 }
 
+.navbar-solid {
+  background-color: blue;
+  opacity: 25%;
+  transition: width 2s
+}
+
+.avatar{
+ height: 40px;
+ width: 40px;
+ border-radius: 50%;
+}
 
