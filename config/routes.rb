@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'profiles/show'
+  get 'exports/index'
   devise_for :users
   root to: 'pages#home'
   resources :routes do
