@@ -3,20 +3,22 @@
   margin: 0 auto;
   background-color: transparent;
   height: 70px;
-  padding: 0px 30px;
+  width: 100vw;
+  padding: 0px 30px 0px 0px;
   display: flex;
   align-items: center;
   position: fixed;
   z-index: 10;
   justify-content: space-between;
-  width: 1374px;
   text-decoration: none;
+  margin-bottom: 10px;
   // transition
 }
 
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
+  margin-left: 20px;
 }
 
 
@@ -33,6 +35,8 @@
   cursor: pointer;
   padding: 0 20px;
   margin: 10px;
+  border: 2px solid white;
+  border-color: transparent;
 }
 
 /* Navbar link */
@@ -44,9 +48,9 @@
   text-decoration: none;
 }
 .navbar-wagon-link:hover {
-  color: #75FCFF;
+  color: #8aae92;
   text-decoration: none;
-  border: 2px solid #75FCFF;
+  border: 2px solid #8aae92;
   border-radius: 10px;
   text-decoration: none;
 }

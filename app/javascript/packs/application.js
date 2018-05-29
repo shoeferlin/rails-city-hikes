@@ -7,4 +7,3 @@ window.addEventListener("scroll", changeNavbarScroll);
 import "./map";
 import "navbar";
 
-
