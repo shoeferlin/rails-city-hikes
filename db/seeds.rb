@@ -18,7 +18,7 @@ end
 User.create(first_name: "Magic", username: "magicmike", email: "magic@mike.com", password: "123456", picture_url: "https://avatarfiles.alphacoders.com/547/54795.jpg")
 
 puts "Generating cities"
-  berlin = City.create(name: "Berlin", lng: Faker::Address.longitude, lat: Faker::Address.latitude, picture_url: "http://www.6am-group.com/wp-content/uploads/2016/08/Berlin.jpg")
+  berlin = City.create(locality: "Berlin", country: "DE", lng: Faker::Address.longitude, lat: Faker::Address.latitude, picture_url: "http://www.6am-group.com/wp-content/uploads/2016/08/Berlin.jpg")
 
 puts "Generating sights"
 sights = []
