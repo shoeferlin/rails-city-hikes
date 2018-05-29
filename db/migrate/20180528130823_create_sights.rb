@@ -5,8 +5,8 @@ class CreateSights < ActiveRecord::Migration[5.2]
       t.text :description
       t.string :category
       t.string :picture_url
-      t.float :lat
-      t.float :lng
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps
     end
