@@ -1,5 +1,6 @@
 class ApplicationPolicy
   attr_reader :user, :record
+  # Use this commmand to generate new policy: rails g pundit:policy policy_name
 
   def initialize(user, record)
     @user = user

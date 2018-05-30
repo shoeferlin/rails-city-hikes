@@ -9,7 +9,6 @@ class RoutesController < ApplicationController
   end
 
   def show
-
   end
 
   def new
@@ -39,9 +38,6 @@ class RoutesController < ApplicationController
 
   def destroy
     raise
-  end
-
-  def export
   end
 
   private
