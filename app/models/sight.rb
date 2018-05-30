@@ -1,6 +1,7 @@
 class Sight < ApplicationRecord
   attr_accessor :search
 
+  has_many :waypoints, dependent: :destroy
   has_many :routes, through: :waypoints
 
   validates :name, uniqueness: true, presence: true
