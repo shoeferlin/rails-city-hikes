@@ -8,14 +8,14 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= favicon_link_tag "city-hikes-logo-black-white-favicon.png" %>
   </head>
   <body>
-    <div class="page-total">
-      <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
+      <%= render 'shared/navbar' %>
       <%= yield %>
       <%= render 'shared/footer' %>
-    </div>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
     <%= javascript_pack_tag 'application' %>

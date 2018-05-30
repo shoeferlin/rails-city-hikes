@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <% @routes.each do |route| %>
+    <%= link_to(route_path(route)) do %>
+    <div class="col-sm-6 col-sm-offset-0">
+      <div class="card-small" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
+        <!-- <h4 class="card-id"><%= route.id %></h4> -->
+        <h5 class="card-small-name"><%= route.name %></h5>
+        <p class="card-small-description"><%= route.description %></p>
+        <h5 class="card-small-owner"><%= route.user.first_name %></h5>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>

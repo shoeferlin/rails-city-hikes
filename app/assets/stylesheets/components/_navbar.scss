@@ -3,20 +3,24 @@
   margin: 0 auto;
   background-color: transparent;
   height: 70px;
-  padding: 0px 30px;
+  width: 100vw;
+  padding: 0px 30px 0px 0px;
   display: flex;
   align-items: center;
   position: fixed;
   z-index: 10;
   justify-content: space-between;
-  width: 1374px;
   text-decoration: none;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+
   // transition
 }
 
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
+  margin-left: 20px;
 }
 
 
@@ -33,20 +37,22 @@
   cursor: pointer;
   padding: 0 20px;
   margin: 10px;
+  border: 2px solid white;
+  border-color: transparent;
 }
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: white;
+  color: #8aae92;
   font-size: 14px;
   height: 39px;
   padding-top: 7px;
   text-decoration: none;
 }
 .navbar-wagon-link:hover {
-  color: #75FCFF;
+  color: #8aae92;
   text-decoration: none;
-  border: 2px solid #75FCFF;
+  border: 2px solid #8aae92;
   border-radius: 10px;
   text-decoration: none;
 }
@@ -83,9 +89,9 @@
 }
 
 .navbar-solid {
-  background-color: blue;
+  background-color: #FDFEFD;
   opacity: 25%;
-  transition: width 2s
+  transition: width 2s;
 }
 
 .avatar{
