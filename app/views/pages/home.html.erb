@@ -1,10 +1,11 @@
 <div class="landing-page">
-  <div><%= render 'pages/landing-video' %></div>
-  <div class="flex-header-home">
-    <i class="far fa-arrow-alt-circle-down"></i>
-    <h2>Check out our recommended Hikes</h2>
-    <i class="far fa-arrow-alt-circle-down"></i>
-  </div>
+  <div>
+    <div>
+      <%= render 'pages/landing-video' %>
+    </div>
+ </div>
+ </div>
+  <div class="flex-header-home"><h2><i class="far fa-arrow-alt-circle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;Check out our recommended Hikes&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-arrow-alt-circle-down"></i></h2></div>
   <%= render 'shared/cards-small', routes: @routes %>
 </div>
 

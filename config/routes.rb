@@ -9,11 +9,11 @@ Rails.application.routes.draw do
     post 'exports/send-route-clipboard', to: 'exports#send_route_clipboard', as: :send_route_clipboard
     post 'exports/send-route-gmaps', to: 'exports#send_route_gmaps', as: :send_route_gmaps
     post 'exports/send-route-friend', to: 'exports#send_route_friend', as: :send_route_friend
+    resources :sights, only: [:destroy, :create]
   end
   resources :dashboards, only: [:index, :show]
   resources :cities, only: [:new, :create]
-  resources :sights, only: [:new, :create]
-  get 'sights/create'
+  # get 'sights/create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
