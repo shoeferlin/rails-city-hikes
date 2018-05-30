@@ -38,6 +38,7 @@ class RoutesController < ApplicationController
   end
 
   def destroy
+    raise
   end
 
   def export
