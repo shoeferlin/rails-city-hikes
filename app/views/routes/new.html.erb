@@ -5,6 +5,6 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :city, collection: @cities, :label_method => :locality %>
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary btn-lg" %>
   <% end %>
 </div>
