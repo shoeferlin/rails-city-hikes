@@ -3,8 +3,8 @@ class RoutesController < ApplicationController
 
 
   def index
-    city = params["query"]
-    @routes = policy_scope(Route).order(created_at: :asc).where(city_id:  City.where(locality: city).ids)
+    @city = params["query"]
+    @routes = policy_scope(Route).order(created_at: :asc).where(city_id:  City.where(locality: @city).ids)
     # @routes = Route.all
   end
 
