@@ -70,13 +70,11 @@
     width: 100%;
 }
 
-// .icon1 {
-//   margin: 0px 0px 0px 100px;
-// }
-
-// .icon2 {
-//   margin: 0px 100px 0px 0px;
-// }
+.flex-header-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 h2 {
   text-align: center;
