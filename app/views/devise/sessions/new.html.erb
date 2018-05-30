@@ -1,15 +1,24 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+  <div class="container-fluid" style="background-image: url(https://images.unsplash.com/photo-1511312066185-a25084d4dee2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e3f92177346bbbb23d83467e77b880c8&auto=format&fit=crop&w=3300&q=80); background-size: cover; height: 100vh">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+        <div class="login-form">
+          <h2>Log in</h2>
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-inputs">
+              <%= f.input :email, required: false, autofocus: true %>
+              <%= f.input :password, required: false %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Log in", class: "btn-primary btn-lg" %>
+            </div>
+          <% end %>
+          <br>
+          <br>
+          <%= button_to "Sign up", new_registration_path(resource_name), class: "btn-primary" %>
+          <br>
+          <%= button_to "Forgot your password", new_password_path(resource_name), class: "btn-primary" %>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
