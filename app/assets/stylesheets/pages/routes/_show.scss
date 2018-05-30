@@ -1,0 +1,60 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#map {
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  margin-left: 250px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+.route-box {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  padding: 50px;
+  background-color: $light-gray;
+}
+.route-name {
+  border-bottom: 2px solid gray;
+  padding-bottom: 20px;
+}
+
+.route-description {
+  margin: 30px 0px 30px 0px;
+  color: gray;
+  font-size: 18px;
+}
+
+.route-items {
+  text-align: center;
+  border-bottom: 0.5px solid lightgray;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+}
+
+.route-points {
+
+}
+
+.route-points:hover {
+  font-weight: bolder;
+  padding-left: 5px;
+}
+
+.route-owner {
+  margin-top: 20px;
+  padding-top: 8px;
+  border-top: 0.5px solid lightgray;
+}
+
+.show-btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
