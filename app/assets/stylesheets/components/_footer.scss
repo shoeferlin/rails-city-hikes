@@ -3,9 +3,8 @@
   justify-content: space-between;
   height: 250px;
   color: white;
-  margin-top: 200px;
+  margin-top: 50px;
   min-height: calc(100%-65px);
-  background-color: blue;
   background-image: cover;
 }
 .footer-links {
@@ -13,10 +12,13 @@
   align-items: center;
   color: white;
   margin-top: 50px;
+  margin-left: 100px;
+
 }
 .footer-links a {
   color: $dark-green;
   text-decoration: none;
+  opacity: 0.7;
   font-size: 24px;
   padding: 0px 10px;
 }
