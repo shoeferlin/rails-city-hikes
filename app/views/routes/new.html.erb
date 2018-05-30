@@ -4,7 +4,7 @@
   <%= simple_form_for(@route) do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :city, collection: @cities %>
+    <%= f.input :city, collection: @cities, :label_method => :locality %>
     <%= f.button :submit %>
   <% end %>
 </div>
