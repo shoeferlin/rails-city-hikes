@@ -1,21 +1,21 @@
-<h1>Routes#show</h1>
-<p>Find me in app/views/routes/show.html.erb</p>
+<div class="main-container">
+  <div class="route-box">
+    <div class="route-container">
+      <h3 class="route-name"><strong><%= @route.name %></strong></h3>
 
-<h4>Route id: <strong> <%= @route.id %></strong></h4>
-<h5>Route name:  <strong><%= @route.name %></strong></h5>
-<h5>Route description: <strong><%= @route.description %></strong></h5>
-<h5>Route owner: <strong><%= @route.user.username %> </strong></h5>
-
-<h4>Sightseeing items:</h4>
-  <% Waypoint.where(route_id: @route.id).each do |w| %>
-    <ul>
-      <li><strong><%=w.sight.name %></strong></li>
-    </ul>
-  <% end %>
-
-
-<%= link_to "return", routes_path %>
-<%= link_to "edit", edit_route_path(@route) %>
-
-
-
+      <h5 class="route-description"><em><%= @route.description %></em></h5>
+      <h5 class="route-items">Sightseeing items:</h5>
+      <% Waypoint.where(route_id: @route.id).each do |w| %>
+      <ul>
+        <li class="route-points"><%=w.sight.name %></li>
+      </ul>
+      <% end %>
+      <h5 class="route-owner">Ask <strong><%= @route.user.username %></strong> for further tips!</h5>
+      <div class="show-btns">
+        <%= button_to "Return", routes_path, class: "btn btn-primary" %>
+        <%= button_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+  <div id="map" data-markers="<%= @markers.to_json %>"></div>
+</div>
