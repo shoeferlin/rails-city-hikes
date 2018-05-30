@@ -3,12 +3,11 @@ class RoutesController < ApplicationController
 
 
   def index
-   @routes = policy_scope(Route).order(created_at: :asc)
-   # @routes = Route.all
+    @routes = policy_scope(Route).order(created_at: :asc)
+    # @routes = Route.all
   end
 
   def show
-
   end
 
   def new
@@ -37,9 +36,6 @@ class RoutesController < ApplicationController
   end
 
   def destroy
-  end
-
-  def export
   end
 
   private
