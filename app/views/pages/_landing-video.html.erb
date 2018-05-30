@@ -1,15 +1,15 @@
 <div class="homepage-hero-module">
     <div class="video-container">
       <div class="filter"></div>
-       <div class="col-sm-4 col-sm-offset-4 main-search-bar">
+       <div class="col-sm-6 col-sm-offset-3">
+        <div class="main-search-bar">
         <h4>Find inspiration for your city trip</h4>
         <%= form_tag routes_path, method: :get do %>
         <%= text_field_tag :query,
         params[:query],
-        class: "form-control style-text",
-        placeholder: "Search a city to hike"
-        %>
+        class: "form-control style-text", placeholder: "Search a city to hike..." %>
         <% end %>
+        </div>
       </div>
         <video autoplay loop class="fillWidth">
           <source src="<%= asset_path "landing-page-video.mp4" %>" type="video/mp4" />
