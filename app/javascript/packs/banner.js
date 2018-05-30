@@ -26,7 +26,7 @@ function scaleVideoContainer() {
 
 function initBannerVideoSize(element){
 
-    $(element).each(function(){
+    $(element).each(function() {
         $(this).data('height', $(this).height());
         $(this).data('width', $(this).width());
     });
@@ -35,7 +35,7 @@ function initBannerVideoSize(element){
 
 }
 
-function(element) {
+function videoPlaying(element){
 
     var windowWidth = $(window).width(),
     windowHeight = $(window).height() + 5,
