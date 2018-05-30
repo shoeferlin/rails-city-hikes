@@ -7,4 +7,3 @@ import initBannerVideoSize from "./banner"
 import scaleBannerVideoSize from "./banner"
 
 
-
