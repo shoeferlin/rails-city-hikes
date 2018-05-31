@@ -1,5 +1,4 @@
-<h1>Routes#edit</h1>
-<p>Find me in app/views/routes/edit.html.erb</p>
+
 
 <div class="container">
   <div class="row">
@@ -7,7 +6,7 @@
       <div class="current-sights edit-card">
         <h4>Sightseeing items:</h4>
           <% Waypoint.where(route_id: @route.id).each do |w| %>
-            <ul class="list-inline">
+            <ul class="list-inline sight-li">
               <li><%=w.sight.name %></li>
               <li><%= button_to "Delete", route_sight_path(@route, w.sight), method: :delete  %></li>
             </ul>
