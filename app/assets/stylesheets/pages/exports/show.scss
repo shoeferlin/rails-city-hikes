@@ -1,0 +1,57 @@
+#export-info {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border: 2px solid $light-green;
+  // text-align: left !important;
+
+}
+
+#export-header {
+  background-color: $dark-green;
+  color: white;
+  padding: 3px;
+  border-radius: 2px;
+  line-height: 1;
+}
+
+.export-button-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.export-button {
+  margin: 20px;
+  width: 300px;
+  background-color: $dark-green;
+  border: 1px solid grey;
+}
+
+.export-button:hover {
+  background-color: $light-green;
+  border: 1px solid black;
+  color: black;
+  transition: ease 0.2s;
+}
+
+.send-route-friend {
+  input[type="email"]{
+    width: calc(100% - 180px)
+  }
+}
+
+.simple_form div.input {
+
+}
+
+.export {
+  table, tbody, tr {
+    width: 100%;
+  }
+
+  td {
+    width: 50%;
+  }
+}

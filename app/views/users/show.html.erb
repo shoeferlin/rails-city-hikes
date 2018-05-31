@@ -1,0 +1,32 @@
+<h3>User information</h3>
+<%= cl_image_tag @user.picture_url, height: 150, width: 200, crop: :fill %>
+<ul>
+  <li><%= @user.first_name %></li>
+  <li><%= @user.username %></li>
+  <li><%= @user.email %></li>
+</ul>
+<button type="button" class="btn btn-success"><%= link_to "Edit profile", edit_user_path(current_user) %></button>
+  <!-- <li><%#= @user.picture_url %></li> -->
+
+
+
+<h3>Owned routes</h3>
+<% @routes.each do |route| %>
+  <ul>
+  <% if route.user == @user %>
+    <li><%= route.name %></li>
+    <li><%= route.description %></li>
+    <li><%= route.city %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<h3>Your walked routes</h3>
+<ul>
+  <% @hiked_routes.each do |hiked_route| %>
+  <li><%= hiked_route.name %></li>
+  <li><%= hiked_route.description %></li>
+  <li><%= hiked_route.city %></li>
+  <% end %>
+</ul>
+

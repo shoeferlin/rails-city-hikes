@@ -8,12 +8,12 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-    <%= favicon_link_tag "city-hikes-logo-black-white-favicon.png" %>
+    <%= favicon_link_tag "city-hikes-logo-green-white-favicon.png" %>
   </head>
   <body>
-      <%= render 'shared/flashes' %>
       <%= render 'shared/navbar' %>
       <div style="min-height: calc(100vh - 300px); padding-top: 70px"> <!-- SH: Sticks footer always to bottom and navbar to top  -->
+        <%= render 'shared/flashes' %>
         <%= yield %>
       </div>
       <%= render 'shared/footer' %>
