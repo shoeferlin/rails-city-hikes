@@ -33,7 +33,7 @@ end
 puts "Generating waypoints"
 
 Route.all.each do |route|
-  sights.sample(5).each do |sight|
+  sights.sample(20).each do |sight|
     w = Waypoint.new(route_id: route.id, sight_id: sight.id)
     w.save
   end

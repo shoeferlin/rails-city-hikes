@@ -4,6 +4,8 @@ class ExportsController < ApplicationController
   def show
     @export = Export.new
     authorize @export
+    @gmaps_url = create_gmaps_url
+    raise
   end
 
   def send_route_email
@@ -33,14 +35,14 @@ class ExportsController < ApplicationController
     # redirect_to route_path(@route)
   end
 
-  def send_route_gmaps
-    @export = Export.new
-    authorize @export
-    flash[:notice] = "We are opening Google Maps for you, #{@route.user.first_name}"
-    # open google maps in a new tab
-    redirect_to route_export_path(@route)
-    # redirect_to route_path(@route)
-  end
+  # def send_route_gmaps
+  #   @export = Export.new
+  #   authorize @export
+  #   flash[:notice] = "We are opening Google Maps for you, #{@route.user.first_name}"
+  #   # open google maps in a new tab
+  #   redirect_to route_export_path(@route)
+  #   # redirect_to route_path(@route)
+  # end
 
   def send_route_friend
     @export = Export.new
@@ -57,4 +59,34 @@ class ExportsController < ApplicationController
     @route = Route.find(params[:route_id])
     # authorize @route
   end
+
+  def create_gmaps_url
+    base_url    = "https://www.google.com/maps/dir/?api=1"
+    origin      = "&origin=#{@route.waypoints.first.sight.latitude},#{@route.waypoints.first.sight.longitude}"
+    waypoints   = create_waypoint_url
+    destination = "&destination=#{@route.waypoints.last.sight.latitude},#{@route.waypoints.last.sight.longitude}"
+    options      = "&travelmode=walking"
+    return base_url + origin + destination + waypoints + options
+  end
+
+  def create_waypoint_url
+    @waypoints = Waypoint.all
+    if @route.waypoint_ids.length <= 2
+      return ""
+    else
+      waypoint_url = "&waypoints="
+      waypoint_array = @route.waypoint_ids
+      waypoint_array.delete_at(0)
+      new_array = waypoint_array
+      new_array.delete_at(new_array.length - 1)
+      new_array_2 = new_array
+      waypoint_array.each do |waypoint|
+        waypoint_url << "#{@waypoints[waypoint].sight.latitude},#{@waypoints[waypoint].sight.latitude}|"
+      end
+      raise
+      return waypoint_url
+    end
+  end
+
+  # https://www.google.com/maps/dir/?api=1&origin=Brandenburger+Tor&origin_place_id=ChIJQyqpKMRRqEcRR_uYQXL9THg&destination=Checkpoint+Charlie&destination_place_id=ChIJzdgmXNFRqEcRyIl9R0IApSM&travelmode=walking
 end
