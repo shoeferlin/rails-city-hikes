@@ -1,12 +1,12 @@
 <% @routes.each do |route| %>
-<%= link_to(route_path(route)) do %>
-<div class="col-sm-6 col-sm-offset-0">
-  <div class="card" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
-    <!-- <div class="card-id"><%= route.id %></div> -->
-    <div class="card-name"><%= route.name %></div>
-    <div class="card-description"><%= route.description %></div>
-    <div class="card-owner"><%= route.user.first_name %></div>
-  </div>
-</div>
-<% end %>
+  <%= link_to(route_path(route)) do %>
+    <div class="col-sm-6 col-sm-offset-0">
+      <div class="card" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
+        <!-- <div class="card-id"><%= route.id %></div> -->
+        <div class="card-name"><%= route.name %></div>
+        <div class="card-description"><%= route.description %></div>
+        <div class="card-owner"><%= route.user.first_name %></div>
+      </div>
+    </div>
+  <% end %>
 <% end %>
