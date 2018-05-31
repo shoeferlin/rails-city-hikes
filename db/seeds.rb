@@ -12,10 +12,10 @@ puts "Generating users ..."
 
 users = []
 
-users << User.create(first_name: "Felix", username: "@felix", password: 123456, email: "felix.fastrich@gmail.com", picture_url: "https://picsum.photos/200/300/?random")
-users << User.create(first_name: "Johnny", username: "@johnny", password: 123456, email: "johnny.lohner@gmail.com", picture_url: "https://picsum.photos/200/300/?random")
-users << User.create(first_name: "Nathan", username: "@nathan", password: 123456, email: "nathan.lebas@gmail.com", picture_url: "https://picsum.photos/200/300/?random")
-users << User.create(first_name: "Simon", username: "@simon", password: 123456, email: "simon.hoeferlin@gmail.com", picture_url: "https://picsum.photos/200/300/?random")
+users << User.create(first_name: "Felix", username: "@felix", password: 123456, email: "felix@city-hikes.com", picture_url: "image/upload/v1527786929/u3rygis7vptbmshvqttw.jpg")
+users << User.create(first_name: "Johnny", username: "@johnny", password: 123456, email: "johnny@gcity-hikes.com", picture_url: "image/upload/v1527786726/anbde5rrrq4yxk6nbj9m.jpg")
+users << User.create(first_name: "Nathan", username: "@nathan", password: 123456, email: "nathan@city-hikes.com", picture_url: "image/upload/v1527787017/xvqw3svmlh2wad7ju27h.jpg")
+users << User.create(first_name: "Simon", username: "@simon", password: 123456, email: "simon@city-hikes.com", picture_url: "image/upload/v1527786840/qtsanl4o6xmgzdg6nxhi.jpg")
 
 11.times do
   first_name  = Faker::Name.first_name

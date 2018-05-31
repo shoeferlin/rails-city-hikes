@@ -3,12 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>City Hikes</title>
+    <title>City Hikes - Your city trip inspiration</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <%= favicon_link_tag "city-hikes-logo-green-white-favicon.png" %>
+    <meta property="og:url"          content="http://www.city-hikes.com" />
+    <meta property="og:type"         content="website" />
+    <meta property="og:title"        content="City Hikes - Your city trip inspiration" />
+    <meta property="og:description"  content="Get inspired by one of our many routes for your next city trip and hike to the locations with tips of locals." />
+    <meta property="og:image"        content="http://res.cloudinary.com/dmatmwg2i/image/upload/v1527789320/fpgvgmqb9chuyjl6siib.jpg" />
   </head>
   <body>
       <%= render 'shared/navbar' %>
