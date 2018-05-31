@@ -83,12 +83,12 @@
 // }
 
 .main-search-bar {
-    position: absolute;
-    z-index: 99;
-    width: 100%;
-    height: 100%;
-    margin: auto auto;
-    background-color: white;
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  margin: auto auto;
+  background-color: white;
 }
 
 .main-search-bar h4 {
@@ -149,9 +149,12 @@
   justify-content: center;
 }
 
-h2 {
-  text-align: center;
-}
+
+// SH: Commented this out because it was overwriting all h2 globally!
+
+// h2 {
+//   text-align: center;
+// }
 
 
 
