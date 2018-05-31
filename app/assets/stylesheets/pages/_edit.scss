@@ -3,6 +3,7 @@
   justify-content: space-around;
   text-align: center;
   width: 100%;
+  margin-top: 60px;
 }
 
 .current-sights {
@@ -10,6 +11,12 @@
   text-align: left;
 }
 
+h4 {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 0.5px solid $dark-green;
+  padding-bottom: 5px;
+}
 .search-sights{
   flex-grow: 2;
 }
@@ -26,6 +33,47 @@
   color: grey;
   font-weight: lighter;
   line-height: 25px;
-  height: 350px;
+  height: 450px;
   align-items: center;
 }
+
+
+.list-inline {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.delete-button {
+  border-radius: 10px;
+  background-color: $dark-green;
+  color: white;
+}
+
+.delete-button:hover {
+  color: black;
+}
+
+.sight-item:hover {
+  font-weight: bolder;
+}
+
+.create-sight-btn {
+  border: 2px solid #8aae92;
+  background-color: #8aae92;
+  color: white;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
