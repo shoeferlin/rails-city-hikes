@@ -1,6 +1,8 @@
 class DashboardsController < ApplicationController
   def index
-    @routes = policy_scope(Route)
+    @user = current_user
+    @routes = policy_scope(Route).all
+    @hiked_routes = HikedRoute.where(user_id: @user.id)
   end
 
   def show
