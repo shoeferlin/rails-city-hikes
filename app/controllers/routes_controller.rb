@@ -3,9 +3,15 @@ class RoutesController < ApplicationController
 
 
   def index
-    @city = params["query"]
-    @routes = policy_scope(Route).order(created_at: :asc)
-    # @routes = policy_scope(Route).order(created_at: :asc).where(city_id: City.where(locality: @city).ids)
+    @city = params["query"].capitalize
+    # @routes = policy_scope(Route).order(created_at: :asc)
+
+    if City.where(locality: @city).exists?
+      @routes =  policy_scope(Route).order(created_at: :asc).where(city_id: City.where(locality: @city).ids)
+    else
+      @city = "We don't know about this city yet"
+      @routes = policy_scope(Route).order(created_at: :asc)
+    end
     # @routes = Route.all
   end
 
@@ -55,4 +61,8 @@ class RoutesController < ApplicationController
   def params_city
     params.require(:route).permit(:city)
   end
+
+  private
+
+
 end
