@@ -12,8 +12,16 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
      stopover: true
     })
   })
+
+  var options = {
+      fillColor: 'red',
+      title: 'Johnnys Marker'
+    };
+
+  markers[0].color = 'blue';
+
   console.log(markers[0])
-  map.addMarkers(markers);
+  map.addMarkers(markers, options);
   map.drawRoute({
     origin: [markers[0].lat, markers[0].lng],
     destination: [markers[markers.length - 1].lat, markers[markers.length - 1].lng],
@@ -34,4 +42,4 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
   }
 }
 
-autocomplete();
+

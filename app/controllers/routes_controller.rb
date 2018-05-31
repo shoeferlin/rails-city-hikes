@@ -44,6 +44,9 @@ class RoutesController < ApplicationController
 
   def edit
     @sight = Sight.new
+    @waypoints = @route.sights.map do |sight|
+      {lat: sight.latitude, lng: sight.longitude}
+    end
   end
 
   def update

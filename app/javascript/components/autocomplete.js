@@ -1,3 +1,5 @@
+
+
 // JavaScript AutoComplete for Geocoding
 import GMaps from 'gmaps/gmaps.js';
 
@@ -89,6 +91,7 @@ function autocomplete() {
   });
 }
 
+autocomplete();
 export { autocomplete };
 
 
