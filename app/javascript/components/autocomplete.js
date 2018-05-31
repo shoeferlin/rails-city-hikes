@@ -75,8 +75,8 @@ function autocomplete() {
       // List items from Search result
       const list = document.querySelector("#results");
       console.log(list.innerText)
-        list.insertAdjacentHTML("afterbegin", `<li>${type_name.value}</li>`);
-        list.insertAdjacentHTML("beforeend", `<li><a href="${type_url.value}">${type_url.value}</a></li>`);
+        list.insertAdjacentHTML("afterbegin", `<li id="searchfor">${type_name.value}</li>`);
+        // list.insertAdjacentHTML("beforeend", `<li><a href="${type_url.value}">${type_url.value}</a></li>`);
         list.insertAdjacentHTML("beforeend", `<li>${type_formatted_address.value}</li>`);
         if (type_website.value) {
           console.log(type_website.value)

@@ -34,6 +34,7 @@ h4 {
 
 .info-sights {
   flex-grow: 1.5;
+  width: 400px;
 }
 
 .edit-card {
@@ -79,6 +80,20 @@ h4 {
 .sight-li {
   display:flex;
   justify-content: space-between;
+}
+
+.info_text {
+  width: 100%;
+}
+
+.info_image {
+  width: 180px;
+  text-align: center;
+  line-height: 0.5;
+}
+
+.info-sights p {
+  font-size: 12px;
 }
 
 #results {

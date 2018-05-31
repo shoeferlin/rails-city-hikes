@@ -2,13 +2,13 @@ class SightsController < ApplicationController
   def create
     @sight = Sight.new(params_sight)
     @route = Route.find(params[:route_id])
+    @page = Wikipedia.find( @sight.name )
     authorize @sight
 
     if @sight.save
       @route.sights << @sight
       @route.save
       redirect_to edit_route_path(@route)
-
     else
       puts "Sorry not saved"
       redirect_to edit_route_path(@route)
