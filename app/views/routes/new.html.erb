@@ -4,7 +4,12 @@
   <%= simple_form_for(@route) do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :city, collection: @cities, :label_method => :locality %>
+    <div class="form-inline city-form">
+      <div id="city-form">
+        <%= f.input :city, collection: @cities, :label_method => :locality %>
+      </div>
+      <%= link_to "Create City", new_city_path, class: "btn btn-primary btn-lg" %>
+    </div>
     <%= f.button :submit, class: "btn btn-primary btn-lg" %>
   <% end %>
 </div>

@@ -15,9 +15,10 @@
 
     <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My Routes", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Find a routes", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%#= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%#= link_to "Find Route", routes_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%#= link_to "Home", routes_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Create Route", new_route_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <div class="navbar-wagon-item">
       <div class="dropdown">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">

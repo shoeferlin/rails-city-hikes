@@ -62,7 +62,4 @@ class RoutesController < ApplicationController
     params.require(:route).permit(:city)
   end
 
-  private
-
-
 end
