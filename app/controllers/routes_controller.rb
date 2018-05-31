@@ -3,10 +3,13 @@ class RoutesController < ApplicationController
 
 
   def index
-    @city = params["query"].capitalize
+    if params["query"].nil?
+      @city = ""
+    else
+      @city = params["query"]
+    end
     # @routes = policy_scope(Route).order(created_at: :asc)
-
-    if City.where(locality: @city).exists?
+    if City.where(locality: @city.downcase).exists?
       @routes =  policy_scope(Route).order(created_at: :asc).where(city_id: City.where(locality: @city).ids)
     else
       @city = "We don't know about this city yet"
@@ -16,6 +19,9 @@ class RoutesController < ApplicationController
   end
 
   def show
+    @waypoints = @route.sights.map do |sight|
+      {lat: sight.latitude, lng: sight.longitude}
+    end
   end
 
   def new
