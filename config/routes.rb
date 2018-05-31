@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     post 'exports/send-route-gmaps', to: 'exports#send_route_gmaps', as: :send_route_gmaps
     post 'exports/send-route-friend', to: 'exports#send_route_friend', as: :send_route_friend
   end
-  resources :dashboards, only: [:index, :show]
+  resources :users, only: [:show, :edit, :update]
   resources :cities, only: [:new, :create]
   # get 'sights/create'
 
