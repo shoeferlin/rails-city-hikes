@@ -1,7 +1,6 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
 
-
   def index
     if params["query"].nil?
       @city = ""

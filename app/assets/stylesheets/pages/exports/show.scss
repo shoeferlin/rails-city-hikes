@@ -1,18 +1,38 @@
+.export-container {
+  background-color: white;
+  border-radius: 3px;
+}
+
 #export-info {
   background-color: white;
   color: black;
   padding: 5px;
-  border: 2px solid $light-green;
+  box-shadow: 2px 2px 4px 2px $light-gray;
+  border-radius: 3px;
+  padding: 20px;
+  // border: 2px solid $light-green;
   // text-align: left !important;
+  margin-top: 40px;
+}
 
+#export-info:hover {
+  box-shadow: 4px 4px 8px 4px $light-gray;
 }
 
 #export-header {
-  background-color: $dark-green;
-  color: white;
+  color: $dark-green;
   padding: 3px;
   border-radius: 2px;
   line-height: 1;
+  text-align: center;
+  h1 {
+    border-bottom: 0.5px solid $dark-green;
+    padding-bottom: 30px;
+  }
+}
+
+#share-with-friend {
+
 }
 
 .export-button-area {
@@ -20,6 +40,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
 }
 
 .export-button {
@@ -27,6 +48,17 @@
   width: 300px;
   background-color: $dark-green;
   border: 1px solid grey;
+}
+
+.export-maps {
+  margin: 20px;
+  width: 400px;
+}
+
+.export-maps:hover {
+  background-color: $dark-green;
+  transition: ease 0.2s;
+  border: 1px solid black;
 }
 
 .export-button:hover {
@@ -40,6 +72,8 @@
   input[type="email"]{
     width: calc(100% - 180px)
   }
+  margin-bottom: 21px;
+
 }
 
 .simple_form div.input {
