@@ -3,12 +3,27 @@
     <div>
       <%= render 'pages/landing-video' %>
     </div>
- </div>
- </div>
-  <div class="flex-header-home">
-    <h2><i class="far fa-arrow-alt-circle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;Check out our recommended Hikes&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-arrow-alt-circle-down"></i></h2>
   </div>
-  <%= render 'shared/cards-small', routes: @routes %>
+</div>
+<!-- <div class="flex-header-home">
+  <h2><i class="far fa-arrow-alt-circle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;Check out our recommended Hikes&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-arrow-alt-circle-down"></i></h2>
+</div> -->
+<div class="carousel">
+  <h1>Check out our recommended hikes</h1>
+  <div id="wrapper-carousel">
+    <div id="image-carousel">
+      <div class="image i1" style="linear-gradient(-225deg, rgba(0,60,20,0.6) 0%, rgba(0,36,80,0.6) 50%)"><%= image_tag "crete.jpg" %></div>
+      <div class="image i2"><%= image_tag "crete.jpg" %></div>
+      <div class="image i3"><%= image_tag "crete.jpg" %></div>
+      <div class="image i4"><%= image_tag "crete.jpg" %></div>
+      <div class="image i5"><%= image_tag "crete.jpg" %></div>
+      <div class="image i6"><%= image_tag "crete.jpg" %></div>
+      <div class="image i7"><%= image_tag "crete.jpg" %></div>
+      <div class="image i8"><%= image_tag "crete.jpg" %></div>
+    </div>
+  </div>
+</div>
+<%#= render 'shared/cards-small', routes: @routes %>
 </div>
 
 
