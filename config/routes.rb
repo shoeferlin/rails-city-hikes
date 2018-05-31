@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :routes do
     resources :reviews, only: [:create, :destroy]
+    resources :sights, only: [:destroy, :create]
     get 'export', to: 'exports#show', as: :export
     post 'export/send_route_email', to: 'exports#send_route_email', as: :send_route_email
     post 'export/send_route_phone', to: 'exports#send_route_phone', as: :send_route_phone
@@ -11,7 +12,7 @@ Rails.application.routes.draw do
     post 'export/send_route_friend', to: 'exports#send_route_friend', as: :send_route_friend
     resources :sights, only: [:destroy, :create]
   end
-  resources :dashboards, only: [:index, :show]
+  resources :users, only: [:show, :edit, :update]
   resources :cities, only: [:new, :create]
   # get 'sights/create'
 

@@ -15,15 +15,15 @@
 
     <% if user_signed_in? %>
       <!-- Links when logged in -->
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My Routes", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Find a routes", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%#= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%#= link_to "Find Route", routes_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%#= link_to "Home", routes_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Create Route", new_route_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <div class="navbar-wagon-item">
       <div class="dropdown">
         <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to "My Profile", dashboards_path %></li>
-          <li><a href="#">Dashboard</a></li>
+          <li><%= link_to "Dashboard", user_path(current_user) %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete%></li>
         </ul>
       </div>

@@ -1,8 +1,20 @@
+.edit-container {
+  max-width: 85%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-container {
+  overflow:hidden;
+}
+
 .edit-view{
   display: flex;
   justify-content: space-around;
   text-align: center;
   width: 100%;
+  margin-top: 20px;
 }
 
 .current-sights {
@@ -10,6 +22,12 @@
   text-align: left;
 }
 
+h4 {
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 0.5px solid $dark-green;
+  padding-bottom: 5px;
+}
 .search-sights{
   flex-grow: 2;
 }
@@ -26,6 +44,71 @@
   color: grey;
   font-weight: lighter;
   line-height: 25px;
-  height: 350px;
+  // height: 450px;
+  display: inline-block;
   align-items: center;
 }
+
+.list-inline {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.delete-button {
+  border-radius: 10px;
+  background-color: $dark-green;
+  color: white;
+}
+
+.delete-button:hover {
+  color: black;
+}
+
+.sight-item:hover {
+  font-weight: bolder;
+}
+
+.create-sight-btn {
+  border: 2px solid #8aae92;
+  background-color: #8aae92;
+  color: white;
+  border-radius: 10px;
+}
+
+.sight-li {
+  display:flex;
+  justify-content: space-between;
+}
+
+#results {
+  list-style-type: none;
+  padding: 8px;
+}
+
+#results li {
+  margin: 10px 0px 10px 0px;
+}
+
+#results a {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#results a.btn {
+  border-radius: 10px;
+}
+
+#current-city {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+

@@ -5,18 +5,22 @@ function autocomplete() {
 
   function initializeAutocomplete(id) {
 
+    // Restrict city options
     const currenty_city = document.getElementById("current_city");
-    // console.log(current_city)
-    // console.log(current_city.innerText);
-
-    // Restrict city option
+    if (current_city.innerHTML != "") {
     var options = {
       componentRestrictions: {country: current_city.innerText}
      };
-
+    }
+    console.log(current_city)
     var element = document.getElementById(id);
     if (element) {
-      var autocomplete = new google.maps.places.Autocomplete(element, options, { types: ['geocode'] });
+      if (current_city.innerHTML != "") {
+        var autocomplete = new google.maps.places.Autocomplete(element, options, { types: ['geocode'] });
+      }
+      else {
+        var autocomplete = new google.maps.places.Autocomplete(element, options, { types: ['geocode'] });
+      }
       google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
     }
   }
@@ -40,6 +44,7 @@ function autocomplete() {
       }
 
     // FOR SIGHTS
+    if (current_city.innerHTML != "") {
       // - STORE NAME
       var type_name = document.getElementById("sight_name");
       type_name.value = place.name;
@@ -68,12 +73,14 @@ function autocomplete() {
       // List items from Search result
       const list = document.querySelector("#results");
       console.log(list.innerText)
-        list.insertAdjacentHTML("beforeend", `<li>${type_name.value}</li>`);
+        list.insertAdjacentHTML("afterbegin", `<li>${type_name.value}</li>`);
         list.insertAdjacentHTML("beforeend", `<li><a href="${type_url.value}">${type_url.value}</a></li>`);
         list.insertAdjacentHTML("beforeend", `<li>${type_formatted_address.value}</li>`);
         if (type_website.value) {
-          list.insertAdjacentHTML("beforeend", `<li><a href="${type_website.value}></a></li>`)
+          console.log(type_website.value)
+          list.insertAdjacentHTML("beforeend", `<p><a href="${type_website.value}" class="btn btn-primary">Link to homepage</a></p>`)
         };
+      }
   }
 
   google.maps.event.addDomListener(window, 'load', function() {

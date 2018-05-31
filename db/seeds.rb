@@ -14,10 +14,11 @@ users = []
 3.times do
   users << User.create(first_name: Faker::Name.first_name, username: Faker::Cat.name, email: Faker::Internet.email, picture_url: "https://picsum.photos/200/300/?random", password: Faker::Internet.password)
 end
-User.create(first_name: "Magic", username: "magicmike", email: "magic@mike.com", password: "123456", picture_url: "https://avatarfiles.alphacoders.com/547/54795.jpg")
+User.create(first_name: "Magic", username: "magicmike", email: "magic@mike.com", password: "123456", picture_url: "https://avatarfiles.alphacoders.com/547/54795.jpg", admin: true)
 
 puts "Generating cities"
 berlin = City.create(locality: "Berlin", country: "DE", longitude: Faker::Address.longitude, latitude: Faker::Address.latitude, picture_url: "http://www.6am-group.com/wp-content/uploads/2016/08/Berlin.jpg", photo: "de")
+paris = City.create(locality: "Paris", country: "FR", longitude: Faker::Address.longitude, latitude: Faker::Address.latitude, picture_url: "http://www.6am-group.com/wp-content/uploads/2016/08/Berlin.jpg", photo: "de")
 
 puts "Generating sights"
 sights = []

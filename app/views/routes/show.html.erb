@@ -13,9 +13,10 @@
       <h5 class="route-owner">Ask <strong><%= @route.user.username %></strong> for further tips!</h5>
       <div class="show-btns">
         <%= button_to "Return", routes_path, class: "btn btn-primary" %>
-        <%= button_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
+        <%= link_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
       </div>
     </div>
   </div>
   <div id="map" data-markers="<%= @markers.to_json %>"></div>
 </div>
+
