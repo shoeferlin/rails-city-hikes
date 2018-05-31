@@ -5,7 +5,6 @@ class ExportsController < ApplicationController
     @export = Export.new
     authorize @export
     @gmaps_url = create_gmaps_url
-    raise
   end
 
   def send_route_email
@@ -76,14 +75,11 @@ class ExportsController < ApplicationController
     else
       waypoint_url = "&waypoints="
       waypoint_array = @route.waypoint_ids
+      waypoint_array.delete_at(waypoint_array.length - 1)
       waypoint_array.delete_at(0)
-      new_array = waypoint_array
-      new_array.delete_at(new_array.length - 1)
-      new_array_2 = new_array
       waypoint_array.each do |waypoint|
-        waypoint_url << "#{@waypoints[waypoint].sight.latitude},#{@waypoints[waypoint].sight.latitude}|"
+        waypoint_url << "#{@waypoints[waypoint].sight.latitude},#{@waypoints[waypoint].sight.longitude}|"
       end
-      raise
       return waypoint_url
     end
   end

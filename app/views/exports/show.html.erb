@@ -28,6 +28,7 @@
           <%= button_to "Send route to my email", route_send_route_email_path(@route), class: "btn btn-primary export-button" %>
           <%= button_to "Send route to my phone", route_send_route_phone_path(@route), class: "btn btn-primary export-button" %>
           <%= button_to "Copy route to clipboard", route_send_route_clipboard_path(@route), class: "btn btn-primary export-button" %>
+          <p><%= @gmaps_url %></p>
         </div>
       </div>
     </div>
