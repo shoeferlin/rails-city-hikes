@@ -34,5 +34,14 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div id="edit-return-btn">
+      <%= link_to "Return", route_path(@route), class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="row">
+        <div id="map" data-waypoints="<%= @waypoints.to_json %>"></div>
+
+  </div>
 </div>
 
