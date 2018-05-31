@@ -12,4 +12,24 @@ class ExportPolicy < ApplicationPolicy
   def show?
     true
   end
+
+  def send_route_email?
+    true
+  end
+
+  def send_route_phone?
+    true
+  end
+
+  def send_route_clipboard?
+    true
+  end
+
+  def send_route_gmaps?
+    true
+  end
+
+  def send_route_friend?
+    true
+  end
 end
