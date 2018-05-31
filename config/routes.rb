@@ -5,11 +5,12 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :destroy]
     resources :sights, only: [:destroy, :create]
     get 'export', to: 'exports#show', as: :export
-    post 'exports/send-route-email', to: 'exports#send_route_email', as: :send_route_email
-    post 'exports/send-route-phone', to: 'exports#send_route_phone', as: :send_route_phone
-    post 'exports/send-route-clipboard', to: 'exports#send_route_clipboard', as: :send_route_clipboard
-    post 'exports/send-route-gmaps', to: 'exports#send_route_gmaps', as: :send_route_gmaps
-    post 'exports/send-route-friend', to: 'exports#send_route_friend', as: :send_route_friend
+    post 'export/send_route_email', to: 'exports#send_route_email', as: :send_route_email
+    post 'export/send_route_phone', to: 'exports#send_route_phone', as: :send_route_phone
+    post 'export/send_route_clipboard', to: 'exports#send_route_clipboard', as: :send_route_clipboard
+    post 'export/send_route_gmaps', to: 'exports#send_route_gmaps', as: :send_route_gmaps
+    post 'export/send_route_friend', to: 'exports#send_route_friend', as: :send_route_friend
+    resources :sights, only: [:destroy, :create]
   end
   resources :users, only: [:show, :edit, :update]
   resources :cities, only: [:new, :create]

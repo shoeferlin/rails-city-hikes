@@ -24,6 +24,8 @@ gem 'pundit'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem "geocoder"
+gem "launchy"
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'
