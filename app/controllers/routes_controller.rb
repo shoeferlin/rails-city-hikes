@@ -5,10 +5,10 @@ class RoutesController < ApplicationController
     if params["query"].nil?
       @city = ""
     else
-      @city = params["query"]
+      @city = params["query"].capitalize
     end
-    # @routes = policy_scope(Route).order(created_at: :asc)
-    if City.where(locality: @city.downcase).exists?
+    # @routes = t: :asc)
+    if City.where(locality: @city).exists?
       @routes =  policy_scope(Route).order(created_at: :asc).where(city_id: City.where(locality: @city).ids)
     else
       @city = "We don't know about this city yet"
