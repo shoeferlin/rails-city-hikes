@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class= "export" id="export-info">
+        <div class="export" id="export-header">
+          <h1>Export route</h1>
+        </div>
+        <h1><%= @route.name %></h1>
+        <h3><%= @route.city.locality %></h3>
+        <table class="export">
+          <tbody class="export">
+            <tr class="export">
+              <td class="export">Rating: 4.3 / 5</td>
+              <td class="export" style="text-align: right;">Distance: 5 km</td>
+            </tr>
+            <tr class="export">
+              <td class="export">Tags: #architectural #germany #historic #touristic</td>
+              <td class="export" style="text-align: right;">Time: 2 h</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+        <div class="export-button-area">
+          <%= button_to "Send route to my email", "exports/send-route-email", class: "btn btn-primary export-button" %>
+          <%= button_to "Send route to my phone", "exports/send-route-phone", class: "btn btn-primary export-button" %>
+          <%= button_to "Copy route to clipboard", "exports/send-route-clipboard", class: "btn btn-primary export-button" %>
+          <%= button_to "Open route in Google Maps ", "exports/send-route-gmaps", class: "btn btn-primary export-button" %>
+        </div>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div id="export-info">
+        <div id="export-header">
+          <h3 style="text-align: center;">Share route with a friend</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <%= form_tag("exports/send-route-friend", method: "post", class: "send-route-friend") do %>
+        <%= email_field(:user, :address, style: "width: 500px") %>
+        <%= submit_tag("Send him your route") %>
+      <% end %>
+    </div>
+  </div>
+</div>

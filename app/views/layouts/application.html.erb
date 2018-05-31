@@ -13,7 +13,9 @@
   <body>
       <%= render 'shared/flashes' %>
       <%= render 'shared/navbar' %>
-      <%= yield %>
+      <div style="min-height: calc(100vh - 330px); padding-top: 70px"> <!-- SH: Sticks footer always to bottom and navbar to top  -->
+        <%= yield %>
+      </div>
       <%= render 'shared/footer' %>
 
     <%= javascript_include_tag 'application' %>
