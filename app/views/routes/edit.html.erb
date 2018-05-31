@@ -1,34 +1,36 @@
-<div class="container">
+<div class="edit-container">
   <div class="row">
-    <div class="col-xs-5 col-sm-6 col-lg-4 edit-view">
-      <div class="current-sights edit-card">
-        <h4>Sightseeing items:</h4>
-          <% Waypoint.where(route_id: @route.id).each do |w| %>
-            <ul class="list-inline">
-              <li><%= w.sight.name%></li>
-              <li><%= button_to "Delete", route_sight_path(@route, w.sight), method: :delete, class:"delete-button"%></li>
-            </ul>
+    <div class="grid-container">
+      <div class="col-xs-5 col-sm-6 col-lg-4 edit-view">
+        <div class="current-sights edit-card">
+          <h4>Sightseeing items:</h4>
+            <% Waypoint.where(route_id: @route.id).each do |w| %>
+              <ul class="list-inline">
+                <li><%= w.sight.name%></li>
+                <li><%= button_to "Delete", route_sight_path(@route, w.sight), method: :delete, class:"delete-button"%></li>
+              </ul>
+            <% end %>
+        </div>
+        <div class="search-sights edit-card">
+          <h4>Add additional sights</h4>
+          <%= simple_form_for [@route, @sight] do |f| %>
+            <%= f.input :search %>
+            <%= f.input :name, as: :hidden %>
+            <%= f.input :place_id, as: :hidden %>
+            <%= f.input :url, as: :hidden %>
+            <%= f.input :website, as: :hidden %>
+            <%= f.input :formatted_address, as: :hidden %>
+            <%= f.button :submit, class:"create-sight-btn" %>
+            <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
           <% end %>
-      </div>
-      <div class="search-sights edit-card">
-        <h4>Add additional sights</h4>
-        <%= simple_form_for [@route, @sight] do |f| %>
-          <%= f.input :search %>
-          <%= f.input :name, as: :hidden %>
-          <%= f.input :place_id, as: :hidden %>
-          <%= f.input :url, as: :hidden %>
-          <%= f.input :website, as: :hidden %>
-          <%= f.input :formatted_address, as: :hidden %>
-          <%= f.button :submit, class:"create-sight-btn" %>
-          <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
-        <% end %>
-        <ul id="results">
-          <div id="current_city"><%= @route.city.country.downcase %></div>
-          <!-- <li></li> -->
-        </ul>
-      </div>
-      <div class="info-sights edit-card">
-        <h4>Info</h4>
+          <ul id="results">
+            <div id="current_city"><%= @route.city.country.downcase %></div>
+            <!-- <li></li> -->
+          </ul>
+        </div>
+        <div class="info-sights edit-card">
+          <h4>Info</h4>
+        </div>
       </div>
     </div>
   </div>
