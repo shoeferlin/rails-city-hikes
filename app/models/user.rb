@@ -11,7 +11,11 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
 
+
   # Activate when field exists in form and discussed with team
   # validates :username, uniqueness: true, presence: true
+
+  # to upload users' profile picture
+  mount_uploader :picture_url, PhotoUploader
 
 end
