@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+gitsource 'https://rubygems.org'
 ruby '2.4.4'
 
 gem 'bootsnap', require: false
@@ -19,12 +19,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
-<<<<<<< HEAD
 gem 'draggable-rails'
 
 # Added gems
-=======
->>>>>>> 3e493c8804f73d88f9feaf6b4365731210807dc5
 gem 'pundit'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'

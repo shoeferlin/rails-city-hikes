@@ -7,3 +7,40 @@
   padding: 50px;
   background-color: $light-gray;
 }
+
+.profile_picture {
+  border-radius: 54px;
+}
+
+.font-weight-bold {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  color: white;
+  font-size: 22px;
+}
+
+.box_info{
+  border-radius: 17px;
+  background-color: transparent;
+}
+
+
+.card-profile {
+  border-radius: 46px;
+  display: flex;
+}
+
+.background-image-profile {
+  background-size: cover;
+  background-position: center;
+}
+
+.title-profile {
+  color: white;
+}
+
+.box-routes-profile {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
