@@ -33,15 +33,17 @@
         </div>
         <div class="info-sights edit-card">
           <h4>Info</h4>
-          <% @page = Wikipedia.find( @route.sights.last.name ) %>
-          <p id="infotext" class="hide"> ...</p>
-          <!--  FOR NOW -->
-          <% if !@page.text.nil? %>
-            <p class="info_text"><%= @page.text.first(400) %> ...</p>
-            <img class="info_image" src="<%= @page.image_urls[0] %>" alt="No image">
-            <a href="<%= @page.fullurl%>" class="btn btn-primary">More Info here</a>
-          <% else %>
-            <h5>Sorry, We got no information about this item ...</h5>
+          <% if !@route.sights.empty? %>
+            <% @page = Wikipedia.find( @route.sights.last.name ) %>
+            <p id="infotext" class="hide"> ...</p>
+            <!--  FOR NOW -->
+            <% if !@page.text.nil? %>
+              <p class="info_text"><%= @page.text.first(400) %> ...</p>
+              <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
+              <a href="<%= @page.fullurl%>" class="btn btn-primary">More Info here</a>
+            <% else %>
+              <h5>Sorry, We got no information about this item ...</h5>
+            <% end %>
           <% end %>
         </div>
       </div>
