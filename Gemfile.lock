@@ -83,6 +83,7 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
+    draggable-rails (1.0.1)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
@@ -260,6 +261,7 @@ DEPENDENCIES
   carrierwave (~> 1.2)
   cloudinary
   devise
+  draggable-rails
   faker!
   figaro
   font-awesome-sass (~> 5.0.9)
@@ -289,4 +291,4 @@ RUBY VERSION
    ruby 2.4.4p296
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
