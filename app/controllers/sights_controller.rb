@@ -2,7 +2,8 @@ class SightsController < ApplicationController
   def create
     @sight = Sight.new(params_sight)
     @route = Route.find(params[:route_id])
-    @page = Wikipedia.find( @sight.name )
+    @page = Wikipedia.find(@sight.name)
+
     authorize @sight
 
     if @sight.save

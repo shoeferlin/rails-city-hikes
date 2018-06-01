@@ -7,7 +7,8 @@
         <div class="current-sights edit-card">
           <h4>Sightseeing items:</h4>
             <% Waypoint.where(route_id: @route.id).each do |w| %>
-              <ul class="list-inline">
+              <ul class="list-inline edit-list-moveable">
+                <!-- <li class="waypoint-id hidden"><%#= waypoint.id %></li> -->
                 <li><%= w.sight.name%></li>
                 <li><%= button_to "Delete", route_sight_path(@route, w.sight), method: :delete, class:"delete-button"%></li>
               </ul>
@@ -28,9 +29,17 @@
           <ul id="results">
             <div id="current_city" class="hide"><%= @route.city.country.downcase %></div>
             <div id="hidden_infotext" class="hide">
-            <div id="hidden_infotext" class="hide"><% if !@sight.name.nil? %><% @page = Wikipedia.find( @sight.name ) %>@page.title<% end %></div>
+            <div id="hidden_infotext" class="hide"><% if !@sight.name.nil? %><% @page = Wikipedia.find(@sight.name) %>@page.title<% end %></div>
           </ul>
         </div>
+        <!-- <div id="infotext" class="info-sights edit-card">
+          <#% if !@route.sights.empty? %>
+            <h4 id="infoheadline">Info</h4>
+            <%# @page = Wikipedia.find( @route.sights.last.name ) %>
+          <#% else %>
+            <h6>Sorry, We got no information about this item ...</h6>
+          <#% end %>
+        </div> -->
         <div class="info-sights edit-card">
           <h4>Info</h4>
           <% if !@route.sights.empty? %>
@@ -40,7 +49,7 @@
             <% if !@page.text.nil? %>
               <p class="info_text"><%= @page.text.first(400) %> ...</p>
               <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
-              <a href="<%= @page.fullurl%>" class="btn btn-primary">More Info here</a>
+              <a href="<%= @page.fullurl%>" class="small-button">More Info here</a>
             <% else %>
               <h5>Sorry, We got no information about this item ...</h5>
             <% end %>

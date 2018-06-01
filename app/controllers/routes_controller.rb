@@ -1,5 +1,7 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:fetch_wikipedia_data]
+  protect_from_forgery except: :fetch_wikipedia_data
 
   def index
     if params["query"].nil?
@@ -49,6 +51,24 @@ class RoutesController < ApplicationController
   end
 
   def update
+  end
+
+  def fetch_wikipedia_data
+    @route = Route.find(params[:route_id])
+    authorize @route
+    Rails.logger.info @route
+    # @info = @route.sights.map do |sight|
+    #   @page = Wikipedia.find (sight.name)
+    #   {description: @page.text.first(400), picture_url: @page.image_urls[1]}
+    # end
+    # @page = Wikipedia.find( @route.sights.last.name )
+    # @page.title
+    @waypoints = @route.sights.map do |sight|
+      {lat: sight.latitude, lng: sight.longitude}
+    end
+    respond_to do |format|
+      format.json {render json: @waypoints}
+    end
   end
 
   def destroy
