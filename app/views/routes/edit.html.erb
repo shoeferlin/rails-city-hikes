@@ -44,23 +44,22 @@
         </div> -->
 
             <!--   <div id="hidden_infotext" class="hide"><#% if !@sight.name.nil? %><#% @page = Wikipedia.find( @sight.name ) %>@page.title<#% end %></div> -->
-
-
-          </div>
-          <div class="info-sights edit-card">
-            <h4>Info</h4>
-            <% if !@route.sights.empty? %>
-            <!--<#% @page = Wikipedia.find( @route.sights.last.name ) %>
-            <p id="infotext" class="hide"> ...</p> -->
-            <!--  FOR NOW -->
-              <% if !@page.text.nil? %>
-                <p class="info_text"><%= @page.text.first(400) %> ...</p>
-                <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
-                <a href="<%= @page.fullurl%>" class="small-button">More Info here</a>
-              <% else %>
-              <h5>Sorry, we have no information about this item yet ...</h5>
+          <div>
+            <div class="info-sights edit-card">
+              <h4>Info</h4>
+              <% if !@route.sights.empty? %>
+                <% @page = Wikipedia.find( @route.sights.last.name ) %>
+              <!-- <p id="infotext" class="hide"> ...</p> -->
+              <!--  FOR NOW -->
+                <% if !@page.text.nil? %>
+                  <p class="info_text"><%= @page.text.first(400) %> ...</p>
+                  <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
+                  <a href="<%= @page.fullurl%>" class="small-button">More Info here</a>
+                <% else %>
+                <h5>Sorry, we have no information about this item yet ...</h5>
+                <% end %>
               <% end %>
-            <% end %>
+            </div>
           </div>
         </div>
       </div>
