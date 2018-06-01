@@ -163,6 +163,7 @@
 .carousel h1 {
   font-size: 36px;
   text-align: center;
+  margin: 0px 0px 30px 0px;
 }
 
 #wrapper-carousel {
@@ -174,7 +175,7 @@
   perspective: 2500;
   -webkit-perspective: 2500;
   width: 800px;
-  margin: 200px auto 0 auto;
+  // margin: 200px auto 0 auto;
   perspective-origin: 50% 150px;
   -webkit-perspective-origin: 50% 150px;
   transition: perspective, 1s;
@@ -301,9 +302,7 @@
   vertical-align: top;
 }
 
-.carousel h1 {
-  font-size: 48px;
-}
+
 
 
 
