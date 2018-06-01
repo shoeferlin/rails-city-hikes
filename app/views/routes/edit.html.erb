@@ -46,7 +46,7 @@
             <!--   <div id="hidden_infotext" class="hide"><#% if !@sight.name.nil? %><#% @page = Wikipedia.find( @sight.name ) %>@page.title<#% end %></div> -->
 
 
-          </div>
+
           <div class="info-sights edit-card">
             <h4>Info</h4>
             <% if !@route.sights.empty? %>
@@ -61,6 +61,7 @@
               <h5>Sorry, we have no information about this item yet ...</h5>
               <% end %>
             <% end %>
+          </div>
           </div>
         </div>
       </div>
