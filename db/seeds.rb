@@ -34,20 +34,10 @@ zurich      = City.create(locality: "Zurich", country: "CH")
 rome        = City.create(locality: "Rome", country: "IT")
 copenhhagen = City.create(locality: "Copenhagen", country: "DK")
 
-puts "Generating sights ..."
-puts "Generating sights in Zürich"
-zürichsights = []
-zürichsights << Sight.create(name: "Grossmünster", description: "Das Grossmünster ist eine evangelisch-reformierte Kirche in der Altstadt von Zürich. Die Kirchenpatrone sind Felix und Regula sowie Exuperantius. Bis zur Reformation war das Grossmünster zugleich Teil eines weltlichen Chorherrenstifts und Pfarrkirche. Das Grossmünster gehört zusammen mit dem Fraumünster und der St. Peter-Kirche zu den bekanntesten Kirchen der Stadt Zürich.", latitude: 47.370093, longitude: 8.544054, place_id: "X", formatted_address: "Grossmünsterplatz, 8001 Zürich, Schweiz", picture_url:"https://i1.wp.com/magic-places.ch/wp-content/uploads/2013/09/Das-Zurcher-Grossmunster-bei-Nacht.jpg?ssl=1")
-zürichsights << Sight.create(name: "Framünster", description: "Das Kloster Fraumünster war ein Benediktinerinnen-Stift in Zürich (Kanton Zürich, Schweiz). Die ehemalige Klosterkirche ist eines der Wahrzeichen und eine der vier Altstadtkirchen Zürichs. ", latitude: 47.37, longitude: 8.544167, place_id: "Y", formatted_address: "Münsterhof 2, 8001 Zürich, Schweiz", picture_url:"https://upload.wikimedia.org/wikipedia/commons/b/ba/Z%C3%BCrich_-_Stadthaus_-_Fraum%C3%BCnster_-_Sicht_vom_Grossm%C3%BCnster_Karlsturm_IMG_6396.JPG")
-zürichsights << Sight.create(name: "Paradeplatz", description: "Der Paradeplatz ist ein Platz an der Bahnhofstrasse im Quartier City in Zürich. Er liegt an einer der teuersten Lagen der Stadt und ist seit Jahren ein Synonym für Banken und den Schweizer Wohlstand. Direkt am Paradeplatz befinden sich unter anderem die beiden Schweizer Grossbanken UBS und Credit Suisse. In der näheren Umgebung sind zudem eine ganze Reihe weiterer Banken beheimatet. ", latitude: 50.9105494, longitude: 9.2346855, place_id: "Z", formatted_address: "Paradeplatz, 8001 Zürich, Schweiz", picture_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Paradeplatz_2011-08-01_16-36-10_ShiftN.jpg/1920px-Paradeplatz_2011-08-01_16-36-10_ShiftN.jpg")
-# zürichsights << Sight.create(name: "Bellevueplatz", description: "Das Bellevue ist ein weitläufiger, zentraler Platz im Herzen von Zürich und ein wichtiger städtischer Verkehrsknotenpunkt. Er liegt am Südende der Altstadt an der rechten Seite des Abflusses des Zürichsees in die Limmat.", latitude: ‎0, longitude: 0, place_id: "ZX", formatted_address: "Bellevueplatz, 8001 Zürich, Schweiz", picture_url:"https://upload.wikimedia.org/wikipedia/commons/2/2a/Bellevue_%28Z%C3%BCrich%29_-_Theaterstrasse_2013-04-15_13-17-17.JPG")
-
-zürichroute = Route.create(user_id: 2, city_id: zurich.id, name: "Zürich Historical Route", description: "Beautiful route through old city center with historical buildings", public: true )
-zürichsights.each do |zürichsight|
-  Waypoint.create(route_id: zürichroute.id, sight_id: zürichsight.id)
-end
 # -------------
 # 47.367089, 8.5450858
+
+puts "Generating sights ..."
 
 sights = []
 20.times do
@@ -69,6 +59,18 @@ Route.all.each do |route|
     w = Waypoint.new(route_id: route.id, sight_id: sight.id)
     w.save
   end
+end
+
+puts "Generating Zürich Route"
+zürichsights = []
+zürichsights << Sight.create(name: "Grossmünster", description: "Das Grossmünster ist eine evangelisch-reformierte Kirche in der Altstadt von Zürich. Die Kirchenpatrone sind Felix und Regula sowie Exuperantius. Bis zur Reformation war das Grossmünster zugleich Teil eines weltlichen Chorherrenstifts und Pfarrkirche. Das Grossmünster gehört zusammen mit dem Fraumünster und der St. Peter-Kirche zu den bekanntesten Kirchen der Stadt Zürich.", latitude: 47.370093, longitude: 8.544054, place_id: "X", formatted_address: "Grossmünsterplatz, 8001 Zürich, Schweiz", picture_url:"https://i1.wp.com/magic-places.ch/wp-content/uploads/2013/09/Das-Zurcher-Grossmunster-bei-Nacht.jpg?ssl=1")
+zürichsights << Sight.create(name: "Framünster", description: "Das Kloster Fraumünster war ein Benediktinerinnen-Stift in Zürich (Kanton Zürich, Schweiz). Die ehemalige Klosterkirche ist eines der Wahrzeichen und eine der vier Altstadtkirchen Zürichs. ", latitude: 47.37, longitude: 8.544167, place_id: "Y", formatted_address: "Münsterhof 2, 8001 Zürich, Schweiz", picture_url:"https://upload.wikimedia.org/wikipedia/commons/b/ba/Z%C3%BCrich_-_Stadthaus_-_Fraum%C3%BCnster_-_Sicht_vom_Grossm%C3%BCnster_Karlsturm_IMG_6396.JPG")
+zürichsights << Sight.create(name: "Paradeplatz", description: "Der Paradeplatz ist ein Platz an der Bahnhofstrasse im Quartier City in Zürich. Er liegt an einer der teuersten Lagen der Stadt und ist seit Jahren ein Synonym für Banken und den Schweizer Wohlstand. Direkt am Paradeplatz befinden sich unter anderem die beiden Schweizer Grossbanken UBS und Credit Suisse. In der näheren Umgebung sind zudem eine ganze Reihe weiterer Banken beheimatet. ", latitude: 50.9105494, longitude: 9.2346855, place_id: "Z", formatted_address: "Paradeplatz, 8001 Zürich, Schweiz", picture_url:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Paradeplatz_2011-08-01_16-36-10_ShiftN.jpg/1920px-Paradeplatz_2011-08-01_16-36-10_ShiftN.jpg")
+# zürichsights << Sight.create(name: "Bellevueplatz", description: "Das Bellevue ist ein weitläufiger, zentraler Platz im Herzen von Zürich und ein wichtiger städtischer Verkehrsknotenpunkt. Er liegt am Südende der Altstadt an der rechten Seite des Abflusses des Zürichsees in die Limmat.", latitude: ‎0, longitude: 0, place_id: "ZX", formatted_address: "Bellevueplatz, 8001 Zürich, Schweiz", picture_url:"https://upload.wikimedia.org/wikipedia/commons/2/2a/Bellevue_%28Z%C3%BCrich%29_-_Theaterstrasse_2013-04-15_13-17-17.JPG")
+
+zürichroute = Route.create(user_id: 2, city_id: zurich.id, name: "Zürich Historical Route", description: "Beautiful route through old city center with historical buildings", public: true )
+zürichsights.each do |zürichsight|
+  Waypoint.create(route_id: zürichroute.id, sight_id: zürichsight.id)
 end
 
 puts "SEEDING COMPLETED"
