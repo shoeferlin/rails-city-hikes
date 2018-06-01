@@ -12,8 +12,11 @@ class ExportsController < ApplicationController
     authorize @export
     flash[:notice] = "Route has been sent to your email, #{@route.user.first_name}"
     # start background job writing email with link
-    redirect_to route_export_path(@route)
-    # redirect_to route_path(@route)
+    @user = current_user
+    @gmaps_url = create_gmaps_url
+    ExportRouteMailer.send_route(@user, @route, @gmaps_url)
+    # redirect_to route_export_path(@route)
+    redirect_to route_path(@route)
   end
 
   def send_route_phone
@@ -48,6 +51,8 @@ class ExportsController < ApplicationController
     authorize @export
     flash[:notice] = "Route has been sent to your friend, #{@route.user.first_name}"
     # start background job sending email with link to address of friend
+    # RouterMailer.send_route(route, email)
+
     redirect_to route_export_path(@route)
     # redirect_to route_path(@route)
   end
