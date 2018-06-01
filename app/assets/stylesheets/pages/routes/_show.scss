@@ -1,24 +1,30 @@
 .main-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 70px;
+  justify-content: space-between;
+  // align-items: center;
+  padding-top: 60px;
 }
 
 #map {
-  flex: 0 0 450px;
-  height: 100vh;
+  flex: 0 0 550px;
+  height: calc(100vh - 60px);
   position: sticky !important;
-  margin-left: 250px;
+  margin-left: 50px;
+  margin-right: 25px;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  top: 0 !important;
 }
 
 .route-box {
   border: 1px solid lightgray;
+  width: calc(100vw - 550px);
   border-radius: 4px;
+  margin-left: 25px;
+  min-height: calc(100vh - 60px);
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   padding: 50px;
   background-color: $light-gray;
+  // width: calc(100vh - 400px);
 }
 .route-name {
   border-bottom: 2px solid gray;
