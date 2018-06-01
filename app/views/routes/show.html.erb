@@ -1,20 +1,20 @@
+<div class="banner-tiny" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.6) 0%, rgba(0,36,80,0.6) 50%), url('<%= image_url 'landing-banner-tiny.jpg' %>')";>
+</div>
 <div class="main-container">
   <div class="route-box">
-    <div class="route-container">
-      <h3 class="route-name"><strong><%= @route.name %></strong></h3>
-
-      <h5 class="route-description"><em><%= @route.description %></em></h5>
-      <h5 class="route-items">Sightseeing items:</h5>
-      <% Waypoint.where(route_id: @route.id).each do |w| %>
-      <ul>
-        <li class="route-points"><%=w.sight.name %></li>
-      </ul>
-      <% end %>
-      <h5 class="route-owner">Ask <strong><%= @route.user.username %></strong> for further tips!</h5>
-      <div class="show-btns">
-        <%= link_to "Return", routes_path, class: "btn btn-primary" %>
-        <%= link_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
-      </div>
+    <h3 class="route-name"><strong><%= @route.name %></strong></h3>
+    <h5 class="route-description"><em><%= @route.description %></em></h5>
+    <h5 class="route-items">Sightseeing items:</h5>
+    <% Waypoint.where(route_id: @route.id).each do |w| %>
+    <ul>
+      <li class="route-points"><%=w.sight.name %></li>
+    </ul>
+    <% end %>
+    <h5 class="route-owner">Ask <strong><%= @route.user.username %></strong> for further tips!</h5>
+    <div class="show-btns">
+      <%= link_to "Return", routes_path, class: "btn btn-primary" %>
+      <%= link_to "Export", route_export_path(@route), class: "btn btn-primary btn", style: "width: 40%" %>
+      <%= link_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
     </div>
   </div>
   <div id="map" data-waypoints="<%= @waypoints.to_json %>"></div>

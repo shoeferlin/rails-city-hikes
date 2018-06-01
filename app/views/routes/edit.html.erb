@@ -1,4 +1,6 @@
-
+<div class="banner-tiny" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.6) 0%, rgba(0,36,80,0.6) 50%), url('<%= image_url 'landing-banner-tiny.jpg' %>')";>
+  <div class="return-button"><%= link_to "Return", route_path(@route), class: "btn btn-primary" %></div>
+</div>
 
 <div class="edit-container">
   <div class="row">
@@ -6,6 +8,7 @@
       <div class="col-xs-5 col-sm-6 col-lg-4 edit-view">
         <div class="current-sights edit-card">
           <h4>Sightseeing items:</h4>
+<<<<<<< HEAD
             <% Waypoint.where(route_id: @route.id).each do |w| %>
               <ul class="list-inline edit-list-moveable">
                 <!-- <li class="waypoint-id hidden"><%#= waypoint.id %></li> -->
@@ -13,22 +16,31 @@
                 <li><%= button_to "Delete", route_sight_path(@route, w.sight), method: :delete, class:"delete-button"%></li>
               </ul>
             <% end %>
+=======
+          <% Waypoint.where(route_id: @route.id).each do |w| %>
+          <ul class="list-inline">
+            <li><%= w.sight.name%></li>
+            <li><%= button_to "Delete", route_sight_path(@route, w.sight), method: :delete, class:"delete-button"%></li>
+          </ul>
+          <% end %>
+>>>>>>> 3e493c8804f73d88f9feaf6b4365731210807dc5
         </div>
         <div class="search-sights edit-card">
           <h4>Add additional sights</h4>
           <%= simple_form_for [@route, @sight] do |f| %>
-            <%= f.input :search %>
-            <%= f.input :name, as: :hidden %>
-            <%= f.input :place_id, as: :hidden %>
-            <%= f.input :url, as: :hidden %>
-            <%= f.input :website, as: :hidden %>
-            <%= f.input :formatted_address, as: :hidden %>
-            <%= f.button :submit, class:"create-sight-btn" %>
-            <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
+          <%= f.input :search %>
+          <%= f.input :name, as: :hidden %>
+          <%= f.input :place_id, as: :hidden %>
+          <%= f.input :url, as: :hidden %>
+          <%= f.input :website, as: :hidden %>
+          <%= f.input :formatted_address, as: :hidden %>
+          <%= f.button :submit, class:"create-sight-btn"%>
+          <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
           <% end %>
           <ul id="results">
             <div id="current_city" class="hide"><%= @route.city.country.downcase %></div>
             <div id="hidden_infotext" class="hide">
+<<<<<<< HEAD
             <div id="hidden_infotext" class="hide"><% if !@sight.name.nil? %><% @page = Wikipedia.find(@sight.name) %>@page.title<% end %></div>
           </ul>
         </div>
@@ -43,28 +55,39 @@
         <div class="info-sights edit-card">
           <h4>Info</h4>
           <% if !@route.sights.empty? %>
+=======
+              <div id="hidden_infotext" class="hide"><% if !@sight.name.nil? %><% @page = Wikipedia.find( @sight.name ) %>@page.title<% end %></div>
+            </ul>
+          </div>
+          <div class="info-sights edit-card">
+            <h4>Info</h4>
+            <% if !@route.sights.empty? %>
+>>>>>>> 3e493c8804f73d88f9feaf6b4365731210807dc5
             <% @page = Wikipedia.find( @route.sights.last.name ) %>
             <p id="infotext" class="hide"> ...</p>
             <!--  FOR NOW -->
             <% if !@page.text.nil? %>
+<<<<<<< HEAD
               <p class="info_text"><%= @page.text.first(400) %> ...</p>
               <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
               <a href="<%= @page.fullurl%>" class="small-button">More Info here</a>
+=======
+            <p class="info_text"><%= @page.text.first(400) %> ...</p>
+            <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
+            <a href="<%= @page.fullurl%>" class="btn btn-primary">More Info here</a>
+>>>>>>> 3e493c8804f73d88f9feaf6b4365731210807dc5
             <% else %>
-              <h5>Sorry, We got no information about this item ...</h5>
+            <h5>Sorry, we have no information about this item yet ...</h5>
             <% end %>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div id="edit-return-btn">
-      <%= link_to "Return", route_path(@route), class: "btn btn-primary" %>
+    <div class="row">
+      <div id="edit-return-btn">
+      </div>
     </div>
-  </div>
-  <div class="row">
     <div id="map" data-waypoints="<%= @waypoints.to_json %>"></div>
   </div>
-</div>
 
