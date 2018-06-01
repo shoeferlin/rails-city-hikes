@@ -19,7 +19,9 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+gem 'draggable-rails'
 
+# Added gems
 gem 'pundit'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
