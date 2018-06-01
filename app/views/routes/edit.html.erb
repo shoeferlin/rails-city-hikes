@@ -1,4 +1,6 @@
-
+<div class="banner-tiny" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.6) 0%, rgba(0,36,80,0.6) 50%), url('<%= image_url 'landing-banner-tiny.jpg' %>')";>
+  <div class="return-button"><%= link_to "Return", route_path(@route), class: "btn btn-primary" %></div>
+</div>
 
 <div class="edit-container">
   <div class="row">
@@ -17,14 +19,14 @@
         <div class="search-sights edit-card">
           <h4>Add additional sights</h4>
           <%= simple_form_for [@route, @sight] do |f| %>
-            <%= f.input :search %>
-            <%= f.input :name, as: :hidden %>
-            <%= f.input :place_id, as: :hidden %>
-            <%= f.input :url, as: :hidden %>
-            <%= f.input :website, as: :hidden %>
-            <%= f.input :formatted_address, as: :hidden %>
-            <%= f.button :submit, class:"create-sight-btn" %>
-            <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
+          <%= f.input :search %>
+          <%= f.input :name, as: :hidden %>
+          <%= f.input :place_id, as: :hidden %>
+          <%= f.input :url, as: :hidden %>
+          <%= f.input :website, as: :hidden %>
+          <%= f.input :formatted_address, as: :hidden %>
+          <%= f.button :submit, class:"create-sight-btn"%>
+          <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
           <% end %>
           <ul id="results">
             <div id="current_city" class="hide"><%= @route.city.country.downcase %></div>
@@ -35,14 +37,14 @@
         <!-- <div id="infotext" class="info-sights edit-card">
           <#% if !@route.sights.empty? %>
             <h4 id="infoheadline">Info</h4>
-            <%# @page = Wikipedia.find( @route.sights.last.name ) %>
+            <#% @page = Wikipedia.find( @route.sights.last.name ) %>
           <#% else %>
             <h6>Sorry, We got no information about this item ...</h6>
           <#% end %>
         </div> -->
-        <div class="info-sights edit-card">
-          <h4>Info</h4>
-          <% if !@route.sights.empty? %>
+          <div class="info-sights edit-card">
+            <h4>Info</h4>
+            <% if !@route.sights.empty? %>
             <% @page = Wikipedia.find( @route.sights.last.name ) %>
             <p id="infotext" class="hide"> ...</p>
             <!--  FOR NOW -->
@@ -51,20 +53,17 @@
               <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
               <a href="<%= @page.fullurl%>" class="small-button">More Info here</a>
             <% else %>
-              <h5>Sorry, We got no information about this item ...</h5>
+            <h5>Sorry, we have no information about this item yet ...</h5>
             <% end %>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div id="edit-return-btn">
-      <%= link_to "Return", route_path(@route), class: "btn btn-primary" %>
+    <div class="row">
+      <div id="edit-return-btn">
+      </div>
     </div>
-  </div>
-  <div class="row">
     <div id="map" data-waypoints="<%= @waypoints.to_json %>"></div>
   </div>
-</div>
 
