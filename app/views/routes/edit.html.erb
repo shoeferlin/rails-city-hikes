@@ -50,8 +50,8 @@
           <div class="info-sights edit-card">
             <h4>Info</h4>
             <% if !@route.sights.empty? %>
-            <!--<#% @page = Wikipedia.find( @route.sights.last.name ) %>
-            <p id="infotext" class="hide"> ...</p> -->
+            <% @page = Wikipedia.find( @route.sights.last.name ) %>
+            <!-- <p id="infotext" class="hide"> ...</p> -->
             <!--  FOR NOW -->
               <% if !@page.text.nil? %>
                 <p class="info_text"><%= @page.text.first(400) %> ...</p>
