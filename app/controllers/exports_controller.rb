@@ -14,7 +14,7 @@ class ExportsController < ApplicationController
     # start background job writing email with link
     @user = current_user
     @gmaps_url = create_gmaps_url
-    ExportRouteMailer.send_route(@user, @route, @gmaps_url)
+    ExportRouteMailer.send_route(@user, @route, @gmaps_url).deliver_now
     # redirect_to route_export_path(@route)
     redirect_to route_path(@route)
   end
@@ -52,9 +52,12 @@ class ExportsController < ApplicationController
     flash[:notice] = "Route has been sent to your friend, #{@route.user.first_name}"
     # start background job sending email with link to address of friend
     # RouterMailer.send_route(route, email)
-
-    redirect_to route_export_path(@route)
-    # redirect_to route_path(@route)
+    friend = User.new(first_name: params[:friend_name], email: params[:friend_email])
+    @user = friend
+    @gmaps_url = create_gmaps_url
+    ExportRouteMailer.send_route(@user, @route, @gmaps_url).deliver_now
+    # redirect_to route_export_path(@route)
+    redirect_to route_path(@route)
   end
 
   private
@@ -63,6 +66,10 @@ class ExportsController < ApplicationController
     @route = Route.find(params[:route_id])
     # authorize @route
   end
+
+  # def params_friend
+  #   require.params(:friend_params).permit(:friend_email, :friend_name)
+  # end
 
   def create_gmaps_url
     base_url    = "https://www.google.com/maps/dir/?api=1"

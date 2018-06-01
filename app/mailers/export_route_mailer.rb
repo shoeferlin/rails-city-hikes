@@ -12,6 +12,4 @@ class ExportRouteMailer < ApplicationMailer
 
     mail(to: @user.email, subject: 'City Hikes - Your Exported Route')
   end
-
-
 end

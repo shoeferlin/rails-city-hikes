@@ -1,16 +1,7 @@
-<h1>ExportRoute#send_route</h1>
-
-<p>
-  <%= @user.first_name %>, find me in app/views/export_route_mailer/send_route.html.erb
-</p>
-
-<h1>City Hikes - Your Exported Route</h1>
+<h2>City Hikes - Your Exported Route</h2>
 
 <p>Hi <%= @user.first_name %>,</p>
-<br>
 <p>here is the link to the route you just exported. Have fun on your City Hike and don't forget to review the route afterwards.</p>
-<br>
-<a href="<%= @gmaps_url %>"><%= @route.name %></a>
-<br>
+<a href="<%= @gmaps_url %>" target="_blank"><%= @route.name %></a>
 <p>All the best,</p>
-<p>your City Hikes team</p>
+<p>City Hikes</p>
