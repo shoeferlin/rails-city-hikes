@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+
   resources :routes do
+    get '/fetch_wikipedia_data', to: 'routes#fetch_wikipedia_data'
     resources :reviews, only: [:create, :destroy]
     resources :sights, only: [:destroy, :create]
     get 'export', to: 'exports#show', as: :export
@@ -12,8 +14,12 @@ Rails.application.routes.draw do
     post 'export/send_route_friend', to: 'exports#send_route_friend', as: :send_route_friend
     resources :sights, only: [:destroy, :create]
   end
+
+
   resources :users, only: [:show, :edit, :update]
   resources :cities, only: [:new, :create]
+
+
   # get 'sights/create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

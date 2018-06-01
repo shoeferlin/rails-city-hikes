@@ -21,3 +21,14 @@
   display: flex;
   justify-content: center;
 }
+
+
+.small-button {
+  border-radius: 10px;
+  background-color: $dark-green;
+  color: white;
+}
+
+.small-button:hover {
+  color: black;
+}

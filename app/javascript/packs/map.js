@@ -9,18 +9,21 @@ if (mapElement) { // don't try to build a map if there's no div#map to inject in
     const lnglat = new google.maps.LatLng(point)
     return({
      location: lnglat,
-     stopover: true
+     stopover: true,
+     // optimize: true,
     })
   })
+
+  // console.log(waypoints)
 
   var options = {
       fillColor: 'red',
       title: 'Johnnys Marker'
     };
 
-  markers[0].color = 'blue';
+  markers[0].fillColor = 'blue';
 
-  console.log(markers[0])
+  // console.log(markers)
   map.addMarkers(markers, options);
   map.drawRoute({
     origin: [markers[0].lat, markers[0].lng],
