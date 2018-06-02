@@ -10,7 +10,7 @@ class ExportsController < ApplicationController
   def send_route_email
     @export = Export.new
     authorize @export
-    flash[:notice] = "Route has been sent to your email, #{@route.user.first_name}"
+    flash[:notice] = "Route has been sent to your email, #{current_user.first_name}"
     # start background job writing email with link
     @user = current_user
     @gmaps_url = create_gmaps_url
@@ -22,7 +22,7 @@ class ExportsController < ApplicationController
   def send_route_phone
     @export = Export.new
     authorize @export
-    flash[:notice] = "Route has been sent to your phone, #{@route.user.first_name}"
+    flash[:notice] = "Route has been sent to your phone, #{current_user.first_name}"
     # start background job sending a text via API with link
     redirect_to route_export_path(@route)
     # redirect_to route_path(@route)
@@ -31,7 +31,7 @@ class ExportsController < ApplicationController
   def send_route_clipboard
     @export = Export.new
     authorize @export
-    flash[:notice] = "Route is now in your clipboard, #{@route.user.first_name}"
+    flash[:notice] = "Route is now in your clipboard, #{current_user.first_name}"
     # copy to clipboard action
     redirect_to route_export_path(@route)
     # redirect_to route_path(@route)
@@ -48,13 +48,13 @@ class ExportsController < ApplicationController
 
   def send_route_friend
     @export = Export.new
-    authorize @export
-    flash[:notice] = "Route has been sent to your friend, #{@route.user.first_name}"
-    # start background job sending email with link to address of friend
-    # RouterMailer.send_route(route, email)
     friend = User.new(first_name: params[:friend_name], email: params[:friend_email])
     @user = friend
     @gmaps_url = create_gmaps_url
+    authorize @export
+    flash[:notice] = "Route has been sent to your friend #{@user.first_name}, #{current_user.first_name}"
+    # start background job sending email with link to address of friend
+    # RouterMailer.send_route(route, email)
     ExportRouteMailer.send_route(@user, @route, @gmaps_url).deliver_now
     # redirect_to route_export_path(@route)
     redirect_to route_path(@route)
