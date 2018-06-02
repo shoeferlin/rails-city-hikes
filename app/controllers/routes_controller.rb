@@ -1,6 +1,6 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:fetch_wikipedia_data]
+  skip_before_action :authenticate_user!, only: [:index, :show, :fetch_wikipedia_data]
   protect_from_forgery except: :fetch_wikipedia_data
 
   def index
