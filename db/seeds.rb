@@ -15,7 +15,7 @@ users << User.create(first_name: "Johnny", username: "@johnny", password: 123456
 # 03 User
 users << User.create(first_name: "Nathan", username: "@nathan", password: 123456, email: "nathan@city-hikes.com", picture_url: "image/upload/v1527787017/xvqw3svmlh2wad7ju27h.jpg")
 # 04 User
-users << User.create(first_name: "Simon", username: "@simon", password: 123456, email: "simon@city-hikes.com", picture_url: "image/upload/v1527786840/qtsanl4o6xmgzdg6nxhi.jpg")
+users << User.create(first_name: "Simon", username: "@simon", password: 123456, email: "simon@city-hikes.com", picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1527786840/qtsanl4o6xmgzdg6nxhi.jpg")
 
 # Other users
 11.times do
