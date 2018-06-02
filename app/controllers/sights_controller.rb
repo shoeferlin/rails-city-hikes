@@ -2,12 +2,16 @@ class SightsController < ApplicationController
   def create
     @sight = Sight.new(params_sight)
     @route = Route.find(params[:route_id])
-    @page = Wikipedia.find(@sight.name)
+    @waypoint = Waypoint.new
+    # @page = Wikipedia.find(@sight.name)
 
+    # @waypoint = Waypoint.new(list_nr: @route.sights.count)
+    # @waypoint.sight_id = @sight.id
+    # @waypoint.route_id = @route.id
     authorize @sight
-
     if @sight.save
       @route.sights << @sight
+      @route.waypoints << @waypoint
       @route.save
       redirect_to edit_route_path(@route)
     else
