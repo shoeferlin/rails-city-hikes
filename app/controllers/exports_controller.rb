@@ -11,12 +11,11 @@ class ExportsController < ApplicationController
     @export = Export.new
     authorize @export
     flash[:notice] = "Route has been sent to your email, #{current_user.first_name}"
-    # start background job writing email with link
     @user = current_user
     @gmaps_url = create_gmaps_url
-    ExportRouteMailer.send_route(@user, @route, @gmaps_url).deliver_now
-    # redirect_to route_export_path(@route)
-    redirect_to route_path(@route)
+    ExportRouteMailer.send_route_email(@user, @route, @gmaps_url).deliver_now
+    redirect_to route_export_path(@route)
+    # redirect_to route_path(@route)
   end
 
   def send_route_phone
@@ -48,16 +47,15 @@ class ExportsController < ApplicationController
 
   def send_route_friend
     @export = Export.new
-    friend = User.new(first_name: params[:friend_name], email: params[:friend_email])
-    @user = friend
+    @friend_name = params[:friend_name]
+    @friend_email = params[:friend_email]
     @gmaps_url = create_gmaps_url
+    @user = current_user
     authorize @export
-    flash[:notice] = "Route has been sent to your friend #{@user.first_name}, #{current_user.first_name}"
-    # start background job sending email with link to address of friend
-    # RouterMailer.send_route(route, email)
-    ExportRouteMailer.send_route(@user, @route, @gmaps_url).deliver_now
-    # redirect_to route_export_path(@route)
-    redirect_to route_path(@route)
+    flash[:notice] = "Route has been sent to your friend #{@friend_name}, #{current_user.first_name}"
+    ExportRouteMailer.send_route_friend(@user, @route, @gmaps_url, @friend_name, @friend_email).deliver_now
+    redirect_to route_export_path(@route)
+    # redirect_to route_path(@route)
   end
 
   private
@@ -66,10 +64,6 @@ class ExportsController < ApplicationController
     @route = Route.find(params[:route_id])
     # authorize @route
   end
-
-  # def params_friend
-  #   require.params(:friend_params).permit(:friend_email, :friend_name)
-  # end
 
   def create_gmaps_url
     base_url    = "https://www.google.com/maps/dir/?api=1"
@@ -95,6 +89,4 @@ class ExportsController < ApplicationController
       return waypoint_url
     end
   end
-
-  # https://www.google.com/maps/dir/?api=1&origin=Brandenburger+Tor&origin_place_id=ChIJQyqpKMRRqEcRR_uYQXL9THg&destination=Checkpoint+Charlie&destination_place_id=ChIJzdgmXNFRqEcRyIl9R0IApSM&travelmode=walking
 end

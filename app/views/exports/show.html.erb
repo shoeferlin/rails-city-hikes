@@ -3,7 +3,10 @@
     <div class="export-container">
       <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
-          <div class="export" id="export-header"><h1>Export route</h1></div>
+          <div class="export" id="export-header">
+            <h1>Export route</h1>
+            <p>When you export the route you will receive a link to the route on Google Maps</p>
+          </div>
           <div class= "export" id="export-info">
             <h1><%= @route.name %></h1>
             <h3><%= @route.city.locality %></h3>
@@ -25,6 +28,7 @@
       <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
           <div class="export-button-area">
+            <%= link_to "Return to route", route_path(@route), class: "btn btn-primary export-button" %>
             <a href=" <%= @gmaps_url %> " class="btn btn-danger export-maps">Go to Google Maps</a>
             <%= button_to "Send route to my email", route_send_route_email_path(@route), class: "btn btn-primary export-button" %>
             <%= button_to "Send route to my phone", route_send_route_phone_path(@route), class: "btn btn-primary export-button" %>
