@@ -1,0 +1,11 @@
+Hi <%= @friend_name %>,
+
+your friend <%= @user.first_name %> wanted to share the follow route with you. Have fun on your City Hike and don't forget to review the route afterwards.
+
+Route name: <%= @route.name %>
+City name: <%= @route.city.locality %>
+Route URL: https://www.city-hikes.com/routes/<%= @route.id %>
+Google Maps URL: <%= @gmaps_url %>
+
+All the best,
+City Hikes
