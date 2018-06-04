@@ -1,65 +1,77 @@
 .card {
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  height: 300px;
-  margin: 50px;
-  background-size: cover !important;
-  background-position: center;
-  border-radius: 3px;
-}
-// .card-id {
-//   position: absolute;
-//   top: 3px;
-//   left: 8px;
-//   font-size: 14px;
-// }
-.card-description {
-  position: relative;
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
-  top: 210px;
-  left: 8px;
-  justify-content: center;
+  color: black;
+  min-height: 300px;
+  width: auto;
+  height: auto;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  box-shadow: 1px 1px 2px 1px rgba(200, 200, 200, 0.75);
 }
 
-.card-link {
-  position: absolute;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
+.card-image {
+  width: 50%;
+  background-size: cover !important;
+}
+
+.card-details {
+  font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3px;
+  padding-top: 25px;
 }
 
 .card-name {
-  position: absolute;
-  justify-content: center;
-  top: 140px;
-  left: 110px;
+  font-family: 'Space Mono', monospace;
   font-weight: bolder;
+  border-bottom: 0.5px solid $dark-green;
+  padding-bottom: 4px;
+  padding-left: 3px;
 }
 
-.card-name:hover {
+.card-hashtags {
+  color: $dark-green;
+  font-size: 18px;
+  left: 5px;
+  margin-top: 3px;
+  padding-left: 3px;
+}
 
+.card-description {
+  font-size: 16px;
+  opacity: 0.7;
+  font-weight: lighter;
+  margin-top: 20px;
+  text-align: justify;
+  line-height: 25px;
+  padding-left: 3px;
 }
 
 .card-owner {
-  position: absolute;
-  top: 8px;
-  right: 8px;
   font-size: 14px;
-  padding: 3px;
+  padding-left: 3px;
   border: 0.5px solid white;
   border-radius: 7px;
+  opacity: 0.6;
+  margin-top: 5px;
 }
 
 .card-owner:hover {
   color: grey;
-  border-color: grey;
+  border-color: $dark-green;
 }
-// .card-link:hover {
-//   opacity: 0.1;
-// }
+
+.route-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 36px;
+  margin-left: 5px;
+  margin-right: 5px;
+  p {
+    font-size: 14px;
+    font-family: 'Space Mono', monospace;
+  }
+}
+
 
