@@ -12,7 +12,7 @@ class RoutesController < ApplicationController
     end
     # @routes = t: :asc)
     if City.where(locality: @city).exists?
-      @routes =  licy_scope(Route).order(created_at: :asc).where(city_id: City.where(locality: @city).ids)
+      @routes =  policy_scope(Route).order(created_at: :asc).where(city_id: City.where(locality: @city).ids)
     else
       @city = "We don't know about this city yet"
       @routes = policy_scope(Route).order(created_at: :asc)
