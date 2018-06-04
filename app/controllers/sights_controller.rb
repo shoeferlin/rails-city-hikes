@@ -8,7 +8,7 @@ class SightsController < ApplicationController
     if @sight.save
       @route.sights << @sight
       @route.save
-      redirect_to route_waypoints_path(:id)
+      redirect_to edit_route_path(@route)
     else
       puts "Sorry not saved"
       redirect_to edit_route_path(@route)
