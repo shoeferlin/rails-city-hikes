@@ -9,12 +9,10 @@
         <div class="current-sights edit-card">
           <h4>Sightseeing items:</h4>
             <ol class="edit-list-moveable" id="movable">
-              <% count = 3 %>
               <% Waypoint.where(route_id: @route.id).each do |w| %>
-                <li><%= w.sight.name%></li>
-                <% w.list_nr = count %>
-                <% w.sight.list_nr = count %>
-                <% count += 1 %>
+                <li class="waypoint" data-id="<%= w.id %>">
+                  <%= w.sight.name%>
+                </li>
               <% end %>
             </ol>
         </div>
@@ -26,7 +24,6 @@
             <%= f.input :place_id, as: :hidden %>
             <%= f.input :url, as: :hidden %>
             <%= f.input :website, as: :hidden %>
-            <%= f.input :list_nr, as: :hidden, value: count%>
             <%= f.input :formatted_address, as: :hidden %>
             <%= f.button :submit, class:"create-sight-btn"%>
             <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>

@@ -23,6 +23,11 @@ before_action :set_waypoint, only: [:edit]
     end
   end
 
+  def sort_waypoints
+    logger.debug "Hello"
+    logger.debug params
+  end
+
   private
 
   def params_waypoint

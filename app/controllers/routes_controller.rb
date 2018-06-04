@@ -51,7 +51,7 @@ class RoutesController < ApplicationController
   def edit
     @sight = Sight.new
     @waypoint = Waypoint.new
-    @route.waypoints.sort_by {|i| i.list_nr}
+    # @route.waypoints.sort_by {|i| i.list_nr}
     @waypoints = @route.sights.map do |sight|
       {lat: sight.latitude, lng: sight.longitude}
     end

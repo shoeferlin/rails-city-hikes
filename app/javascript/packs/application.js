@@ -3,7 +3,7 @@ import changeNavbarScroll from "./navbar";
 import "./map";
 import "../components/getinfo"
 // import "../components/draganddrop.js"
-import { Sortable } from '@shopify/draggable';
+// import { Sortable } from '@shopify/draggable';
 import { draganddrop } from '../components/draganddrop';
 
 
