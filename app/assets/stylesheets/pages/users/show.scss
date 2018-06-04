@@ -9,31 +9,37 @@
 }
 
 .profile_picture {
-  border-radius: 54px;
+  border-radius: 3px;
 }
 
 .font-weight-bold {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  color: white;
+  color: black;
   font-size: 22px;
+  flex-grow: 1;
+  padding-bottom: 60px;
+  padding-top: 79px;
 }
 
-.box_info{
-  border-radius: 17px;
-  background-color: transparent;
+.container-box-user-profile{
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  background-color: #FEFEFE;
 }
 
 
 .card-profile {
-  border-radius: 46px;
+  border-radius: 6px;
   display: flex;
+  height: 120px;
+  width: 120px;
 }
 
 .background-image-profile {
-  background-size: cover;
-  background-position: center;
+  padding-top: 83px;
 }
 
 .title-profile {
@@ -43,4 +49,46 @@
 .box-routes-profile {
   justify-content: flex-start;
   flex-wrap: wrap;
+}
+
+.left-box-user-profile {
+  padding: 36px;
+}
+
+.right-boxuser-profile {
+  padding: 36px;
+}
+
+.KPI, .cities {
+  border-top: 2px solid #E0E1E2;
+  border-width: 2px;
+  padding-top: 24px;
+  margin-top: 48px;
+}
+
+.profile-marker{
+  margin-right: 8px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.routes-user-profile {
+  overflow:hidden;
+  width: 797px;
+  border-top: 2px solid #E0E1E2;
+  border-width: 2px;
+}
+
+.edit_profile {
+  padding: 38px;
+}
+
+.kpi_info {
+ padding-top: 8px;
+ margin-bottom: 0px;
+ font-size: 15px;
+ color: #a2a6aa;
 }

@@ -1,13 +1,13 @@
-<h3>Update user information</h3>
+<h3>Edit your profile information</h3>
 <div class="login-form update-box">
   <%= simple_form_for @user do |f|%>
-    <%= f.input :first_name %>
-    <%= f.input :username %>
-    <%= f.input :email %>
-    <%= f.input :picture_url, as: :file, label: :"Profile picture" %>
-    <%= f.input :picture_url_cache, as: :hidden %>
-    <div class="buttons-new">
-      <%= f.button :submit , class: "btn btn-primary btn-lg" %>
-    </div>
+  <%= f.input :picture_url, as: :file, label: :"Profile picture" %>
+  <%= f.input :picture_url_cache, as: :hidden %>
+  <%= f.input :first_name %>
+  <%= f.input :username %>
+  <%= f.input :email %>
+  <div class="buttons-new">
+  <%= f.button :submit , class: "btn btn-primary btn-lg" %>
   </div>
+</div>
 <% end %>
