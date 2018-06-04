@@ -29,6 +29,8 @@ class RoutesController < ApplicationController
     @waypoints = @route.sights.map do |sight|
       {lat: sight.latitude, lng: sight.longitude}
     @route_pictures = @route.route_pictures.all
+    @new_review = Review.new
+    @reviews = Review.where(route: @route)
     end
   end
 
