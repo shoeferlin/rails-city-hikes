@@ -4,6 +4,7 @@ class RoutesController < ApplicationController
   protect_from_forgery except: :fetch_wikipedia_data
 
   def index
+    @route_pictures = RoutePicture.all
     if params["query"].nil?
       @city = ""
     else

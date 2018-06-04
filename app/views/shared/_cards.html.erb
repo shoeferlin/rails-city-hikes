@@ -1,3 +1,4 @@
+<% card_counter = 1 %>
 <% @routes.each do |route| %>
 <%= link_to(route_path(route)) do %>
 
@@ -5,33 +6,51 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="card-image col-sm-6 col-sm-offset-0">
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div id="myCarousel-<%= card_counter %>" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-              <li data-target="#myCarousel" data-slide-to="1"></li>
-              <li data-target="#myCarousel" data-slide-to="2"></li>
-              <li data-target="#myCarousel" data-slide-to="3"></li>
-              <!-- if more than 4 pics are uploaded, we have to define it...  -->
+              <% list_counter = 0 %>
+              <% route.route_pictures.each do |rp| %>
+                <% if list_counter == 0 %>
+                  <li data-target="#myCarousele-<%= card_counter %>" data-slide-to="<%= list_counter %>" class="active"></li>
+                  <% list_counter += 1 %>
+                <% else %>
+                  <li data-target="#myCarousele-<%= card_counter %>" data-slide-to="<%= list_counter %>"></li>
+                  <% list_counter += 1 %>
+                <% end %>
+              <% end %>
             </ol>
 
-            <!-- @JOHNNY, you can add the pictures within the items, thanks ;)-->
+            <!-- Pictures -->
             <div class="carousel-inner">
-              <div class="carousel-image item active">
-                <%= image_tag "landing-banner.jpg" %>
-              </div>
-
-              <div class="carousel-image item">
-                <%= image_tag "landing-banner.jpg" %>
-              </div>
+              <% picture_counter = 0 %>
+              <% if route.route_pictures.nil? %>
+                <div class="carousel-image item active">
+                    <%= image_url "http://via.placeholder.com/300x400" %>
+                  </div>
+              <% else %>
+                <% route.route_pictures.each do |rp| %>
+                  <% if picture_counter == 0 %>
+                    <div class="carousel-image item active">
+                      <%= image_tag rp.route_picture.url %>
+                      <% picture_counter += 1 %>
+                    </div>
+                  <% else %>
+                    <div class="carousel-image item">
+                      <%= image_tag rp.route_picture.url %>
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
             </div>
 
             <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <a class="left carousel-control" href="#myCarousele-<%= card_counter %>" data-slide="prev">
               <span class="glyphicon glyphicon-chevron-left"></span>
               <span class="sr-only">Previous</span>
             </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <a class="right carousel-control" href="#myCarousel-<%= card_counter %>" data-slide="next">
+            <% card_counter += 1 %>
               <span class="glyphicon glyphicon-chevron-right"></span>
               <span class="sr-only">Next</span>
             </a>
