@@ -20,6 +20,11 @@ class RoutesController < ApplicationController
   end
 
   def show
+    # @route.waypoints.each do |waypoint|
+    #    waypoint.last.list_nr.sort_by {|i| i}
+    #   raise
+    # end
+    @route.waypoints.sort_by {|i| i.list_nr}
     @waypoints = @route.sights.map do |sight|
       {lat: sight.latitude, lng: sight.longitude}
     end
@@ -45,6 +50,8 @@ class RoutesController < ApplicationController
 
   def edit
     @sight = Sight.new
+    @waypoint = Waypoint.new
+    @route.waypoints.sort_by {|i| i.list_nr}
     @waypoints = @route.sights.map do |sight|
       {lat: sight.latitude, lng: sight.longitude}
     end

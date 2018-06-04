@@ -129,10 +129,24 @@
 }
 
 
+#movable{
+
+}
+
+.movable{
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.movable-li {
+  width: 100px;
+}
 
 
-
-
+.edit-list-moveable li {
+  margin: 5px;
+}
 
 
 

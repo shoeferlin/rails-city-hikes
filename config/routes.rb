@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :sights, only: [:destroy, :create]
   end
 
-
+  resources :waypoints, only: [:create]
   resources :users, only: [:show, :edit, :update]
   resources :cities, only: [:new, :create]
 
