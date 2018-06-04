@@ -1,3 +1,4 @@
+// import { Sortable } from '@shopify/draggable';
 import Sortable from '@shopify/draggable/lib/sortable';
 // import Sortable from '@shopify/draggable/lib/sortable';
 
@@ -17,41 +18,62 @@ import Sortable from '@shopify/draggable/lib/sortable';
 
 function draganddrop() {
   $(document).ready(function(){
-    console.log('Test1')
     const sortable = new Sortable(document.querySelectorAll('#movable'), {
       draggable: 'li',
-      classes: 'li-item',
+      // classes: 'li-item',
       // handle: 'move'
     });
-    console.log('b')
-    // console.log(sortable)
-    console.log('a')
-    console.log(sortable.containers)
-    // sortable.on('sortable:start', () => console.log('sortable:start'));
+
+    let elements = sortable.getDraggableElementsForContainer(document.querySelector('#movable'))
+
+    // sortable.on('sortable:start', () => updateListNr());
     // sortable.on('sortable:sort', () => console.log('sortable:sort'));
     // sortable.on('sortable:sorted', () => console.log('sortable:sorted'));
-    // sortable.on('sortable:stop', () => console.log('sortable:stop'));
+    // sortable.on('sortable:stop', () => initListNrUpdater());
+    sortable.on('sortable:stop', (event) => updateListNr(event));
   });
 }
 
 
-function save_order() {
-     $("#movable").sortable({
-         update: function () {
-             var order1 = $('#movable').sortable('toArray').toString();
+// function initListNrUpdater(elements) {
+//   setTimeout(updateListNr(), 1000)
+// }
 
-             alert("Order 1:" + order1); //Just showing update
-             $.ajax({
-                 type: "POST",
-                 url: "/echo/json/",
-                 data: "order1=" + order1,
-                 dataType: "json",
-                 success: function (data) {
-                 }
-             });
-         }
-     }).disableSelection();
- };
+function updateListNr(event) {
+  console.log(event);
+  // Get us a NodeElement
+  const listNodeElements = event.data.newContainer.children;
+
+  // forEach
+  var i;
+  for (i = 1; i < listNodeElements.length - 1; i++) {
+    console.log(listNodeElements[i].dataset.id);
+  }
+
+  // const array = [...listNodeElements];
+  // console.log(array);
+  // // Convert listElements into Array
+  // const listElems = Array.prototype.slice.call(listNodeElements);
+  // console.log(listElems);
+  // const listIds = listElems.map((li) => li.dataset.id);
+  // console.log(listIds);
+    // console.log(Rails.csrfToken())
+    // console.log("feueugieguiekj")
+
+    // const waypointsList = document.querySelectorAll('#movable li[class="waypoint"]')
+    // waypointsList.forEach( function (waypoint) {
+    //   console.log(waypoint)
+    // });
+
+    // Rails.ajax({
+    //   url: "/waypoints/sort_waypoints",
+    //   type: "POST",
+    //   data: "data=[{id: 19, list_nr: 1}, {id: 1, list_nr: 2}, {id: 3, list_nr: 3}]",
+    //   success: function(data) {
+    //     console.log(data);
+    //   }
+    // });
+}
 
 
 export { draganddrop };

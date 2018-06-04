@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  post '/waypoints/sort_waypoints', to: 'waypoints#sort_waypoints'
+
   resources :routes do
     get '/fetch_wikipedia_data', to: 'routes#fetch_wikipedia_data'
     resources :reviews, only: [:create, :destroy]
