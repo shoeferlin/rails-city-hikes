@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
-  post '/waypoints/sort_waypoints', to: 'waypoints#sort_waypoints'
+  # post '/waypoints/sort_waypoints', to: 'waypoints#sort_waypoints'
 
   resources :routes do
     get '/fetch_wikipedia_data', to: 'routes#fetch_wikipedia_data'
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :sights, only: [:destroy, :create]
   end
 
-  resources :waypoints, only: [:create]
+  resources :waypoints, only: [:update]
   resources :users, only: [:show, :edit, :update]
   resources :cities, only: [:new, :create]
 

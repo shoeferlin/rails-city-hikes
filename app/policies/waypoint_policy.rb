@@ -5,7 +5,7 @@ class WaypointPolicy < ApplicationPolicy
     end
   end
 
-  def create?
+  def update?
     true
   end
 end

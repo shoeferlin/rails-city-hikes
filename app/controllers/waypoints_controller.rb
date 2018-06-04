@@ -1,36 +1,39 @@
 class WaypointsController < ApplicationController
 before_action :set_waypoint, only: [:edit]
 
-  def create
-    @waypont = Waypoint.find(@sight.waypoints.last.id)
-    # @waypoint = Waypoint.new(params_waypoint)
-    @route = Route.find(params[:route_id])
-    @sight = Sight.find(params[:sight_id])
-
-
-    @waypoint.list_nr = @sight.list_nr
-    @waypoint.save
-    redirect_to edit_route_path(@route)
-    raise
+  def update
+    p params
+    puts "We are in UPDATE"
+    puts "Getting waypoint"
+    @waypoint = Waypoint.find(params[:id])
+    puts "set new waypoint list_nr"
+    @waypoint.set_list_position(params[:list_nr])
+    # puts "findin route .. "
+    # @route = Route.find(id: @waypoint.route_id)
     authorize @waypoint
-    if @waypoint.save
-      @route.waypoints << @waypoint
-      @sight.waypoint << @waypoint
-      redirect_to edit_route_path(@route)
-    else
-      puts "Waypoint not saved"
-      redirect_to edit_route_path(@route)
+    position = 0
+    @waypoints = @waypoint.route.sights.map do |sight|
+      position += 1
+      { lat: sight.latitude,
+        lng: sight.longitude,
+        # label: "#{position.to_s}",
+        label: { text: "#{position.to_s}", color: 'white'} ,
+        icon: {
+          url: "images/markers/marker.png",
+          scaledSize: new google.maps.Size(64, 64)
+        }
+        # '#8aae92'
+        # infoWindow: { content: render_to_string(partial: "/locations/map_box_two", locals: { location: location }) }
+        # icon: image_tag("#{sight.picture_url}")
+        # icon: "../images/map_pin.svg"
+      }
     end
-  end
-
-  def sort_waypoints
-    logger.debug "Hello"
-    logger.debug params
+    render json: @waypoints
   end
 
   private
 
-  def params_waypoint
-    params.require(:waypoint).permit(:list_nr)
-  end
+  # def params_waypoint
+  #   params.require(:waypoint).permit(:list_nr)
+  # end
 end
