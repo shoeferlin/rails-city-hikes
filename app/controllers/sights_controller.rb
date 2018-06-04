@@ -2,18 +2,13 @@ class SightsController < ApplicationController
   def create
     @sight = Sight.new(params_sight)
     @route = Route.find(params[:route_id])
-    @waypoint = Waypoint.new
-    # @page = Wikipedia.find(@sight.name)
-
-    # @waypoint = Waypoint.new(list_nr: @route.sights.count)
-    # @waypoint.sight_id = @sight.id
-    # @waypoint.route_id = @route.id
+    # @waypoint = Waypoint.find(@route.waypoints.last.id)
+    # @waypoint = Waypoint.find(params[:waypoint_id])
     authorize @sight
     if @sight.save
       @route.sights << @sight
-      @route.waypoints << @waypoint
       @route.save
-      redirect_to edit_route_path(@route)
+      redirect_to route_waypoints_path(:id)
     else
       puts "Sorry not saved"
       redirect_to edit_route_path(@route)
@@ -31,10 +26,6 @@ class SightsController < ApplicationController
   private
 
   def params_sight
-    params.require(:sight).permit(:name, :place_id, :url, :website, :formatted_address)
+    params.require(:sight).permit(:name, :place_id, :url, :list_nr, :website, :formatted_address)
   end
-
-  # def params_route
-  #   params.require(:route).permit(:id)
-  # end
 end
