@@ -11,7 +11,7 @@ class RoutesController < ApplicationController
     end
     # @routes = t: :asc)
     if City.where(locality: @city).exists?
-      @routes =  policy_scope(Route).order(created_at: :asc).where(city_id: City.where(locality: @city).ids)
+      @routes =  licy_scope(Route).order(created_at: :asc).where(city_id: City.where(locality: @city).ids)
     else
       @city = "We don't know about this city yet"
       @routes = policy_scope(Route).order(created_at: :asc)
@@ -27,6 +27,7 @@ class RoutesController < ApplicationController
     @route.waypoints.sort_by {|i| i.list_nr}
     @waypoints = @route.sights.map do |sight|
       {lat: sight.latitude, lng: sight.longitude}
+    @route_pictures = @route.route_pictures.all
     end
   end
 
@@ -34,6 +35,7 @@ class RoutesController < ApplicationController
     @route = Route.new
     @cities = City.all
     authorize @route
+    @route_pictures = @route.route_pictures.build
   end
 
   def create
@@ -42,9 +44,17 @@ class RoutesController < ApplicationController
     @route.user = current_user
     authorize @route
     if @route.save
+      unless params['route_pictures'].nil?
+        params[:route_pictures]['route_pictures'].each do |a|
+          @route_pictures = @route.route_pictures.create!(route_picture: a, route_id: @route.id)
+        end
+      end
       redirect_to route_path(@route)
     else
-      render :new
+      @cities = City.all
+      @route_pictures = @route.route_pictures.build
+      render :new #'views/routes/new.html.erb'
+      # redirect_to new_route_path(@route)
     end
   end
 
@@ -90,7 +100,7 @@ class RoutesController < ApplicationController
   end
 
   def params_route
-    params.require(:route).permit(:name, :description, :photo, :photo_cache)
+    params.require(:route).permit(:name, :description, :photo, :photo_cache, route_pictures_attributes: [:id, :route_id, :route_picture])
   end
 
   def params_city
