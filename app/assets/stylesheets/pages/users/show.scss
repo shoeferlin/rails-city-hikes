@@ -16,13 +16,13 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  color: white;
+  color: black;
   font-size: 22px;
 }
 
 .box_info{
   border-radius: 17px;
-  background-color: transparent;
+  background-color: #FCFCFC;
 }
 
 
@@ -31,9 +31,8 @@
   display: flex;
 }
 
-.background-image-profile {
-  background-size: cover;
-  background-position: center;
+.background-profile {
+  background-color: #4AE8B3;
 }
 
 .title-profile {
