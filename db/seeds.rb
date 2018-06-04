@@ -9,13 +9,13 @@ puts "Generating users ..."
 users = []
 
 # 01 User
-users << User.create(first_name: "Felix", username: "@felix", password: 123456, email: "felix@city-hikes.com", picture_url: "image/upload/v1527786929/u3rygis7vptbmshvqttw.jpg")
+users << User.create(first_name: "Felix", username: "@felix", password: 123456, email: "felix@city-hikes.com",remote_picture_url_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1527786929/u3rygis7vptbmshvqttw.jpg")
 # 02 User
-users << User.create(first_name: "Johnny", username: "@johnny", password: 123456, email: "johnny@city-hikes.com", picture_url: "image/upload/v1527786726/anbde5rrrq4yxk6nbj9m.jpg")
+users << User.create(first_name: "Johnny", username: "@johnny", password: 123456, email: "johnny@city-hikes.com", remote_picture_url_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1527786726/anbde5rrrq4yxk6nbj9m.jpg")
 # 03 User
-users << User.create(first_name: "Nathan", username: "@nathan", password: 123456, email: "nathan@city-hikes.com", picture_url: "image/upload/v1527787017/xvqw3svmlh2wad7ju27h.jpg")
+users << User.create(first_name: "Nathan", username: "@nathan", password: 123456, email: "nathan@city-hikes.com", remote_picture_url_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1527787017/xvqw3svmlh2wad7ju27h.jpg")
 # 04 User
-users << User.create(first_name: "Simon", username: "@simon", password: 123456, email: "simon@city-hikes.com", picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1527786840/qtsanl4o6xmgzdg6nxhi.jpg")
+users << User.create(first_name: "Simon", username: "@simon", password: 123456, email: "simon@city-hikes.com", remote_picture_url_url: "https://cloudinary.com/console/media_library/asset/image/upload/qtsanl4o6xmgzdg6nxhi")
 
 # Other users
 11.times do
@@ -29,29 +29,25 @@ end
 puts "Generating cities ..."
 
 # 01 City
-berlin      = City.create(locality: "Berlin", country: "DE")
+berlin      = City.create(locality: "Berlin", country: "DE", remote_photo_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528124752/z0dcxzuts9oielxrwiav.jpg")
 # 02 City
-munich      = City.create(locality: "Munich", country: "DE")
+munich      = City.create(locality: "Munich", country: "DE", remote_photo_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528124745/sx988bpb9sl82mim7rg5.jpg")
 # 03 City
-paris       = City.create(locality: "Paris", country: "FR")
+paris       = City.create(locality: "Paris", country: "FR", remote_photo_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528124749/wsmhxeslstpymmwiktws.jpg")
 # 04 City
-london      = City.create(locality: "London", country: "GB")
+london      = City.create(locality: "London", country: "GB", remote_photo_url: "https://images.unsplash.com/photo-1508711046474-2f4c2d3d30ca?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d9753d35c4f5b62442eb81568033ddc2&auto=format&fit=crop&w=2250&q=80")
 # 05 City
-barcelona   = City.create(locality: "Barcelona", country: "ES")
+barcelona   = City.create(locality: "Barcelona", country: "ES", remote_photo_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528124741/ggcijd2dtdakjaw8s632.jpg")
 # 06 City
-amsterdam   = City.create(locality: "Amsterdam", country: "NL")
+amsterdam   = City.create(locality: "Amsterdam", country: "NL", remote_photo_url: "https://images.unsplash.com/photo-1468436385273-8abca6dfd8d3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e71160983b3af78d30b19751a9574ce4&auto=format&fit=crop&w=2194&q=80")
 # 07 City
-zurich      = City.create(locality: "Zurich", country: "CH")
+zurich      = City.create(locality: "Zurich", country: "CH", remote_photo_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528124750/f2ia345osm1py34r95wg.jpg")
 # 08 City
-rome        = City.create(locality: "Rome", country: "IT")
+rome        = City.create(locality: "Rome", country: "IT", remote_photo_url: "https://images.unsplash.com/photo-1522460676881-83490b51a873?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94aaccf321f4962bff0ed0236879d2b0&auto=format&fit=crop&w=3289&q=80")
 # 09 City
-copenhhagen = City.create(locality: "Copenhagen", country: "DK")
+copenhhagen = City.create(locality: "Copenhagen", country: "DK", remote_photo_url: "https://images.unsplash.com/photo-1445168580797-f946f0688547?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bbd5443b70b8bf661b89340ec61bf4d7&auto=format&fit=crop&w=2250&q=80")
 # 10 City
-basel       = City.create(locality: "Basel", country: "CH")
-# 11 City
-rome        = City.create(locality: "Rome", country: "IT")
-# 12 City
-milano      = City.create(locality: "Milano", country: "IT")
+basel       = City.create(locality: "Basel", country: "CH", remote_photo_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528125517/eejimk3koqhtx2tuhm6z.jpg")
 
 
 ### SIGHTS ###
@@ -106,13 +102,30 @@ Sight.create(name: "Bellevueplatz", description: nil, latitude: 47.3674026, long
 ### ROUTES ###
 puts "Generating routes ..."
 
-# Munich
-Route.create( name: "Beautiful Munich in one afternoon", description: "Munich, Bavaria’s capital, is home to centuries-old buildings and numerous museums. The city is known for its annual Oktoberfest celebration and its beer halls, including the famed Hofbräuhaus, founded in 1589. In the Altstadt (Old Town), central Marienplatz square contains landmarks such as Neo-Gothic Neues Rathaus (town hall), with a popular glockenspiel show that chimes and reenacts stories from the 16th century.", public: true, user_id: 4, city_id: 2)
-# London
+# Munich 01
+Route.create(name: "Beautiful Munich in one afternoon", description: "Munich, Bavaria’s capital, is home to centuries-old buildings and numerous museums. The city is known for its annual Oktoberfest celebration and its beer halls, including the famed Hofbräuhaus, founded in 1589. In the Altstadt (Old Town), central Marienplatz square contains landmarks such as Neo-Gothic Neues Rathaus (town hall), with a popular glockenspiel show that chimes and reenacts stories from the 16th century.", public: true, user_id: 4, city_id: 2)
+# London 02
 Route.create(name: "The City", description: "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations. Across the Thames River, the London Eye observation wheel provides panoramic views of the South Bank cultural complex, and the entire city.", public: true, user_id: 4, city_id: 4)
-# Zurich
+# Zurich 03
 Route.create(name: "Picturesque Zurich", description: "The city of Zurich, a global center for banking and finance, lies at the north end of Lake Zurich in northern Switzerland. The picturesque lanes of the central Altstadt (Old Town), on either side of the Limmat River, reflect its pre-medieval history. Waterfront promenades like the Limmatquai follow the river toward the 17th-century Rathaus (town hall).", public: true, user_id: 2, city_id: 7)
 
+
+### ROUTE PICTURES ###
+puts "Generating route pictures ..."
+
+# Munich 01
+RoutePicture.create(route_id: 1, remote_route_picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528126466/pvpmkodn803rd6ygxbki.jpg")
+RoutePicture.create(route_id: 1, remote_route_picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528126461/dzhpry6hrzmss0wkqgf3.jpg")
+RoutePicture.create(route_id: 1, remote_route_picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528126447/skyshumx8dpbd8uugrlz.jpg")
+RoutePicture.create(route_id: 1, remote_route_picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528126464/tciudxnhd6ounlpxmi17.jpg")
+
+# London 02
+RoutePicture.create(route_id: 2, remote_route_picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528126728/jaj1iprkvgy7brfwz55x.jpg")
+RoutePicture.create(route_id: 2, remote_route_picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528126732/ucehr34wxe74zzew3irr.jpg")
+RoutePicture.create(route_id: 2, remote_route_picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528126734/mqnsoqx23go2inn08hjn.jpg")
+
+# Zurich 03
+RoutePicture.create(route_id: 3, remote_route_picture_url: "https://images.pexels.com/photos/161138/grossmunster-church-tower-church-tower-161138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
 
 ### WAYPOINTS ###
 puts "Generating waypoints ..."
