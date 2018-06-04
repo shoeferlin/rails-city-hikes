@@ -9,7 +9,7 @@
 }
 
 .profile_picture {
-  border-radius: 54px;
+  border-radius: 3px;
 }
 
 .font-weight-bold {
@@ -18,11 +18,14 @@
   flex-direction: column;
   color: black;
   font-size: 22px;
+  flex-grow: 1;
 }
 
-.box_info{
-  border-radius: 17px;
-  background-color: #FCFCFC;
+.container-box{
+  display: flex;
+  flex-direction: row;
+  border-radius: 10px;
+  background-color: #FEFEFE;
 }
 
 
@@ -33,6 +36,7 @@
 
 .background-profile {
   background-color: #4AE8B3;
+  padding-top: 83px;
 }
 
 .title-profile {
@@ -42,4 +46,41 @@
 .box-routes-profile {
   justify-content: flex-start;
   flex-wrap: wrap;
+}
+
+.left-box {
+  padding: 36px;
+}
+
+.right-box {
+  padding: 36px;
+}
+
+.KPI, .cities {
+  border-top: 2px solid #E0E1E2;
+  border-width: 2px;
+  padding-top: 24px;
+  margin-top: 48px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  color: #E0E1E2
+}
+
+.profile-marker{
+  margin-right: 8px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.routes {
+  overflow:hidden;
+  width: 797px;
+  border-top: 2px solid #E0E1E2;
+  border-width: 2px;
 }

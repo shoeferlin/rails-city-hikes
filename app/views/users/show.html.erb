@@ -1,41 +1,59 @@
 <div class="background-profile">
-  <div class="container">
-    <div >
-      <%= cl_image_tag @user.picture_url, height: 150, width: 200, crop: :fill, class: "profile_picture"%>
+  <div class="container container-box">
+    <div class="left-box">
+      <div>
+        <%= cl_image_tag @user.picture_url, height: 230, width: 230, crop: :fill, class: "profile_picture"%>
+      </div>
+      <div class="KPI">
+        <p>KPI</p>
+        <p>Distance walked: </p>
+        <p>Added routes: </p>
+        <p>Created routes: </p>
+        <p> number of city visited</p>
+      </div>
+      <div class="cities">
+        <p>City visited</p>
+      </div>
     </div>
-    <div class="font-weight-bold">
-      <p>name: <strong><%= @user.first_name %></strong> </p>
-      <p>username: <strong><%= @user.username %></strong></p>
-      <p>email: <strong><%= @user.email %></strong></p>
-    </div>
-  </div>
-  <div class="buttons-new">
-    <%= link_to "Edit profile", edit_user_path(current_user), class: "btn btn-primary btn-lg" %>
-  </div>
-      <!-- <li><%#= @user.picture_url %></li> -->
-  <% @routes.each do |route| %>
-    <% if route.user == @user %>
-      <%= link_to(route_path(route)) do %>
-        <div class="col-sm-6 col-sm-offset-0">
-          <div class="card card-profile" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
-            <!-- <div class="card-id"><%= route.id %></div> -->
-            <p class="card-name"><%= route.name %></p>
+    <div class="right-box">
+      <div class="user-info">
+        <div class="font-weight-bold">
+          <p><strong><%= @user.first_name %></strong> </p>
+          <p>username: <strong><%= @user.username %></strong></p>
+          <div class="flex-row marker-city">
+            <i class="fas fa-map-marker profile-marker"></i>
+            <p> from </p>
           </div>
+          <p>routes eview</p>
+          <p>email: <strong><%= @user.email %></strong></p>
         </div>
-      <% end %>
-    <% end %>
-  <% end %>
-
-
-    <h3 class="title-profile">Your walked routes</h3>
-    <div class="box_info box-routes-profile">
-      <ul>
-        <% @hiked_routes.each do |hiked_route| %>
-        <li><%= hiked_route.name %></li>
-        <li><%= hiked_route.description %></li>
-        <li><%= hiked_route.city %></li>
+        <div class="edit_profile">
+          <i class="far fa-edit"><%= link_to "Edit", edit_user_path(current_user)%></i>
+        </div>
+      </div>
+      <div class="routes">
+        <% @routes.each do |route| %>
+          <% if route.user == @user %>
+            <%= link_to(route_path(route)) do %>
+              <div class="col-sm-6 col-sm-offset-0">
+                <div class="card card-profile" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
+                  <!-- <div class="card-id"><%= route.id %></div> -->
+                  <p class="card-name"><%= route.name %></p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
         <% end %>
-      </ul>
+        <div>
+          <ul>
+            <% @hiked_routes.each do |hiked_route| %>
+            <li><%= hiked_route.name %></li>
+            <li><%= hiked_route.description %></li>
+            <li><%= hiked_route.city %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>
