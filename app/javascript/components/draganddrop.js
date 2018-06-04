@@ -42,8 +42,14 @@ function draganddrop() {
 function updateListNr(event) {
   console.log(event);
   // Get us a NodeElement
-  const listNodeElements = event.data.newContainer.children;
-
+  const listNodeElements = []
+  const listNodeElementsHelp = event.data.newContainer.children;
+  listNodeElementsHelp.forEach(function(element) {
+    console.log(element)
+    // listNodeElements.push(element);
+  });
+  console.log(listNodeElements)
+  console.log('------------')
   // forEach
   var i;
   for (i = 1; i < listNodeElements.length - 1; i++) {
