@@ -19,6 +19,8 @@
   color: black;
   font-size: 22px;
   flex-grow: 1;
+  padding-bottom: 60px;
+  padding-top: 42px
 }
 
 .container-box{
@@ -30,12 +32,13 @@
 
 
 .card-profile {
-  border-radius: 46px;
+  border-radius: 6px;
   display: flex;
+  height: 120px;
+  width: 120px;
 }
 
-.background-profile {
-  background-color: #4AE8B3;
+.background-image-profile {
   padding-top: 83px;
 }
 
@@ -83,4 +86,24 @@
   width: 797px;
   border-top: 2px solid #E0E1E2;
   border-width: 2px;
+}
+
+.edit_profile {
+  padding-right: 73px;
+}
+
+.marker-city {
+  font-size: 15px;
+}
+
+.card-name {
+  font-color: black;
+}
+
+.kpi_info {
+ padding-top: 8px;
+ margin-bottom: 0px;
+ font-size: 15px;
+ color: #a2a6aa;
+
 }
