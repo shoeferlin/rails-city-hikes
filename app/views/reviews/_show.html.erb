@@ -1,0 +1,18 @@
+<div class="show-review-box">
+  <% reviews.each do |r| %>
+    <div class="row review">
+      <div class="col-sm-2 review-user">
+        <% unless current_user.nil? %>
+          <%= image_tag r.user.picture_url.url, class: "review-avatar" %>
+          <p><%= r.user.username %></p>
+        <% end %>
+      </div>
+      <div class="col-sm-2 review-rating">
+        <p>Rating: <%= r.rating %></p>
+      </div>
+      <div class="col-sm-8 review-comment">
+        <p>Comment: <%= r.content %><p>
+     </div>
+   </div>
+  <% end %>
+</div>

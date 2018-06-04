@@ -23,6 +23,8 @@ class RoutesController < ApplicationController
   def show
     position = 0
     @route_pictures = @route.route_pictures.all
+    @new_review = Review.new
+    @reviews = Review.where(route: @route)
     @waypoints = @route.sights.map do |sight|
       position += 1
       { lat: sight.latitude,
