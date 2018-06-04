@@ -7,7 +7,11 @@
       <div class="main-search-bar" style="margin-top: 20vh"> <!-- SH: Current bug fix -->
         <h4>Find inspiration for your city trip</h4>
         <%= form_tag routes_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "form-control style-text", placeholder: "Search a city to hike..." %>
+        <div class="search-bar-home-page">
+           <%= text_field_tag :query, params[:query], class: "form-control style-text", placeholder: "Search a city to hike..." %>
+           <button type="button" class="btn btn-light"> <%= link_to "Search", routes_path, class: "search_button_main_page" %> </button>
+
+        </div>
         <% end %>
       </div>
     </div>
