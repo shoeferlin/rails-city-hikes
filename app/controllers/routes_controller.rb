@@ -21,14 +21,14 @@ class RoutesController < ApplicationController
   end
 
   def show
-    # @route.waypoints.each do |waypoint|
-    #    waypoint.last.list_nr.sort_by {|i| i}
-    #   raise
-    # end
-    @route.waypoints.sort_by {|i| i.list_nr}
-    @waypoints = @route.sights.map do |sight|
-      {lat: sight.latitude, lng: sight.longitude}
+    position = 0
     @route_pictures = @route.route_pictures.all
+    @waypoints = @route.sights.map do |sight|
+      position += 1
+      { lat: sight.latitude,
+        lng: sight.longitude,
+        label: { text: "#{position.to_s}", color: 'white'},
+      }
     end
   end
 
@@ -62,9 +62,16 @@ class RoutesController < ApplicationController
   def edit
     @sight = Sight.new
     @waypoint = Waypoint.new
-    # @route.waypoints.sort_by {|i| i.list_nr}
+    position = 0
     @waypoints = @route.sights.map do |sight|
-      {lat: sight.latitude, lng: sight.longitude}
+      position += 1
+      { lat: sight.latitude,
+        lng: sight.longitude,
+        label: { text: "#{position.to_s}", color: 'white'},
+        # infoWindow: { content: render_to_string(partial: "#{sight.description}", locals: { location: location })},
+        # fillColor: '#8aae92'
+        # icon: image_tag("marker.svg"),
+      }
     end
   end
 

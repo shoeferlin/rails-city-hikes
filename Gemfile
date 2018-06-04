@@ -20,6 +20,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem 'draggable-rails'
+gem 'acts_as_list'
 
 # Added gems
 gem 'pundit'
