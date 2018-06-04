@@ -1,72 +1,77 @@
 .card {
-  position: relative;
   color: black;
-  height: 300px;
+  min-height: 300px;
+  width: auto;
+  height: auto;
   margin: 10px;
   border-radius: 5px;
   padding: 10px 20px 10px 20px;
   box-shadow: 1px 1px 2px 1px rgba(200, 200, 200, 0.75);
-
 }
 
 .card-image {
-  position: absolute;
-  left: 0px;
   width: 50%;
   background-size: cover !important;
 }
 
 .card-details {
-  position: absolute;
-  position: relative;
   font-family: 'Quicksand', sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3px;
+  padding-top: 25px;
 }
 
 .card-name {
   font-family: 'Space Mono', monospace;
-  position: absolute;
-  justify-content: center;
-  text-align: center;
-  top: 8px;
-  text-align: center;
   font-weight: bolder;
+  border-bottom: 0.5px solid $dark-green;
+  padding-bottom: 4px;
+  padding-left: 3px;
+}
+
+.card-hashtags {
+  color: $dark-green;
+  font-size: 18px;
+  left: 5px;
+  margin-top: 3px;
+  padding-left: 3px;
 }
 
 .card-description {
-  position: absolute;
   font-size: 16px;
   opacity: 0.7;
   font-weight: lighter;
-  top: 100px;
-  left: 5px;
+  margin-top: 20px;
   text-align: justify;
   line-height: 25px;
+  padding-left: 3px;
 }
 
 .card-owner {
-  position: absolute;
-  top: 8px;
-  right: 8px;
   font-size: 14px;
-  padding: 3px;
+  padding-left: 3px;
   border: 0.5px solid white;
   border-radius: 7px;
   opacity: 0.6;
+  margin-top: 5px;
 }
 
 .card-owner:hover {
   color: grey;
-  border-color: grey;
+  border-color: $dark-green;
 }
 
-// .card-link {
-//   width: 100%;
-//   z-index: 2;
-//   background: black;
-//   opacity: 0;
-// }
+.route-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 36px;
+  margin-left: 5px;
+  margin-right: 5px;
+  p {
+    font-size: 14px;
+    font-family: 'Space Mono', monospace;
+  }
+}
 
-// .card-link:hover {
-//   opacity: 0.1;
-// }
 
