@@ -1,48 +1,46 @@
 .card {
   position: relative;
-  justify-content: center;
-  align-items: center;
-  color: white;
+  color: black;
   height: 300px;
-  margin: 50px;
-  background-size: cover !important;
-  background-position: center;
-  border-radius: 3px;
-}
-// .card-id {
-//   position: absolute;
-//   top: 3px;
-//   left: 8px;
-//   font-size: 14px;
-// }
-.card-description {
-  position: relative;
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
-  top: 210px;
-  left: 8px;
-  justify-content: center;
+  margin: 10px;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  box-shadow: 1px 1px 2px 1px rgba(200, 200, 200, 0.75);
+
 }
 
-.card-link {
+.card-image {
   position: absolute;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
+  left: 0px;
+  width: 50%;
+  background-size: cover !important;
+}
+
+.card-details {
+  position: absolute;
+  position: relative;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .card-name {
+  font-family: 'Space Mono', monospace;
   position: absolute;
   justify-content: center;
-  top: 140px;
-  left: 110px;
+  text-align: center;
+  top: 8px;
+  text-align: center;
   font-weight: bolder;
 }
 
-.card-name:hover {
-
+.card-description {
+  position: absolute;
+  font-size: 16px;
+  opacity: 0.7;
+  font-weight: lighter;
+  top: 100px;
+  left: 5px;
+  text-align: justify;
+  line-height: 25px;
 }
 
 .card-owner {
@@ -53,12 +51,21 @@
   padding: 3px;
   border: 0.5px solid white;
   border-radius: 7px;
+  opacity: 0.6;
 }
 
 .card-owner:hover {
   color: grey;
   border-color: grey;
 }
+
+// .card-link {
+//   width: 100%;
+//   z-index: 2;
+//   background: black;
+//   opacity: 0;
+// }
+
 // .card-link:hover {
 //   opacity: 0.1;
 // }

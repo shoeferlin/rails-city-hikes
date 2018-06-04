@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(version: 2018_06_02_201015) do
     t.bigint "sight_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "list_nr", default: 0
     t.index ["route_id"], name: "index_waypoints_on_route_id"
     t.index ["sight_id"], name: "index_waypoints_on_sight_id"
   end
