@@ -20,10 +20,10 @@
   font-size: 22px;
   flex-grow: 1;
   padding-bottom: 60px;
-  padding-top: 42px
+  padding-top: 79px;
 }
 
-.container-box{
+.container-box-user-profile{
   display: flex;
   flex-direction: row;
   border-radius: 10px;
@@ -51,11 +51,11 @@
   flex-wrap: wrap;
 }
 
-.left-box {
+.left-box-user-profile {
   padding: 36px;
 }
 
-.right-box {
+.right-boxuser-profile {
   padding: 36px;
 }
 
@@ -64,12 +64,6 @@
   border-width: 2px;
   padding-top: 24px;
   margin-top: 48px;
-}
-
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  color: #E0E1E2
 }
 
 .profile-marker{
@@ -81,7 +75,7 @@
   justify-content: space-between;
 }
 
-.routes {
+.routes-user-profile {
   overflow:hidden;
   width: 797px;
   border-top: 2px solid #E0E1E2;
@@ -89,15 +83,7 @@
 }
 
 .edit_profile {
-  padding-right: 73px;
-}
-
-.marker-city {
-  font-size: 15px;
-}
-
-.card-name {
-  font-color: black;
+  padding: 38px;
 }
 
 .kpi_info {
@@ -105,5 +91,4 @@
  margin-bottom: 0px;
  font-size: 15px;
  color: #a2a6aa;
-
 }
