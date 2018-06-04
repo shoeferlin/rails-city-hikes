@@ -25,6 +25,7 @@
   border-color: #8aae92;
   border-width: 2px;
   height: 50px;
+  position: relative;
 }
 
 .homepage-hero-module {
@@ -222,13 +223,27 @@
   vertical-align: top;
 }
 
+.search-button-home-page {
+  position: absolute;
+}
 
+.search-bar-home-page {
+  display: flex;
+  flex-direction: row;
+}
 
+.btn-light {
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 7px;
+  border-color: #8aae92;
+  border-width: 2px;
+}
 
+.search_button_main_page:hover {
+  text-decoration: none;
 
-
-
-
+}
 
 
 

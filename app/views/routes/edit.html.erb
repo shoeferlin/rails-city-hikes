@@ -9,7 +9,7 @@
         <div class="current-sights edit-card">
           <h4>Sightseeing items:</h4>
             <ol class="edit-list-moveable" id="movable">
-              <% Waypoint.where(route_id: @route.id).each do |w| %>
+              <% @route.waypoints.each do |w| %>
                 <li class="waypoint" data-id="<%= w.id %>">
                   <%= w.sight.name%>
                 </li>
