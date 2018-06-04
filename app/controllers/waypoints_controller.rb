@@ -18,10 +18,10 @@ before_action :set_waypoint, only: [:edit]
         lng: sight.longitude,
         # label: "#{position.to_s}",
         label: { text: "#{position.to_s}", color: 'white'} ,
-        icon: {
-          url: "images/markers/marker.png",
-          scaledSize: new google.maps.Size(64, 64)
-        }
+        # icon: {
+        #   url: "images/markers/marker.png",
+        #   scaledSize: new google.maps.Size(64, 64)
+        # }
         # '#8aae92'
         # infoWindow: { content: render_to_string(partial: "/locations/map_box_two", locals: { location: location }) }
         # icon: image_tag("#{sight.picture_url}")
