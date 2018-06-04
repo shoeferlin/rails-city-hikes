@@ -7,7 +7,7 @@
         <%= f.input :city, collection: @cities, :label_method => :locality, class:"form-inline city-form", id:"city-form" %>
         <%= f.input :name %>
         <%= f.input :description %>
-        <%= f.fields_for :route_pictures do |p| %>
+        <%= f.fields_for :route_picturesdo |p| %>
                     <div class="field">
                       <%= p.label :route_pictures %><br>
                       <%= p.file_field :route_picture, :multiple => true, name:     "route_pictures[route_pictures][]" %>

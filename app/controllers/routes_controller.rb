@@ -44,12 +44,17 @@ class RoutesController < ApplicationController
     @route.user = current_user
     authorize @route
     if @route.save
-      params[:route_pictures]['route_pictures'].each do |a|
-        @route_pictures = @route.route_pictures.create!(route_picture: a, route_id: @route.id)
+      unless params['route_pictures'].nil?
+        params[:route_pictures]['route_pictures'].each do |a|
+          @route_pictures = @route.route_pictures.create!(route_picture: a, route_id: @route.id)
+        end
       end
       redirect_to route_path(@route)
     else
-      render :new
+      @cities = City.all
+      @route_pictures = @route.route_pictures.build
+      render :new #'views/routes/new.html.erb'
+      # redirect_to new_route_path(@route)
     end
   end
 
