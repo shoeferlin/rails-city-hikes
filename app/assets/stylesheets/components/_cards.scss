@@ -5,7 +5,6 @@
   height: auto;
   margin: 10px;
   border-radius: 5px;
-  padding: 10px 20px 10px 20px;
   box-shadow: 1px 1px 2px 1px rgba(200, 200, 200, 0.75);
 }
 
@@ -18,8 +17,11 @@
   font-family: 'Quicksand', sans-serif;
   display: flex;
   flex-direction: column;
-  padding-left: 3px;
-  padding-top: 25px;
+  padding: 20px 20px 20px 10px;
+}
+
+.card-details:hover {
+  text-decoration: none;
 }
 
 .card-name {
@@ -71,6 +73,10 @@
   p {
     font-size: 14px;
     font-family: 'Space Mono', monospace;
+  }
+
+  .carousel-slide {
+    padding: 0 !important;
   }
 }
 
