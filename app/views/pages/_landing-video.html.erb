@@ -1,22 +1,25 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
 <div class="homepage-hero-module">
   <div class="video-container">
-    <div class="filter"></div>
+    <div class="filter" ></div>
     <div class="col-sm-6 col-sm-offset-3">
       <div class="main-search-bar" style="margin-top: 20vh"> <!-- SH: Current bug fix -->
         <h4>Find inspiration for your city trip</h4>
         <%= form_tag routes_path, method: :get do %>
-          <%= text_field_tag :query,
-          params[:query],
-          class: "form-control style-text", placeholder: "Search a city to hike..." %>
+        <div class="search-bar-home-page">
+           <%= text_field_tag :query, params[:query], class: "form-control style-text", placeholder: "Search a city to hike..." %>
+            <%= submit_tag "Search", class:"btn btn-light search_button_main_page" %>
+        </div>
         <% end %>
       </div>
-      </div>
-        <video autoplay loop class="fillWidth">
-          <source src="<%= asset_path "landing-page-video.mp4" %>" type="video/mp4" />
-          <source src="PATH_TO_WEBM" type="video/webm" />
-        </video>
+    </div>
+    <video autoplay loop class="fillWidth">
+      <source src="<%= asset_path "landing-page-video.mp4" %>" type="video/mp4" />
+        <source src="PATH_TO_WEBM" type="video/webm" />
+      </video>
       <div class="poster hidden">
-      <%= image_tag "landing-page-pic.jpg" %>
+        <%= image_tag "landing-page-pic.jpg" %>
+      </div>
     </div>
   </div>
-</div>

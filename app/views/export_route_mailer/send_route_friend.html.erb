@@ -1,0 +1,89 @@
+<style>
+
+body {
+  font-family: Helvetica;
+}
+
+body h2 {
+  color: #4A5F4D;
+  padding-left: 50px;
+}
+
+a {
+
+}
+
+#banner {
+  background-color: #f4f9f4;
+  height: 100px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin: 15px;
+  margin-right: 20px;
+
+}
+
+#content {
+  min-height: calc(100vh - 200px);
+  background-color: white;
+  width: 90vw;
+  padding: 5vw;
+}
+
+#footer {
+  background-image: linear-gradient(white, transparent), url("http://res.cloudinary.com/dmatmwg2i/image/upload/v1528034685/vwsqcbzazppm0gurt7yq.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  height: 200px;
+  width: 100vw;
+}
+
+.button {
+  margin: 20px 0;
+  width: 300px;
+  background-color: #8aae92;
+  border: 1px solid grey;
+  padding: 5px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.button:hover {
+  background-color: #647d67;
+}
+
+.button a {
+  text-decoration: none;
+  color: white;
+}
+
+</style>
+
+<!-- Content -->
+
+<div id="banner">
+  <!-- <a href="http://www.city-hikes.com" target="_blank"><img src="http://res.cloudinary.com/dmatmwg2i/image/upload/v1528038026/nxouor5aydn3y90dhnhc.png" alt="logo" id="logo"></a> -->
+  <h2>City Hikes - Your friend <%= @user.first_name %> invited you to hike a route!</h2>
+</div>
+
+<div id="content">
+  <p>Hi <%= @friend_name %>,</p>
+  <p>your friend <%= @user.first_name %> wanted to share the following route in <%= @route.city.locality %> with you. Have fun on your City Hike and don't forget to review the route afterwards.</p>
+  <p>All the best,</p>
+  <p>City Hikes</p>
+  <br>
+  <h3><%= @route.name %></h3>
+    <div class="button"><a href="http://www.city-hikes.com/routes/<%= @route.id %>" target="_blank">Route on City Hikes</a></div>
+    <div class="button"><a href="<%= @gmaps_url %>" target="_blank">Route on Google Maps</a></div>
+<%= render 'shared/footer' %>
+</div>
+

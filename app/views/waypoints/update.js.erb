@@ -1,0 +1,4 @@
+const newMap = document.createElement("div")
+newMap.id = "map"
+newMap.dataset.waypoints = "<%= @waypoints.to_json %>"
+document.querySelector(".map-box").innerHTML = newMap

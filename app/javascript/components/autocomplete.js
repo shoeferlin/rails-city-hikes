@@ -1,3 +1,5 @@
+
+
 // JavaScript AutoComplete for Geocoding
 import GMaps from 'gmaps/gmaps.js';
 
@@ -5,18 +7,21 @@ function autocomplete() {
 
   function initializeAutocomplete(id) {
 
+    // Restrict city options
     const currenty_city = document.getElementById("current_city");
-    // console.log(current_city)
-    // console.log(current_city.innerText);
-
-    // Restrict city option
+    if (current_city.innerHTML != "") {
     var options = {
       componentRestrictions: {country: current_city.innerText}
      };
-
+    }
     var element = document.getElementById(id);
     if (element) {
-      var autocomplete = new google.maps.places.Autocomplete(element, options, { types: ['geocode'] });
+      if (current_city.innerHTML != "") {
+        var autocomplete = new google.maps.places.Autocomplete(element, options, { types: ['geocode'] });
+      }
+      else {
+        var autocomplete = new google.maps.places.Autocomplete(element, options, { types: ['geocode'] });
+      }
       google.maps.event.addListener(autocomplete, 'place_changed', onPlaceChanged);
     }
   }
@@ -26,7 +31,7 @@ function autocomplete() {
     var place = this.getPlace();
 
     // debugger
-    console.log(place);  // Uncomment this line to view the full object returned by Google API.
+    // console.log(place);  // Uncomment this line to view the full object returned by Google API.
 
     // FOR CITIES - STORE COUNTRY CODE AND CITY
       for (var i in place.address_components) {
@@ -40,40 +45,43 @@ function autocomplete() {
       }
 
     // FOR SIGHTS
+    if (current_city.innerHTML != "") {
       // - STORE NAME
       var type_name = document.getElementById("sight_name");
       type_name.value = place.name;
-      console.log(type_name);
+      // console.log(type_name);
 
       // - STORE PLACE ID
       var type_place_id = document.getElementById("sight_place_id")
       type_place_id.value = place.place_id
-      console.log(type_place_id)
+      // console.log(type_place_id)
 
       // - STORE URL
       var type_url = document.getElementById("sight_url");
       type_url.value = place.url;
-      console.log(type_url);
+      // console.log(type_url);
 
       // - STORE website
       var type_website = document.getElementById("sight_website")
       type_website.value = place.website
-      console.log(type_website)
+      // console.log(type_website)
 
       // - STORE formatted_address
       var type_formatted_address = document.getElementById("sight_formatted_address")
       type_formatted_address.value = place.formatted_address
-      console.log(type_formatted_address)
+      // console.log(type_formatted_address)
 
       // List items from Search result
       const list = document.querySelector("#results");
       console.log(list.innerText)
-        list.insertAdjacentHTML("beforeend", `<li>${type_name.value}</li>`);
-        list.insertAdjacentHTML("beforeend", `<li><a href="${type_url.value}">${type_url.value}</a></li>`);
+        list.insertAdjacentHTML("afterbegin", `<li id="searchfor">${type_name.value}</li>`);
+        // list.insertAdjacentHTML("beforeend", `<li><a href="${type_url.value}">${type_url.value}</a></li>`);
         list.insertAdjacentHTML("beforeend", `<li>${type_formatted_address.value}</li>`);
         if (type_website.value) {
-          list.insertAdjacentHTML("beforeend", `<li><a href="${type_website.value}></a></li>`)
+          // console.log(type_website.value)
+          list.insertAdjacentHTML("beforeend", `<p><a href="${type_website.value}" class="btn btn-primary">Link to homepage</a></p>`)
         };
+      }
   }
 
   google.maps.event.addDomListener(window, 'load', function() {
@@ -82,6 +90,7 @@ function autocomplete() {
   });
 }
 
+autocomplete();
 export { autocomplete };
 
 

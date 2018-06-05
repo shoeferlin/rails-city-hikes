@@ -1,14 +1,64 @@
-<div class="landing-page">
-  <div>
-    <div>
-      <%= render 'pages/landing-video' %>
-    </div>
- </div>
- </div>
-  <div class="flex-header-home">
-    <h2><i class="far fa-arrow-alt-circle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;Check out our recommended Hikes&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-arrow-alt-circle-down"></i></h2>
+<div class="landing-page" style="min-height: calc(100vh - 90px); padding: 0px; margin: 0px">
+
+  <%= render 'pages/landing-video' %>
+
+</div>
+
+<!-- <div class="flex-header-home">
+  <h2><i class="far fa-arrow-alt-circle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;Check out our recommended Hikes&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-arrow-alt-circle-down"></i></h2>
+</div> -->
+
+<!-- carousel -->
+<div class="heading"><h1>Explore our most recommended City Hikes</h1></div>
+<div class="carousel-container">
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+</div>
+
+<!-- timeline -->
+<div class="timeline-container" id="timeline-1">
+  <div class="timeline-header">
+    <h2 id="timeline-header__title">Meet City Hikes</h2>
+    <h5 id="timeline-header__subtitle">Hiking has never been so easy</h5>
   </div>
-  <%= render 'shared/cards-small', routes: @routes %>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline__content">
+        <h2 class="timeline__content-title">Choose a City</h2>
+        <p class="timeleine__content-desc">Select from a list of amazing cities, which have already been hiked. If yours is not listed, feel free to create an own city and be the first hiker.</p>
+        <img class="timeline__img" src="" alt="">
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline__content">
+        <h2 class="timeline__content-title">Select a Route</h2>
+        <p class="timeleine__content-desc">Go and choose from handpicked routes configured by locals and fellow hikers. If you have any tips you want to share, create your own hike.</p>
+        <img class="timeline__img" src="" alt="">
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline__content">
+        <h2 class="timeline__content-title">Edit your Route</h2>
+        <p class="timeleine__content-desc">Add special locations, or sights, which you always wanted to hike and create new individual routes just for you and/or your friends.</p>
+        <img class="timeline__img" src="" alt="">
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline__content">
+        <h2 class="timeline__content-title">Export your Route</h2>
+        <p class="timeleine__content-desc">With only one click, you can export your final route and immediately start hiking.</p>
+        <img class="timeline__img" src="" alt="">
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 

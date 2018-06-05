@@ -25,6 +25,10 @@ class RoutePolicy < ApplicationPolicy
     user?
   end
 
+  def fetch_wikipedia_data?
+    true
+  end
+
   private
 
   def user?

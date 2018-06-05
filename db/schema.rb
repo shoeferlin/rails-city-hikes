@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_30_133533) do
+ActiveRecord::Schema.define(version: 2018_06_05_132940) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,14 @@ ActiveRecord::Schema.define(version: 2018_05_30_133533) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "route_pictures", force: :cascade do |t|
+    t.bigint "route_id"
+    t.string "route_picture"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["route_id"], name: "index_route_pictures_on_route_id"
+  end
+
   create_table "routes", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -54,6 +62,9 @@ ActiveRecord::Schema.define(version: 2018_05_30_133533) do
     t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "time", default: 0.0
+    t.float "distance", default: 0.0
+    t.integer "no_exports", default: 0
     t.index ["city_id"], name: "index_routes_on_city_id"
     t.index ["user_id"], name: "index_routes_on_user_id"
   end
@@ -72,6 +83,7 @@ ActiveRecord::Schema.define(version: 2018_05_30_133533) do
     t.string "website"
     t.string "formatted_address"
     t.string "photo"
+    t.integer "list_nr"
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,6 +112,7 @@ ActiveRecord::Schema.define(version: 2018_05_30_133533) do
     t.bigint "sight_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "list_nr", default: 0
     t.index ["route_id"], name: "index_waypoints_on_route_id"
     t.index ["sight_id"], name: "index_waypoints_on_sight_id"
   end
@@ -108,6 +121,7 @@ ActiveRecord::Schema.define(version: 2018_05_30_133533) do
   add_foreign_key "hiked_routes", "users"
   add_foreign_key "reviews", "routes"
   add_foreign_key "reviews", "users"
+  add_foreign_key "route_pictures", "routes"
   add_foreign_key "routes", "cities"
   add_foreign_key "routes", "users"
   add_foreign_key "waypoints", "routes"

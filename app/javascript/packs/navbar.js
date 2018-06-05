@@ -1,5 +1,4 @@
 function changeNavbarScroll() {
-  console.log(window.scrollY)
   const navbar = document.querySelector(".navbar-wagon");
   if(window.scrollY > 693) {
     navbar.classList.add("navbar-solid") && navbar.classList.add("navbar-solid")
@@ -15,7 +14,6 @@ export default changeNavbarScroll;
 
 
 function changeNavbarFontScroll() {
-  console.log(window.scrollY)
   const navbar = document.querySelector(".navbar-wagon");
   if(window.scrollY > 693) {
     navbar.classList.add("navbar-solid")
