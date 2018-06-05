@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :routes do
     get '/fetch_wikipedia_data', to: 'routes#fetch_wikipedia_data'
+    get '/filter', to: 'routes#filter'
+    get '/save_time_and_date', to: 'routes#save_time_and_date'
     resources :reviews, only: [:create, :destroy]
     resources :sights, only: [:destroy, :create]
     get 'export', to: 'exports#show', as: :export
@@ -16,6 +18,8 @@ Rails.application.routes.draw do
     post 'export/send_route_friend', to: 'exports#send_route_friend', as: :send_route_friend
     resources :sights, only: [:destroy, :create]
   end
+
+  get 'filtered_routes', to: 'routes/filters#index'
 
   resources :waypoints, only: [:update]
   resources :users, only: [:show, :edit, :update]
