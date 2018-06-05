@@ -8,15 +8,15 @@ function autocomplete() {
   function initializeAutocomplete(id) {
 
     // Restrict city options
-    const currenty_city = document.getElementById("current_city");
-    if (current_city.innerHTML != "") {
-    var options = {
-      componentRestrictions: {country: current_city.innerText}
-     };
+    const currentCity = document.getElementById("currentCity");
+    if (currentCity && currentCity.innerHTML != "") {
+      var options = {
+        componentRestrictions: {country: currentCity.innerText}
+       };
     }
     var element = document.getElementById(id);
     if (element) {
-      if (current_city.innerHTML != "") {
+      if (currentCity.innerHTML != "") {
         var autocomplete = new google.maps.places.Autocomplete(element, options, { types: ['geocode'] });
       }
       else {
@@ -45,7 +45,7 @@ function autocomplete() {
       }
 
     // FOR SIGHTS
-    if (current_city.innerHTML != "") {
+    if (currentCity.innerHTML != "") {
       // - STORE NAME
       var type_name = document.getElementById("sight_name");
       type_name.value = place.name;

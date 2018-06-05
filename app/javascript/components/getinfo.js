@@ -1,17 +1,19 @@
 
+var searchFor = document.getElementById("sight_search");
+
 function infotext() {
 
-  var search_for = document.getElementById("sight_search")
-  // console.log(search_for)
+  // console.log(searchFor)
 
-  // if (search_for.innerHTML != "") {
+  // if (searchFor.innerHTML != "") {
   //   const infobox = document.querySelector("#infotext");
-  //   info = search_for.innerHTML
+  //   info = searchFor.innerHTML
   //   infobox.insertAdjacentHTML("afterbegin", `<p>${info}</p>`);
   // }
 
-  search_for.addEventListener('blur', function (event) {
-    // console.log(`Function by ${search_for}`)
+
+  searchFor.addEventListener('blur', function (event) {
+    // console.log(`Function by ${searchFor}`)
 
     const list = document.querySelector("#infotext");
     const listhead = document.querySelector("#infoheadline");
@@ -28,5 +30,7 @@ function infotext() {
 }
 
 
+if (searchFor) {
+  infotext();
+}
 
-infotext()
