@@ -4,6 +4,7 @@ class Route < ApplicationRecord
   has_many :waypoints, -> { order(list_nr: :asc) }
   has_many :sights, through: :waypoints, dependent: :destroy
   has_many :route_pictures
+  has_many :reviews
   accepts_nested_attributes_for :route_pictures
 
   validates :city, presence: true
