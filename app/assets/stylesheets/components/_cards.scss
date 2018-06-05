@@ -6,18 +6,21 @@
   margin: 10px;
   border-radius: 5px;
   box-shadow: 1px 1px 2px 1px rgba(200, 200, 200, 0.75);
+  margin-top: 15px;
 }
 
 .card-image {
   width: 50%;
   background-size: cover !important;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .card-details {
   font-family: 'Quicksand', sans-serif;
   display: flex;
   flex-direction: column;
-  padding: 20px 20px 20px 10px;
+  padding: 30px 20px 20px 10px;
 }
 
 .card-details:hover {
@@ -30,6 +33,7 @@
   border-bottom: 0.5px solid $dark-green;
   padding-bottom: 4px;
   padding-left: 3px;
+  color: $dark-green;
 }
 
 .card-hashtags {
@@ -48,20 +52,21 @@
   text-align: justify;
   line-height: 25px;
   padding-left: 3px;
+  color: grey;
 }
 
 .card-owner {
   font-size: 14px;
   padding-left: 3px;
-  border: 0.5px solid white;
-  border-radius: 7px;
   opacity: 0.6;
   margin-top: 5px;
+  color: grey;
 }
 
 .card-owner:hover {
   color: grey;
-  border-color: $dark-green;
+  font-weight: bolder;
+
 }
 
 .route-details {
@@ -78,6 +83,10 @@
   .carousel-slide {
     padding: 0 !important;
   }
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 

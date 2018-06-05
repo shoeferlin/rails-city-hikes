@@ -1,9 +1,10 @@
 import GMaps from 'gmaps/gmaps.js';
 import { autocomplete } from '../components/autocomplete';
 
-// Access Ruby Dataset information in js - Route id
-const routeData = document.getElementById('data-edit').dataset
-// console.log(routeData)
+const route = document.getElementById('data-edit');
+if (route) {
+  const routeData = route.dataset;
+}
 
 function buildMap()  {
   const mapElement = document.getElementById('map');
@@ -83,13 +84,16 @@ function updateRouteDetails(time, distance) {
   const routeTime = document.querySelector("#routetime > p")
   const routeDistance = document.querySelector("#routedistance > p")
 
-  routeTime.innerHTML = `<p>Duration: ${hours}h ${minutes}min</p>`
-  routeDistance.innerHTML = `<p>Distance: ${distance} km</p>`
+  if (routeTime && routeDistance) {
+    routeTime.innerHTML = `<p>Duration: ${hours}h ${minutes}min</p>`
+    routeDistance.innerHTML = `<p>Distance: ${distance} km</p>`
+  }
 }
 
 updateRouteDetails();
 
-
-buildMap();
+if (route) {
+  buildMap();
+}
 
 export default buildMap;

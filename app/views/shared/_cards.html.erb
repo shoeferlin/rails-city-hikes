@@ -58,14 +58,14 @@
           <%= link_to(route_path(route)) do %>
             <div class="card-details col-sm-offset-6">
               <div class="card-name"><%= route.name %></div>
-              <div class="card-owner"> <p>by <%= route.user.first_name %></p></div>
+              <div class="card-owner"><p>by<%= route.user.first_name %></p></div>
               <div class="card-hashtags"><p>#foody #hipster #PLATZHALTER</p></div>
               <div class="card-description"><%= route.description %></div>
               <div class="route-details">
-                <p id="route-length"><%= %>2.8km</p>
-                <p id="route-duration"><%= %>3.5h</p>
-                <p id="route-nr-exports"><%= %>exported 320 times</p>
-                <p id="route-rating"><%= %>3/5 stars</p>
+                <p id="route-length"><%= %> km</p>
+                <p id="route-duration"><%= %> h</p>
+                <p id="route-nr-exports">exportet <%= %> times</p>
+                <p id="route-rating"><%= %></p>
               </div>
             </div>
           <% end %>

@@ -1,11 +1,17 @@
+.export-background {
+  height: 1200px;
+}
+
 .export-container {
   background-color: white;
   border-radius: 3px;
+  margin-top: 70px;
 }
 
 #export-info {
   background-color: white;
   color: black;
+  border: 1px solid $dark-green;
   padding: 5px;
   box-shadow: 2px 2px 4px 2px $light-gray;
   border-radius: 3px;
@@ -28,6 +34,7 @@
   h1 {
     border-bottom: 0.5px solid $dark-green;
     padding-bottom: 30px;
+    color: black;
   }
 }
 
@@ -46,8 +53,15 @@
 .export-button {
   margin: 20px;
   width: 300px;
-  background-color: $dark-green;
-  border: 1px solid grey;
+  // background-color: $dark-green;
+  // opacity: 0.8;
+  // border: 1px solid grey;
+}
+
+.export-button:hover {
+  // background-color: $dark-green;
+  // color: white;
+  transition: ease 0.2s;
 }
 
 .export-maps {
@@ -56,17 +70,11 @@
 }
 
 .export-maps:hover {
-  background-color: firebrick;
+  // background-color: firebrick;
   transition: ease 0.2s;
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 
-.export-button:hover {
-  background-color: $light-green;
-  border: 1px solid black;
-  color: black;
-  transition: ease 0.2s;
-}
 
 .send-route-friend {
   input[type="email"], input[type="text"] {
@@ -100,4 +108,8 @@
 .submit-export-friend {
   width: 100%;
   margin-bottom: 20px;
+}
+
+.invite-friend {
+  border-radius: 5px;
 }
