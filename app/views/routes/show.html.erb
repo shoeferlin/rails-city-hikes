@@ -14,7 +14,7 @@
       <%= link_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
     </div>
     <h5 class="route-description"><em><%= @route.description %></em></h5>
-    <h5 class="route-items">Sightseeing items:</h5>
+    <div class="route-items"><h5>Sightseeing items:</h5></div>
     <% Waypoint.where(route_id: @route.id).each do |w| %>
     <ul>
       <li class="route-points"><%=w.sight.name %></li>
