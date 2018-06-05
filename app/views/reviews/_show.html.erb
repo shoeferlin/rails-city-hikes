@@ -1,18 +1,32 @@
-<div class="show-review-box">
-  <% reviews.each do |r| %>
-    <div class="row review">
-      <div class="col-sm-2 review-user">
-        <% unless current_user.nil? %>
-          <%= image_tag r.user.picture_url.url, class: "review-avatar" %>
-          <p><%= r.user.username %></p>
+<div class="review" id="reviews">
+  <div class="row">
+    <div class="col-sm-2 review-user-avatar">
+      <% unless current_user.nil? %>
+        <%= image_tag r.user.picture_url.url, class: "review-avatar" %>
+      <% end %>
+    </div>
+    <div class="col-sm-2 review-user-name review-content">
+      <%= link_to user_path(r.user) do %>
+        <p><%= r.user.username %></p>
+      <% end %>
+      <% if r.user == current_user %>
+        <%= link_to route_review_path(route, r), method: :delete do %>
+          <i class="fas fa-trash-alt abled-review-trash"></i>
         <% end %>
-      </div>
-      <div class="col-sm-2 review-rating">
-        <p>Rating: <%= r.rating %></p>
-      </div>
-      <div class="col-sm-8 review-comment">
-        <p>Comment: <%= r.content %><p>
-     </div>
-   </div>
-  <% end %>
+      <% else %>
+          <i class="far fa-trash-alt disabled-review-trash"></i>
+      <% end %>
+    </div>
+    <div class="col-sm-2 review-rating review-content">
+      <% r.rating.to_i.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - r.rating.to_i).times do %>
+        <i class="far fa-star"></i>
+      <% end %>
+    </div>
+    <div class="col-sm-6 review-comment review-content">
+      <p><%= r.content %><p>
+    </div>
+  </div>
 </div>

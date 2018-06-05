@@ -1,0 +1,19 @@
+function refreshReviewForm(innerHTML) {
+  const newReviewForm = document.getElementById('new_review');
+  newReviewForm.innerHTML = innerHTML;
+}
+
+function addReview(reviewHTML) {
+  const reviews = document.getElementById('show-review-box');
+  reviews.insertAdjacentHTML('beforebegin', reviewHTML);
+}
+
+<% if @review.errors.any? %>
+  refreshReviewForm('<%= j render "reviews/form", route: @route, review: @new_review %>');
+<% else %>
+  addReview('<%= j render "reviews/show", r: @review, route: @route %>');
+  refreshReviewForm('<%= j render "reviews/form", route: @route, review: @new_review %>');
+<% end %>
+
+document.querySelector("[data-route-id='<%= @route.id %>']")
+  .remove();
