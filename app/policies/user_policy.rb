@@ -7,7 +7,7 @@ class UserPolicy < ApplicationPolicy
 
 
   def show?
-    update?
+    true
   end
 
   def edit?

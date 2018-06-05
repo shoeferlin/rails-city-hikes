@@ -8,41 +8,57 @@
   <h2><i class="far fa-arrow-alt-circle-down"></i>&nbsp;&nbsp;&nbsp;&nbsp;Check out our recommended Hikes&nbsp;&nbsp;&nbsp;&nbsp;<i class="far fa-arrow-alt-circle-down"></i></h2>
 </div> -->
 
-<div class="carousel">
-  <h1>Check out our recommended hikes in ...</h1>
-  <div id="wrapper-carousel">
-    <div id="image-carousel">
-      <div class="image i1" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.4) 0%, rgba(0,36,80,0.4) 50%), url(<%= image_url 'crete.jpg' %>)">
-        <h3>Crete</h3>
+<!-- carousel -->
+<div class="heading"><h1>Explore our most recommended City Hikes</h1></div>
+<div class="carousel-container">
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+  <div class="ui-card"></div>
+</div>
+
+<!-- timeline -->
+<div class="timeline-container" id="timeline-1">
+  <div class="timeline-header">
+    <h2 id="timeline-header__title">Meet City Hikes</h2>
+    <h5 id="timeline-header__subtitle">Hiking has never been so easy</h5>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline__content">
+        <h2 class="timeline__content-title">Choose a City</h2>
+        <p class="timeleine__content-desc">Select from a list of amazing cities, which have already been hiked. If yours is not listed, feel free to create an own city and be the first hiker.</p>
+        <img class="timeline__img" src="" alt="">
       </div>
-      <div class="image i1" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.4) 0%, rgba(0,36,80,0.4) 50%), url(<%= image_url 'hamburg.jpg' %>)">
-        <h3>Hamburg</h3>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline__content">
+        <h2 class="timeline__content-title">Select a Route</h2>
+        <p class="timeleine__content-desc">Go and choose from handpicked routes configured by locals and fellow hikers. If you have any tips you want to share, create your own hike.</p>
+        <img class="timeline__img" src="" alt="">
       </div>
-      <div class="image i2" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.4) 0%, rgba(0,36,80,0.4) 50%), url(<%= image_url 'munichcity.jpg' %>)">
-        <h3>Munich</h3>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline__content">
+        <h2 class="timeline__content-title">Edit your Route</h2>
+        <p class="timeleine__content-desc">Add special locations, or sights, which you always wanted to hike and create new individual routes just for you and/or your friends.</p>
+        <img class="timeline__img" src="" alt="">
       </div>
-      <div class="image i3" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.4) 0%, rgba(0,36,80,0.4) 50%), url(<%= image_url 'sanfrancisco.jpg'%>)">
-        <h3>San Francisco</h3>
-      </div>
-      <div class="image i4" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.4) 0%, rgba(0,36,80,0.4) 50%), url(<%= image_url 'paris.jpg' %>)">
-        <h3>Paris</h3>
-      </div>
-      <div class="image i5" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.4) 0%, rgba(0,36,80,0.4) 50%), url(<%= image_url 'newyork.jpg' %>)">
-        <h3>New York</h3>
-      </div>
-      <div class="image i6" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.4) 0%, rgba(0,36,80,0.4) 50%), url(<%= image_url 'rome.jpg' %>)">
-        <h3>Rome</h3>
-      </div>
-      <div class="image i7" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.4) 0%, rgba(0,36,80,0.4) 50%), url(<%= image_url 'madrid.jpg' %>)">
-        <h3>Madrid</h3>
-      </div>
-        <div class="image i8" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.4) 0%, rgba(0,36,80,0.4) 50%), url(<%= image_url 'london.jpg' %>)">
-        <h3>London</h3>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline__content">
+        <h2 class="timeline__content-title">Export your Route</h2>
+        <p class="timeleine__content-desc">With only one click, you can export your final route and immediately start hiking.</p>
+        <img class="timeline__img" src="" alt="">
       </div>
     </div>
   </div>
 </div>
-<%#= render 'shared/cards-small', routes: @routes %>
 </div>
 
 

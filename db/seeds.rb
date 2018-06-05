@@ -15,7 +15,7 @@ users << User.create(first_name: "Johnny", username: "@johnny", password: 123456
 # 03 User
 users << User.create(first_name: "Nathan", username: "@nathan", password: 123456, email: "nathan@city-hikes.com", remote_picture_url_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1527787017/xvqw3svmlh2wad7ju27h.jpg")
 # 04 User
-users << User.create(first_name: "Simon", username: "@simon", password: 123456, email: "simon@city-hikes.com", remote_picture_url_url: "https://cloudinary.com/console/media_library/asset/image/upload/qtsanl4o6xmgzdg6nxhi")
+users << User.create(first_name: "Simon", username: "@simon", password: 123456, email: "simon@city-hikes.com", remote_picture_url_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1527786840/qtsanl4o6xmgzdg6nxhi.jpg")
 
 # Other users
 11.times do
@@ -156,6 +156,15 @@ Waypoint.create(route_id: 3, sight_id: 20)
 Waypoint.create(route_id: 3, sight_id: 21)
 Waypoint.create(route_id: 3, sight_id: 22)
 
+
+### REVIEWS ###
+
+puts "Generating reviews ..."
+
+Review.create(user_id: 1, content: "Indeed a great route for my home town.", rating: 5, route_id: 1)
+Review.create(user_id: 3, content: "A bit short but besides that nice.", rating: 4, route_id: 1)
+Review.create(user_id: 2, content: "Too touristic in my opinion.", rating: 3, route_id: 2)
+Review.create(user_id: 1, content: "Loved Covent Garden.", rating: 5, route_id: 2)
 
 puts "SEEDING COMPLETED"
 

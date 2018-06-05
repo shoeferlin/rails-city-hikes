@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     authorize @user
     @routes = policy_scope(Route).all
     @hiked_routes = @user.hiked_routes # HikedRoute.where(user_id: @user.id)
