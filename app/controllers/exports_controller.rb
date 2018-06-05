@@ -14,15 +14,18 @@ class ExportsController < ApplicationController
     @user = current_user
     @gmaps_url = create_gmaps_url
     ExportRouteMailer.send_route_email(@user, @route, @gmaps_url).deliver_now
+    count_export(@route)
     redirect_to route_export_path(@route)
     # redirect_to route_path(@route)
   end
 
+  # This one is currently not active
   def send_route_phone
     @export = Export.new
     authorize @export
     flash[:notice] = "Route has been sent to your phone, #{current_user.first_name}"
     # start background job sending a text via API with link
+    count_export(@route)
     redirect_to route_export_path(@route)
     # redirect_to route_path(@route)
   end
@@ -32,6 +35,7 @@ class ExportsController < ApplicationController
     authorize @export
     flash[:notice] = "Route is now in your clipboard, #{current_user.first_name}"
     # copy to clipboard action
+    count_export(@route)
     redirect_to route_export_path(@route)
     # redirect_to route_path(@route)
   end
@@ -54,6 +58,7 @@ class ExportsController < ApplicationController
     authorize @export
     flash[:notice] = "Route has been sent to your friend #{@friend_name}, #{current_user.first_name}"
     ExportRouteMailer.send_route_friend(@user, @route, @gmaps_url, @friend_name, @friend_email).deliver_now
+    count_export(@route)
     redirect_to route_export_path(@route)
     # redirect_to route_path(@route)
   end
@@ -88,5 +93,10 @@ class ExportsController < ApplicationController
       end
       return waypoint_url
     end
+  end
+
+  def count_export(route)
+    new_no_exports = route.no_exports += 1
+    Route.find(route.id).update(no_exports: new_no_exports)
   end
 end
