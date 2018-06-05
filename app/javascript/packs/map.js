@@ -47,7 +47,7 @@ function buildMap()  {
                 distance += e[0].legs[i].distance.value;
             }
             // alert((time/60).toFixed(2) + " min" + ", " + (distance/60).toFixed(2) +" km");
-            updateRouteDetails(time, distance)
+            updateRouteDetails((time/60).toFixed(2), (distance/60).toFixed(2))
 
             Rails.ajax({
               url: `/routes/${routeData.id}`,
@@ -62,11 +62,6 @@ function buildMap()  {
         }
     });
 
-
-
-
-
-
     if (markers.length === 0) {
       map.setZoom(2);
     } else if (markers.length === 1) {
@@ -80,11 +75,14 @@ function buildMap()  {
 }
 
 function updateRouteDetails(time, distance) {
+
+  var hours = parseInt(time/60)
+  var minutes = parseInt(time % 60)
   const routeTime = document.querySelector("#routetime > p")
   const routeDistance = document.querySelector("#routedistance > p")
 
-  routeTime.innerHTML = time
-  routeDistance.innerHTML = distance
+  routeTime.innerHTML = `<p>Duration: ${hours}h ${minutes}min</p>`
+  routeDistance.innerHTML = `<p>Distance: ${distance} km</p>`
 }
 
 updateRouteDetails();
