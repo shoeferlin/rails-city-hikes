@@ -2,7 +2,17 @@
 </div>
 <div class="main-container">
   <div class="route-box">
-    <h3 class="route-name"><strong><%= @route.name %></strong></h3>
+    <div class="route-header">
+      <h3 class="route-name"><strong><%= @route.name %></strong></h3>
+      <% unless current_user.nil? %>
+        <%= image_tag @route.user.picture_url.url, class: "review-avatar"%>
+      <% end %>
+    </div>
+    <div class="show-btns">
+      <%= link_to "Return", routes_path, class: "btn btn-primary" %>
+      <%= link_to "GO HIKING", route_export_path(@route), class: "btn btn-primary btn", style: "width: 40%" %>
+      <%= link_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
+    </div>
     <h5 class="route-description"><em><%= @route.description %></em></h5>
     <div class="route-items"><h5>Sightseeing items:</h5></div>
     <% Waypoint.where(route_id: @route.id).each do |w| %>
@@ -10,12 +20,23 @@
       <li class="route-points"><%=w.sight.name %></li>
     </ul>
     <% end %>
-    <h5 class="route-owner">Ask <strong><%= @route.user.username %></strong> for further tips!</h5>
-    <div class="show-btns">
-      <%= link_to "Return", routes_path, class: "btn btn-primary" %>
-      <%= link_to "Export", route_export_path(@route), class: "btn btn-primary btn", style: "width: 40%" %>
-      <%= link_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
-    </div>
+    <h5 class="route-information">Route information:</h5>
+      <div class="route-information-box">
+        <p><%= @route.distance %></p>
+        <div>
+          <% @avg_rating.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - @avg_rating).times do %>
+            <i class="far fa-star"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="route-information-box">
+        <p><%= @route.time %></p>
+        <p>235 exports</p>
+      </div>
+    <h5 class="route-owner">Ask <strong><%= link_to @route.user.username, user_path(@route.user) %></strong> for further tips!</h5>
   </div>
   <div id="map" data-waypoints="<%= @waypoints.to_json %>"></div>
   </div>
@@ -24,7 +45,11 @@
   <div class="review-container">
     <h4>How did you like the tour? Do you have any suggestions?</h4>
     <%= render 'reviews/form', route: @route, review: @new_review  %>
-    <%= render 'reviews/show', reviews: @reviews %>
+    <div class="show-review-box" id="show-review-box">
+      <% @reviews.reverse.each do |review| %>
+        <%= render 'reviews/show', r: review, route: @route%>
+      <% end %>
+    </div>
 </div>
 
 

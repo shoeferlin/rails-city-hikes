@@ -164,6 +164,21 @@
   margin: 5px;
 }
 
+.routeinfo {
+  font-size: 16px;
+}
+
+.route-info-header {
+  color: white;
+  margin: 15px;
+}
+
+#banner-tiny-text {
+  display: flex;
+  justify-content: text-around;
+  text-align: center;
+}
+
 .delete-button {
   margin-top: 10px;
 }
@@ -176,4 +191,5 @@
 .fa-bars {
   opacity: 0.5;
   color: $dark-green;
+
 }

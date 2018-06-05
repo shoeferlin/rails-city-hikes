@@ -1,2 +1,49 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class="background-image-profile" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.6) 0%, rgba(0,36,80,0.6) 50%), url(<%= image_url 'background-planning-trip.jpg' %>);">
+  <div class="container container-box-user-profile">
+    <div class="left-box-user-profile">
+      <div>
+        <%= cl_image_tag @user.picture_url, height: 230, width: 230, crop: :fill, class: "profile_picture"%>
+      </div>
+      <div class="KPI">
+        <p class="kpi_info">Distance walked:</p>
+        <strong>TBD</strong>
+        <p class="kpi_info"> Hiked routes: </p>
+        <%= HikedRoute.where(user_id: @user.id).count %>
+        <p class="kpi_info">Created routes:</p>
+        <%= Route.where(user_id: @user.id).count %>
+      </div>
+    </div>
+    <div class="right-box-user-profile">
+      <div class="user-info">
+        <div class="font-weight-bold">
+          <p><strong><%= @user.first_name %></strong> </p>
+          <p>username: <strong><%= @user.username %></strong></p>
+          <p>routes eview</p>
+        </div>
+      </div>
+      <div class="routes-user-profile">
+        <ul class="nav nav-tabs">
+          <li><a data-toggle="tab" href="#menu1">Created Routes</a></li>
+        </ul>
+        <div class="tab-content">
+          <div id="menu1" class="tab-pane fade in active">
+            <% @routes.each do |route| %>
+                <% if route.user == @user %>
+                <% @created_route = Route.where(user_id: @user.id).count %>
+                  <%= link_to(route_path(route)) do %>
+                    <div class="col-sm-6 col-sm-offset-0">
+                      <div class="card card-profile" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
+                        <!-- <div class="card-id"><%= route.id %></div> -->
+                      </div>
+                     <!--  <p class="card-name"><%= route.name %></p> -->
+                    </div>
+                  <% end %>
+                <% end %>
+              <% end %>
+          </div>
+        </div>
+      <div>
+    </div>
+  </div>
+</div>
+

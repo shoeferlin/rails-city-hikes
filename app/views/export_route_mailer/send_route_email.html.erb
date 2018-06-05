@@ -6,6 +6,7 @@ body {
 
 body h2 {
   color: #4A5F4D;
+  padding-left: 100px;
 }
 
 a {
@@ -85,6 +86,5 @@ a {
   <div class="button"><a href="http://www.city-hikes.com/routes/<%= @route.id %>" target="_blank">Route on City Hikes</a></div>
   <div class="button"><a href="<%= @gmaps_url %>" target="_blank">Route on Google Maps</a></div>
 
+<%= render 'shared/footer' %>
 </div>
-
-<div id="footer"></div>

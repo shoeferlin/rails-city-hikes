@@ -157,6 +157,15 @@ Waypoint.create(route_id: 3, sight_id: 21)
 Waypoint.create(route_id: 3, sight_id: 22)
 
 
+### REVIEWS ###
+
+puts "Generating reviews ..."
+
+Review.create(user_id: 1, content: "Indeed a great route for my home town.", rating: 5, route_id: 1)
+Review.create(user_id: 3, content: "A bit short but besides that nice.", rating: 4, route_id: 1)
+Review.create(user_id: 2, content: "Too touristic in my opinion.", rating: 3, route_id: 2)
+Review.create(user_id: 1, content: "Loved Covent Garden.", rating: 5, route_id: 2)
+
 puts "SEEDING COMPLETED"
 
 
