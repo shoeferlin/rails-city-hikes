@@ -7,6 +7,8 @@
         <div class="KPI">
           <p class="kpi_info">Distance walked:</p>
           <strong>TBD</strong>
+          <p class="kpi_info">Routes review:</p>
+          <%= User.find(params[:id]).created_routes.joins(:reviews).average(:rating) %>
           <p class="kpi_info"> Hiked routes: </p>
           <%= HikedRoute.where(user_id: @user.id).count %>
           <p class="kpi_info">Created routes:</p>
@@ -18,12 +20,13 @@
           <div class="font-weight-bold">
             <p><strong><%= @user.first_name %></strong> </p>
             <p>username: <strong><%= @user.username %></strong></p>
-            <p>routes eview</p>
-            <p>email: <strong><%= @user.email %></strong></p>
+            <% if current_user == @user %>
+              <p>email: <strong><%= @user.email %></strong></p>
+            <% end %>
           </div>
           <div class="edit_profile">
             <% if current_user == @user %>
-              <i class="far fa-edit"><%= link_to "Edit", edit_user_path(current_user)%></i>
+              <i class="far fa-edit"><%= link_to "Edit", edit_user_path(current_user), class: "button-edit-profile"%></i>
             <% end %>
           </div>
         </div>
