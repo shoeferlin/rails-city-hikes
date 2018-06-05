@@ -1,7 +1,7 @@
 <%= simple_form_for([ route, review ]) do |form| %>
   <div class="new-review-box">
-  <%= form.input :content, label: "Comment" %>
-  <%= form.input :rating, as: :radio_buttons, collection: [['1', '1'], ['2', '2'], ['3', '3'], ['4', '4'], ['5', '5']] %>
-  <%= form.button :submit, class: "btn btn-primary"%>
+  <%= form.input :content, label: "Comment", class: "review-form"%>
+  <%= form.input :rating, label: "Rating", as: :radio_buttons, collection: [['5', '5'], ['4', '4'], ['3', '3'], ['2', '2'], ['1', '1']], class: "review-form" %>
+  <%= form.button :submit, class: "btn btn-primary review-button"%>
 <% end %>
 </div>
