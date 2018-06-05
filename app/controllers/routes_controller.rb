@@ -5,6 +5,8 @@ class RoutesController < ApplicationController
 
   def index
     @route_pictures = RoutePicture.all
+    @cities = City.all
+    # City
     if params["query"].nil?
       @city = ""
     else
@@ -17,6 +19,7 @@ class RoutesController < ApplicationController
       @city = "We don't know about this city yet"
       @routes = policy_scope(Route).order(created_at: :asc)
     end
+    # Time
     # @routes = Route.all
   end
 
@@ -25,6 +28,7 @@ class RoutesController < ApplicationController
     @route_pictures = @route.route_pictures.all
     @new_review = Review.new
     @reviews = Review.where(route: @route)
+    @avg_rating = calc_avg_rating(@reviews)
     @waypoints = @route.sights.map do |sight|
       position += 1
       { lat: sight.latitude,
@@ -77,7 +81,27 @@ class RoutesController < ApplicationController
     end
   end
 
+  def save_time_and_date
+
+  end
+
   def update
+    p params
+    @route = Route.find(params[:id])
+    @route.time = params[:time]
+    @route.distance = params[:distance]
+    authorize @route
+    # if @route.save
+    #   render json: @waypoints
+    # end
+    respond_to do |format|
+      format.html {redirect_to edit_route_path(@route)}
+      format.js # views/routes/update.js.erb
+    end
+  end
+
+  def filter
+
   end
 
   def fetch_wikipedia_data
@@ -117,4 +141,19 @@ class RoutesController < ApplicationController
     params.require(:route).permit(:city)
   end
 
+  def calc_avg_rating(reviews)
+    rating_sum = 0
+    counter = 0
+    reviews.each do |r|
+      unless r.rating.nil?
+        rating_sum += r.rating.to_i
+        counter += 1
+      end
+    end
+    if counter.nil? || counter == 0
+      return 0
+    else
+      return (rating_sum / counter).round
+    end
+  end
 end
