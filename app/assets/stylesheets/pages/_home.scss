@@ -152,6 +152,7 @@ html body .heading p {
   height: 40rem;
   width: 50rem;
   position: relative;
+  background-size: cover;
   z-index: 1;
   -webkit-transform: scale(0.6) translateY(-2rem);
           transform: scale(0.6) translateY(-2rem);
@@ -161,6 +162,12 @@ html body .heading p {
   background: #2e5266;
   background: linear-gradient(to top, #2e5266, #6e8898);
   transition: 2s;
+}
+
+.ui-card p {
+  color: white;
+  justify-content: center;
+  flex-direction: column;
 }
 .carousel-container .ui-card:after {
   content: '';
