@@ -52,18 +52,36 @@
  padding: 27px;
 }
 
+.review_content {
+  width: 50%
+}
+
+#review-content {
+  width: 100%;
+}
+
 .review-avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
 }
 
+.abled-review-trash {
+  color: grey !important;
+}
+
+.disabled-review-trash {
+  color: lightgrey !important;
+}
+
 .review-user-avatar {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around
 }
 
 .review-user-name {
+  display: flex;
+  justify-content: space-between;
 }
 
 .review-rating {

@@ -20,12 +20,21 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
+    @route = Route.find(params[:route_id])
+    authorize @review
+    @review.destroy
+    redirect_to route_path(@route)
   end
 
   private
 
   def review_params
     params.require(:review).permit(:content, :rating)
+  end
+
+  def review_params_delete
+    params.require(:id)
   end
 end
 

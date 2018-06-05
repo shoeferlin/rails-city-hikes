@@ -26,7 +26,7 @@
     <%= render 'reviews/form', route: @route, review: @new_review  %>
     <div class="show-review-box" id="show-review-box">
       <% @reviews.reverse.each do |review| %>
-        <%= render 'reviews/show', r: review %>
+        <%= render 'reviews/show', r: review, route: @route%>
       <% end %>
     </div>
 </div>

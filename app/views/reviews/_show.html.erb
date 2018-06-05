@@ -7,6 +7,13 @@
     </div>
     <div class="col-sm-2 review-user-name review-content">
       <p><%= r.user.username %></p>
+      <% if r.user == current_user %>
+        <%= link_to route_review_path(route, r), method: :delete do %>
+          <i class="fas fa-trash-alt abled-review-trash"></i>
+        <% end %>
+      <% else %>
+          <i class="far fa-trash-alt disabled-review-trash"></i>
+      <% end %>
     </div>
     <div class="col-sm-2 review-rating review-content">
       <% r.rating.to_i.times do %>
