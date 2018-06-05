@@ -4,7 +4,7 @@
   <div class="route-box">
     <h3 class="route-name"><strong><%= @route.name %></strong></h3>
     <h5 class="route-description"><em><%= @route.description %></em></h5>
-    <h5 class="route-items">Sightseeing items:</h5>
+    <div class="route-items"><h5>Sightseeing items:</h5></div>
     <% Waypoint.where(route_id: @route.id).each do |w| %>
     <ul>
       <li class="route-points"><%=w.sight.name %></li>
