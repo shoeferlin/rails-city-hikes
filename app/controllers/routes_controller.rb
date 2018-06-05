@@ -5,6 +5,8 @@ class RoutesController < ApplicationController
 
   def index
     @route_pictures = RoutePicture.all
+    @cities = City.all
+    # City
     if params["query"].nil?
       @city = ""
     else
@@ -17,6 +19,7 @@ class RoutesController < ApplicationController
       @city = "We don't know about this city yet"
       @routes = policy_scope(Route).order(created_at: :asc)
     end
+    # Time
     # @routes = Route.all
   end
 
@@ -78,7 +81,27 @@ class RoutesController < ApplicationController
     end
   end
 
+  def save_time_and_date
+
+  end
+
   def update
+    p params
+    @route = Route.find(params[:id])
+    @route.time = params[:time]
+    @route.distance = params[:distance]
+    authorize @route
+    # if @route.save
+    #   render json: @waypoints
+    # end
+    respond_to do |format|
+      format.html {redirect_to edit_route_path(@route)}
+      format.js # views/routes/update.js.erb
+    end
+  end
+
+  def filter
+
   end
 
   def fetch_wikipedia_data
@@ -129,5 +152,4 @@ class RoutesController < ApplicationController
     end
     return (rating_sum / counter).round
   end
-
 end

@@ -4,6 +4,7 @@ import "./map";
 import "./timeline";
 import "./carousel";
 import "../components/getinfo"
+import "./filter"
 // import "../components/draganddrop.js"
 // import { Sortable } from '@shopify/draggable';
 import { draganddrop } from '../components/draganddrop';
