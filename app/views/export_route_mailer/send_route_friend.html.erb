@@ -6,6 +6,7 @@ body {
 
 body h2 {
   color: #4A5F4D;
+  padding-left: 50px;
 }
 
 a {
@@ -71,7 +72,7 @@ a {
 
 <div id="banner">
   <!-- <a href="http://www.city-hikes.com" target="_blank"><img src="http://res.cloudinary.com/dmatmwg2i/image/upload/v1528038026/nxouor5aydn3y90dhnhc.png" alt="logo" id="logo"></a> -->
-  <h2>City Hikes - Your friend <%= @user.first_name %> sent you a route</h2>
+  <h2>City Hikes - Your friend <%= @user.first_name %> invited you to hike a route!</h2>
 </div>
 
 <div id="content">
@@ -81,9 +82,8 @@ a {
   <p>City Hikes</p>
   <br>
   <h3><%= @route.name %></h3>
-  <div class="button"><a href="http://www.city-hikes.com/routes/<%= @route.id %>" target="_blank">Route on City Hikes</a></div>
-  <div class="button"><a href="<%= @gmaps_url %>" target="_blank">Route on Google Maps</a></div>
-
+    <div class="button"><a href="http://www.city-hikes.com/routes/<%= @route.id %>" target="_blank">Route on City Hikes</a></div>
+    <div class="button"><a href="<%= @gmaps_url %>" target="_blank">Route on Google Maps</a></div>
+<%= render 'shared/footer' %>
 </div>
 
-<div id="footer"></div>
