@@ -10,8 +10,8 @@ import "./filter"
 import { draganddrop } from '../components/draganddrop';
 
 
-import scaleVideoContainer from "./banner"
-import initBannerVideoSize from "./banner"
+// import scaleVideoContainer from "./banner"
+// import initBannerVideoSize from "./banner"
 import scaleBannerVideoSize from "./banner"
 
 

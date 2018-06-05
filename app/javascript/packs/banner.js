@@ -3,9 +3,9 @@ $( document ).ready(function() {
 
     // scaleVideoContainer();
 
-    initBannerVideoSize('.video-container .poster img');
-    initBannerVideoSize('.video-container .filter');
-    initBannerVideoSize('.video-container video');
+    // initBannerVideoSize('.video-container .poster img');
+    // initBannerVideoSize('.video-container .filter');
+    // initBannerVideoSize('.video-container video');
 
     $(window).on('resize', function() {
         scaleVideoContainer();
@@ -24,16 +24,16 @@ $( document ).ready(function() {
 
 // }
 
-function initBannerVideoSize(element){
+// function initBannerVideoSize(element){
 
-    $(element).each(function() {
-        $(this).data('height', $(this).height());
-        $(this).data('width', $(this).width());
-    });
+//     $(element).each(function() {
+//         $(this).data('height', $(this).height());
+//         $(this).data('width', $(this).width());
+//     });
 
-    scaleBannerVideoSize(element);
+//     scaleBannerVideoSize(element);
 
-}
+// }
 
 function videoPlaying(element){
 
