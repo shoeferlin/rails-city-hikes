@@ -22,7 +22,7 @@
     <% end %>
     <h5 class="route-information">Route information:</h5>
       <div class="route-information-box">
-        <p>@route.distance</p>
+        <p><%= @route.distance %></p>
         <div>
           <% @avg_rating.times do %>
             <i class="fas fa-star"></i>
@@ -33,7 +33,7 @@
         </div>
       </div>
       <div class="route-information-box">
-        <p>@route.time</p>
+        <p><%= @route.time %></p>
         <p>235 exports</p>
       </div>
     <h5 class="route-owner">Ask <strong><%= link_to @route.user.username, user_path(@route.user) %></strong> for further tips!</h5>
