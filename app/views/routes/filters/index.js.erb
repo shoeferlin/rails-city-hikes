@@ -1,5 +1,7 @@
 // render the partial of the routes cards
 
-const newCards = `<%= render 'shared/cards', routes: @routes %>`
-document.querySelector("#row-for-cards").innerHTML = newCards
-
+function replaceResults() {
+  const newCards = `<%= render 'shared/cards', routes: @routes %>`
+  document.querySelector("#row-for-cards").innerHTML = newCards
+}
+replaceResults()
