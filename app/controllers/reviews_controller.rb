@@ -6,9 +6,13 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     authorize @review
     if @review.save
-      redirect_to route_path(@route)
+      respond_to do |format|
+        format.html { redirect_to route_path(@route) }
+        format.js
     else
-      render routes_path
+      respond_to do |format|
+        format.html { render routes_path }
+        format.js
     end
   end
 
@@ -21,3 +25,5 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:content, :rating)
   end
 end
+
+

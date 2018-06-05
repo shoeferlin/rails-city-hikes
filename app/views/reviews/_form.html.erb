@@ -1,4 +1,4 @@
-<%= simple_form_for([ route, review ]) do |form| %>
+<%= simple_form_for([ route, review ], remote: true) do |form| %>
   <div class="new-review-box">
   <%= form.input :content, label: "Comment", class: "review-form"%>
   <%= form.input :rating, label: "Rating", as: :radio_buttons, collection: [['5', '5'], ['4', '4'], ['3', '3'], ['2', '2'], ['1', '1']], class: "review-form" %>
