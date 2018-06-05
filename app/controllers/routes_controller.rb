@@ -150,7 +150,7 @@ class RoutesController < ApplicationController
         counter += 1
       end
     end
-    if counter.exist?
+    unless counter.nil? || counter == 0
       return (rating_sum / counter).round
     end
   end
