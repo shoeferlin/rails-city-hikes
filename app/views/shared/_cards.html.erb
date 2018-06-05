@@ -58,14 +58,27 @@
           <%= link_to(route_path(route)) do %>
             <div class="card-details col-sm-offset-6">
               <div class="card-name"><%= route.name %></div>
-              <div class="card-owner"><p>by<%= route.user.first_name %></p></div>
+              <div class="my-flex-space-between">
+                <div class="card-owner"><p>by <%= route.user.first_name %></p></div>
+                <div>
+                  <% route.avg_rating.round.to_i.times do %>
+                    <i class="fas fa-star"></i>
+                  <% end %>
+                  <% (5 - route.avg_rating.round.to_i).times do %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                </div>
+              </div>
               <div class="card-hashtags"><p>#foody #hipster #PLATZHALTER</p></div>
               <div class="card-description"><%= route.description %></div>
               <div class="route-details">
-                <p id="route-length"><%= %> km</p>
-                <p id="route-duration"><%= %> h</p>
-                <p id="route-nr-exports">exportet <%= %> times</p>
-                <p id="route-rating"><%= %></p>
+                <p id="route-length"><%= route.distance%> km</p>
+                <% if route.time.nil? || route.time == 0 %>
+                   <p id="route-duration">0 min </p>
+                <% else %>
+                  <p id="route-duration"><%= (route.time / 60).round %> h <%= (route.time - (@route.time / 60).round).round %> min </p>
+                <% end %>
+                <p id="route-nr-exports"><%= route.no_exports %> x hiked</p>
               </div>
             </div>
           <% end %>

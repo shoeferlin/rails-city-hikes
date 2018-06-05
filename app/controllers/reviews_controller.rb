@@ -7,6 +7,7 @@ class ReviewsController < ApplicationController
     @new_review = Review.new
     authorize @review
     if @review.save
+      calc_avg_rating(@route)
       respond_to do |format|
         format.html { redirect_to route_path(@route) }
         format.js
@@ -24,6 +25,7 @@ class ReviewsController < ApplicationController
     @route = Route.find(params[:route_id])
     authorize @review
     @review.destroy
+    calc_avg_rating(@route)
     redirect_to route_path(@route)
   end
 
@@ -35,6 +37,25 @@ class ReviewsController < ApplicationController
 
   def review_params_delete
     params.require(:id)
+  end
+
+  def calc_avg_rating(route)
+    reviews = Review.where(route: route.id)
+    rating_sum = 0
+    counter = 0
+    reviews.each do |r|
+      unless r.rating.nil?
+        rating_sum += r.rating.to_i
+        counter += 1
+      end
+    end
+    if counter.nil? || counter == 0
+      new_avg_rating = 0
+      Route.find(route.id).update(avg_rating: new_avg_rating)
+    else
+      new_avg_rating = (rating_sum / counter).round(2)
+      Route.find(route.id).update(avg_rating: new_avg_rating)
+    end
   end
 end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_05_132940) do
+ActiveRecord::Schema.define(version: 2018_06_05_145329) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2018_06_05_132940) do
     t.float "time", default: 0.0
     t.float "distance", default: 0.0
     t.integer "no_exports", default: 0
+    t.float "avg_rating", default: 0.0
     t.index ["city_id"], name: "index_routes_on_city_id"
     t.index ["user_id"], name: "index_routes_on_user_id"
   end
