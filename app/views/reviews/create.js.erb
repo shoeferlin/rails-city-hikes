@@ -15,5 +15,5 @@ function addReview(reviewHTML) {
   refreshReviewForm('<%= j render "reviews/form", route: @route, review: @new_review %>');
 <% end %>
 
-document.querySelector("[data-restaurant-id='<%= @restaurant.id %>']")
+document.querySelector("[data-route-id='<%= @route.id %>']")
   .remove();

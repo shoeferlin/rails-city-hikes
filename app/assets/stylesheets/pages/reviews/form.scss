@@ -68,9 +68,11 @@
 
 .abled-review-trash {
 //   color: grey !important;
+// }
 }
 
 .disabled-review-trash {
+  // color: lightgrey !important;
   color: #d0ded3 !important;
 }
 
@@ -82,10 +84,4 @@
 .review-user-name {
   display: flex;
   justify-content: space-between;
-}
-
-.review-rating {
-}
-
-.review-comment {
 }
