@@ -29,7 +29,7 @@
         <div class="col-xs-10 col-xs-offset-1">
           <div class="export-button-area">
             <%= link_to "Return to route", route_path(@route), class: "btn btn-primary export-button" %>
-            <a href=" <%= @gmaps_url %> " class="btn btn-danger export-maps">Open Google Maps</a>
+            <a href=" <%= @gmaps_url %> " target="_blank" class="btn btn-primary export-button">Open with Google Maps</a>
             <%= button_to "Send route to my email", route_send_route_email_path(@route), class: "btn btn-primary export-button" %>
             <%= button_to "Copy route to clipboard", route_send_route_clipboard_path(@route), class: "btn btn-primary export-button" %>
           </div>
