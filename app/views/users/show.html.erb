@@ -5,21 +5,22 @@
           <%= cl_image_tag @user.picture_url, height: 230, width: 230, crop: :fill, class: "profile_picture"%>
         </div>
         <div class="KPI">
+          <% if User.find(params[:id]).created_routes.joins(:reviews).average(:rating).nil? %>
+          <% else %>
+            <p class="kpi_info">Routes review:</p>
+            <%= User.find(params[:id]).created_routes.joins(:reviews).average(:rating) %>
+          <% end %>
           <p class="kpi_info">Distance walked:</p>
           <strong>TBD</strong>
-          <p class="kpi_info">Routes review:</p>
-          <%= User.find(params[:id]).created_routes.joins(:reviews).average(:rating) %>
           <p class="kpi_info"> Hiked routes: </p>
           <%= HikedRoute.where(user_id: @user.id).count %>
-          <p class="kpi_info">Created routes:</p>
-          <%= Route.where(user_id: @user.id).count %>
         </div>
       </div>
       <div class="right-box-user-profile">
         <div class="user-info">
           <div class="font-weight-bold">
             <p><strong><%= @user.first_name %></strong> </p>
-            <p>username: <strong><%= @user.username %></strong></p>
+            <p class= "username_profile"><%= @user.username  %></p>
             <% if current_user == @user %>
               <p>email: <strong><%= @user.email %></strong></p>
             <% end %>
@@ -43,27 +44,36 @@
                   <% if route.user == @user %>
                   <% @created_route = Route.where(user_id: @user.id).count %>
                     <%= link_to(route_path(route)) do %>
-                      <div class="col-sm-6 col-sm-offset-0">
-                        <div class="card card-profile" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
-                          <!-- <div class="card-id"><%= route.id %></div> -->
-                        </div>
-                       <!--  <p class="card-name"><%= route.name %></p> -->
-                      </div>
+                        <div class="group-card-profile">
+                          <div class="card-title-profile">Display Card 1</div>
+                          <div class="overlay-profile"></div>
+                          <div class=" mini-banner-profile" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
+                          </div>
+                          <div class="card-route-profile "><%= route.name %></div>
+                          <div class="card-route-profile "><%= route.description %></div>
+                       </div>
                     <% end %>
                   <% end %>
                 <% end %>
               </div>
             <div id="menu2" class="tab-pane fade">
-               <ul>
-                 <% @hiked_routes.each do |hiked_route| %>
-                  <li><%= hiked_route.name %></li>
-                  <li><%= hiked_route.description %></li>
-                  <li><%= hiked_route.city %></li>
-                <% end %>
-              </ul>
+              <% @hiked_routes.each do |hiked_route| %>
+                <div class="group-card-profile">
+                  <div class="card-title-profile">Display Card 1</div>
+                  <div class="overlay-profile"></div>
+                  <div class=" mini-banner-profile" style="background-image: url('<%=
+
+                   %>');">
+                  </div>
+                  <div class="card-route-profile "><%= hiked_route.name %></div>
+                  <div class="card-route-profile "><%= hiked_route.description %></div>
+                  <div class="card-route-profile "><%= hiked_route.city %></div>
+                </div>
+              <% end %>
             </div>
           </div>
         <div>
       </div>
     </div>
   </div>
+
