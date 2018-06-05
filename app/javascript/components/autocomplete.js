@@ -8,7 +8,7 @@ function autocomplete() {
   function initializeAutocomplete(id) {
 
     // Restrict city options
-    const currentCity = document.getElementById("currentCity");
+    const currentCity = document.getElementById("current_city");
     if (currentCity && currentCity.innerHTML != "") {
       var options = {
         componentRestrictions: {country: currentCity.innerText}
@@ -16,6 +16,7 @@ function autocomplete() {
     }
     var element = document.getElementById(id);
     if (element) {
+      console.log(currentCity)
       if (currentCity.innerHTML != "") {
         var autocomplete = new google.maps.places.Autocomplete(element, options, { types: ['geocode'] });
       }
@@ -29,7 +30,7 @@ function autocomplete() {
   function onPlaceChanged() {
 
     var place = this.getPlace();
-
+    const currentCity = document.getElementById("current_city");
     // debugger
     // console.log(place);  // Uncomment this line to view the full object returned by Google API.
 
