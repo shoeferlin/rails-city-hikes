@@ -6,9 +6,14 @@ class Routes::FiltersController < ApplicationController
     flocality = params[:city]
     freview = params[:review]
 
+    fcityid = City.where(locality: params[:city]).ids
+    p fcityid
 
-    @routes = policy_scope(Route).where(:time => ftime,
-              :distance => fdistance)
+    @routes = policy_scope(Route).where(
+                  :time => 0..ftime.to_i,
+                  :distance => 0..fdistance.to_i,
+                  :city_id => fcityid,
+                  :avg_rating => freview.to_i..5 )
     # :locality => flocality,
     # :review => freview
     p "----------------"
