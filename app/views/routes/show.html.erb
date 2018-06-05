@@ -10,7 +10,7 @@
     </div>
     <div class="show-btns">
       <%= link_to "Return", routes_path, class: "btn btn-primary" %>
-      <%= link_to "GO HIKING", route_export_path(@route), class: "btn btn-primary btn", style: "width: 40%" %>
+      <%= link_to "Go City Hiking", route_export_path(@route), class: "btn btn-primary btn", style: "width: 40%" %>
       <%= link_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
     </div>
     <h5 class="route-description"><em><%= @route.description %></em></h5>
@@ -24,16 +24,20 @@
       <div class="route-information-box">
         <p><%= @route.distance %> km</p>
         <div>
-          <% @avg_rating.times do %>
+          <% @route.avg_rating.round.to_i.times do %>
             <i class="fas fa-star"></i>
           <% end %>
-          <% (5 - @avg_rating).times do %>
+          <% (5 - @route.avg_rating).round.to_i.times do %>
             <i class="far fa-star"></i>
           <% end %>
         </div>
       </div>
       <div class="route-information-box">
-        <p><%= (@route.time / 60).round %> h <%= (@route.time - (@route.time / 60).round).round %> min </p>
+        <% if @route.time.nil? || @route.time == 0 %>
+          <p>0 min</p>
+        <% else %>
+          <p><%= (@route.time / 60).round %> h <%= (@route.time - (@route.time / 60).round).round %> min </p>
+        <% end %>
         <p><%= @route.no_exports %> x hiked</p>
       </div>
     <h5 class="route-owner">Ask <strong><%= link_to @route.user.username, user_path(@route.user) %></strong> for further tips!</h5>
