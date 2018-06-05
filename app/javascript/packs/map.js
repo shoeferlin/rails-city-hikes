@@ -11,6 +11,7 @@ function buildMap()  {
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
     const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
     const markers = JSON.parse(mapElement.dataset.waypoints);
+    console.log(markers)
     const waypoints = markers.map((point) => {
       const lnglat = new google.maps.LatLng(point)
       return({
@@ -22,7 +23,7 @@ function buildMap()  {
 
     // console.log(waypoints
 
-    markers[0].fillColor = 'blue';
+    // markers[0].fillColor = 'blue';
 
     // console.log(markers)
     map.addMarkers(markers);
@@ -49,13 +50,13 @@ function buildMap()  {
                 distance += e[0].legs[i].distance.value;
             }
             // alert((time/60).toFixed(2) + " min" + ", " + (distance/60).toFixed(2) +" km");
-            updateRouteDetails((time/60).toFixed(2), (distance/60).toFixed(2))
+            updateRouteDetails((time/60).toFixed(2), (distance/1000).toFixed(2))
 
             Rails.ajax({
               url: `/routes/${routeData.id}`,
               type: "PATCH",
               // data: `list_nr:${itemNewIndex}`,
-              data: String(`time=${(time/60).toFixed(2)}`) + "&" + String(`distance=${(distance/60).toFixed(2)}`),
+              data: String(`time=${(time/60).toFixed(0)}`) + "&" + String(`distance=${(distance/1000).toFixed(2)}`),
               success: function(data) {
                 document.getElementById("map").dataset.waypoints = JSON.stringify(data);
                 buildMap();

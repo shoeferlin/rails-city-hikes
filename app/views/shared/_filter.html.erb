@@ -2,15 +2,17 @@
   <div class="row">
     <div class="filterbox">
         <%= form_tag filtered_routes_path, method: "get", class: "form-inline", remote: true do %>
-          <%= label_tag "Duration" %>
+          <%= label_tag "Max Duration" %>
           <div id='timevar'>Duration</div>
           <%= range_field_tag 'time', params[:time], in: 1...360, step: 5%>
-          <%= label_tag "Distance" %>
+          <%= label_tag "Max Distance" %>
           <div id='distancevar'>Distance</div>
           <%= range_field_tag 'distance', params[:distance], in: 1...30, step: 1%>
           <%#= text_field_tag :distance, params[:distance], class: "form-control style-text", placeholder: "Search for distance" %>
           <%= label_tag "City" %>
           <%= select_tag :city, options_for_select(@cities.collect{|u| [u.locality]}, params[:locality].to_i)%>
+          <%= label_tag "Min Rating" %>
+          <%= select_tag :rating, options_for_select([["1",1],["2",2],["3",3],["4",4],["5",5]], params[:rating].to_i)%>
           <%= submit_tag "Filter", name: nil %>
         <% end %>
     </div>

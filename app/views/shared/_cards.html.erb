@@ -1,5 +1,6 @@
 <% card_counter = 1 %>
-<% @routes.each do |route| %>
+<% if !@routes.nil? %>
+  <% @routes.each do |route| %>
     <div class="card">
       <div class="row">
         <div class="col-sm-12">
@@ -71,4 +72,13 @@
         </div>
       </div>
     </div>
+  <% end %>
+<% else %>
+  <div class="card">
+    <div class="row">
+      <div class="col-sm-12">
+        <h4>Sorry mate! No route matches your filter options</h4>
+      </div>
+    </div>
+  </div>
 <% end %>
