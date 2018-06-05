@@ -1,9 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
+// Responsive
+@mixin responsive() {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
 
 // Video SCSS
 // .container {
 //   padding: 100px;
 // }
-
 .main-search-bar {
   position: absolute;
   z-index: 99;
@@ -66,6 +72,13 @@
     width: 100%;
 }
 
+.full-video-bg {
+  height: 85vh;
+  /* position: fixed; */
+  overflow: hidden;
+  width: 100%;
+}
+
 .flex-header-home {
   // display: flex;
   // align-items: center;
@@ -121,7 +134,7 @@
   text-align: center;
   color: $dark-green;
   margin-bottom: 5rem;
-  margin-top: 200px;
+  margin-top: 20px;
 }
 .heading h1 {
   margin-bottom: 0;
@@ -172,7 +185,6 @@ html body .heading p {
 .ui-card h3 {
   color: white;
   text-align: center;
-
 }
 .carousel-container .ui-card:after {
   content: '';
@@ -314,14 +326,6 @@ html body .heading p {
 }
 
 // timeline
-
-@import url('https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One');
-// Responsive
-@mixin responsive() {
-  @media only screen and (max-width: 767px) {
-    @content;
-  }
-}
 
 $content-font: Cardo;
 $heading-font: 'Pathway Gothic One',
