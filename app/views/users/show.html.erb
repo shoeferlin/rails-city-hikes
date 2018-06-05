@@ -19,7 +19,9 @@
             <p><strong><%= @user.first_name %></strong> </p>
             <p>username: <strong><%= @user.username %></strong></p>
             <p>routes eview</p>
-            <p>email: <strong><%= @user.email %></strong></p>
+            <% if current_user == @user %>
+              <p>email: <strong><%= @user.email %></strong></p>
+            <% end %>
           </div>
           <div class="edit_profile">
             <% if current_user == @user %>
