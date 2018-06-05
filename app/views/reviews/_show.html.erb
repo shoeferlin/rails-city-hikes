@@ -1,27 +1,23 @@
-<div class="show-review-box">
-  <% reviews.each do |r| %>
-  <div class="review" id="reviews">
-    <div class="row">
-      <div class="col-sm-2 review-user-avatar">
-        <% unless current_user.nil? %>
-          <%= image_tag r.user.picture_url.url, class: "review-avatar" %>
-        <% end %>
-      </div>
-      <div class="col-sm-2 review-user-name review-content">
-        <p><%= r.user.username %></p>
-      </div>
-      <div class="col-sm-2 review-rating review-content">
-        <% r.rating.times do %>
-          <i class="fas fa-star"></i>
-        <% end %>
-        <% (5 - r.rating).times do %>
-          <i class="far fa-star"></i>
-        <% end %>
-      </div>
-      <div class="col-sm-6 review-comment review-content">
-        <p><%= r.content %><p>
-      </div>
+<div class="review" id="reviews">
+  <div class="row">
+    <div class="col-sm-2 review-user-avatar">
+      <% unless current_user.nil? %>
+        <%= image_tag r.user.picture_url.url, class: "review-avatar" %>
+      <% end %>
+    </div>
+    <div class="col-sm-2 review-user-name review-content">
+      <p><%= r.user.username %></p>
+    </div>
+    <div class="col-sm-2 review-rating review-content">
+      <% r.rating.to_i.times do %>
+        <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - r.rating.to_i).times do %>
+        <i class="far fa-star"></i>
+      <% end %>
+    </div>
+    <div class="col-sm-6 review-comment review-content">
+      <p><%= r.content %><p>
     </div>
   </div>
-  <% end %>
 </div>

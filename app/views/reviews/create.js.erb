@@ -4,13 +4,13 @@ function refreshReviewForm(innerHTML) {
 }
 
 function addReview(reviewHTML) {
-  const reviews = document.getElementById('reviews');
-  reviews.insertAdjacentHTML('beforeend', reviewHTML);
+  const reviews = document.getElementById('show-review-box');
+  reviews.insertAdjacentHTML('beforebegin', reviewHTML);
 }
 
 <% if @review.errors.any? %>
-  refreshReviewForm('<%= j render "reviews/form", restaurant: @restaurant, review: @review %>');
+  refreshReviewForm('<%= j render "reviews/form", route: @route, review: @new_review %>');
 <% else %>
-  addReview('<%= j render "reviews/show", review: @review %>');
-  refreshReviewForm('<%= j render "reviews/form", restaurant: @restaurant, review: Review.new %>');
+  addReview('<%= j render "reviews/show", r: @review %>');
+  refreshReviewForm('<%= j render "reviews/form", route: @route, review: @new_review %>');
 <% end %>

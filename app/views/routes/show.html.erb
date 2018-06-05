@@ -24,7 +24,11 @@
   <div class="review-container">
     <h4>How did you like the tour? Do you have any suggestions?</h4>
     <%= render 'reviews/form', route: @route, review: @new_review  %>
-    <%= render 'reviews/show', reviews: @reviews %>
+    <div class="show-review-box" id="show-review-box">
+      <% @reviews.reverse.each do |review| %>
+        <%= render 'reviews/show', r: review %>
+      <% end %>
+    </div>
 </div>
 
 

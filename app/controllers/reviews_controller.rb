@@ -4,15 +4,18 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.route = @route
     @review.user = current_user
+    @new_review = Review.new
     authorize @review
     if @review.save
       respond_to do |format|
         format.html { redirect_to route_path(@route) }
         format.js
+      end
     else
       respond_to do |format|
         format.html { render routes_path }
         format.js
+      end
     end
   end
 
