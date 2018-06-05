@@ -25,6 +25,7 @@ class RoutesController < ApplicationController
     @route_pictures = @route.route_pictures.all
     @new_review = Review.new
     @reviews = Review.where(route: @route)
+    @avg_rating = calc_avg_rating(@reviews)
     @waypoints = @route.sights.map do |sight|
       position += 1
       { lat: sight.latitude,
@@ -115,6 +116,18 @@ class RoutesController < ApplicationController
 
   def params_city
     params.require(:route).permit(:city)
+  end
+
+  def calc_avg_rating(reviews)
+    rating_sum = 0
+    counter = 0
+    reviews.each do |r|
+      unless r.rating.nil?
+        rating_sum += r.rating.to_i
+        counter += 1
+      end
+    end
+    return (rating_sum / counter).round
   end
 
 end
