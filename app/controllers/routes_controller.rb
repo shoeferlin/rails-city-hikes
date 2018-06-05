@@ -150,6 +150,8 @@ class RoutesController < ApplicationController
         counter += 1
       end
     end
-    return (rating_sum / counter).round
+    if counter.exist?
+      return (rating_sum / counter).round
+    end
   end
 end
