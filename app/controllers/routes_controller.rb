@@ -55,7 +55,7 @@ class RoutesController < ApplicationController
           @route_pictures = @route.route_pictures.create!(route_picture: a, route_id: @route.id)
         end
       end
-      redirect_to route_path(@route)
+      redirect_to edit_route_path(@route)
     else
       @cities = City.all
       @route_pictures = @route.route_pictures.build
