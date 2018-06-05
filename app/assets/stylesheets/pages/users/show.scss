@@ -28,6 +28,9 @@
   flex-direction: row;
   border-radius: 10px;
   background-color: #FEFEFE;
+  margin-bottom: 132px;
+  margin-right: 97px;
+  margin-left: 104px;
 }
 
 
@@ -86,7 +89,7 @@
   padding: 38px;
 }
 
-.kpi_info {
+.kpi_info .username_profile {
  padding-top: 8px;
  margin-bottom: 0px;
  font-size: 15px;
@@ -95,4 +98,59 @@
 
 .button-edit-profile:hover {
   text-decoration: none;
+}
+
+/////////////////////////////
+
+
+.group-card-profile:hover {
+  opacity: 1;
+  background: #ccd3db;
+  transition: 1.5s infinite ease-in-out;
+}
+
+.group-card-profile {
+  float: left;
+  margin: 10px;
+  width: 220px;
+  height: 265px;
+  border-radius: 5px;
+  background-color: white;
+  margin-right: 49px;
+}
+
+.card-title-profile {
+  position: absolute;
+  padding: 30px 0 0 15px;
+  color: white;
+  font-family: proxima nova;
+  font-weight: bold;
+  font-size: 1em;
+  z-index: 1;
+}
+
+.overlay-profile{
+  position: absolute;
+  width: 220px;
+  height: 86px;
+  border-radius: 3px 3px 0 0 ;
+  background: rgba(28,36,46,0.55);
+}
+
+.mini-banner-profile {
+  width: 220px;
+  height: 125px;;
+  border-radius: 3px 3px 0 0 ;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.card-route-profile {
+  padding: 20px 10px 10px 15px;
+  color: #566270;
+  font-family: proxima nova;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 20px;
 }
