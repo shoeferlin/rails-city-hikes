@@ -5,7 +5,7 @@ function refreshReviewForm(innerHTML) {
 
 function addReview(reviewHTML) {
   const reviews = document.getElementById('show-review-box');
-  reviews.insertAdjacentHTML('beforebegin', reviewHTML);
+  reviews.insertAdjacentHTML('afterbegin', reviewHTML);
 }
 
 <% if @review.errors.any? %>
@@ -15,5 +15,4 @@ function addReview(reviewHTML) {
   refreshReviewForm('<%= j render "reviews/form", route: @route, review: @new_review %>');
 <% end %>
 
-document.querySelector("[data-route-id='<%= @route.id %>']")
-  .remove();
+document.querySelector("[data-route-id='<%= @route.id %>']").remove();
