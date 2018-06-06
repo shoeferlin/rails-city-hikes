@@ -116,7 +116,6 @@
   height: 265px;
   border-radius: 5px;
   background-color: white;
-  margin-right: 49px;
 }
 
 .card-title-profile {
@@ -147,10 +146,16 @@
 }
 
 .card-route-profile {
-  padding: 20px 10px 10px 15px;
-  color: #566270;
+  padding-left: 10px;
+  padding-top: 10px;
+  color: #8aae92;
   font-family: proxima nova;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 16px;
   line-height: 20px;
+}
+
+.tab-1-profile {
+  display: flex;
+  flex-direction: row;
 }

@@ -1,6 +1,6 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index, :edit, :fetch_wikipedia_data]
+  skip_before_action :authenticate_user!, only: [:index, :show, :fetch_wikipedia_data]
   protect_from_forgery except: :fetch_wikipedia_data
 
   def index
@@ -91,12 +91,13 @@ class RoutesController < ApplicationController
     @route.time = params[:time]
     @route.distance = params[:distance]
     authorize @route
-    # if @route.save
-    #   render json: @waypoints
-    # end
-    respond_to do |format|
-      format.html {redirect_to edit_route_path(@route)}
-      format.js # views/routes/update.js.erb
+    if @route.save
+      # render json: @waypoints
+      respond_to do |format|
+        format.js # views/routes/update.js.erb
+      end
+    else
+      raise
     end
   end
 
@@ -123,7 +124,9 @@ class RoutesController < ApplicationController
   end
 
   def destroy
-    raise
+    @route.destroy
+    authorize @route
+    redirect_to routes_path
   end
 
   private
