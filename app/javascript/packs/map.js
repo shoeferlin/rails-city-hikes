@@ -31,9 +31,9 @@ function buildMap()  {
       destination: [markers[markers.length - 1].lat, markers[markers.length - 1].lng],
       waypoints: waypoints,
       travelMode: 'walking',
-      strokeColor: 'black',
+      strokeColor: '#8aae92',
       strokeOpacity: '0.8',
-      strokeWeight: '6',
+      strokeWeight: '5',
     });
 
     map.getRoutes({
@@ -48,6 +48,7 @@ function buildMap()  {
                 time += e[0].legs[i].duration.value;
                 // console.log(time/3600)
                 distance += e[0].legs[i].distance.value;
+                console.log(distance)
             }
             // alert((time/60).toFixed(2) + " min" + ", " + (distance/60).toFixed(2) +" km");
             updateRouteDetails((time).toFixed(2), (distance/1000).toFixed(2))
@@ -59,7 +60,7 @@ function buildMap()  {
                 url: `/routes/${routeData.id}`,
                 type: "PATCH",
                 // data: `list_nr:${itemNewIndex}`,
-                data: String(`time=${(time/3600).toFixed(0)}`) + "&" + String(`distance=${(distance/1000).toFixed(2)}`),
+                data: String(`time=${(time/60).toFixed(0)}`) + "&" + String(`distance=${(distance/1000).toFixed(2)}`),
                 success: function(data) {
                   document.getElementById("map").dataset.waypoints = JSON.stringify(data);
                   // buildMap();
