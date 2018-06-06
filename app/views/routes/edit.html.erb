@@ -11,14 +11,15 @@
   <div class="row">
     <div class="grid-container">
       <div class="col-xs-5 col-sm-6 col-lg-4 edit-view">
-        <div class="current-sights edit-card">
+        <div class="current-sights edit-card" id="dragdrop">
           <h4>Sightseeing items:</h4>
           <h6 id="explanation">(Drag and drop for optimizing the route)</h6>
             <ol class="edit-list-moveable" id="movable">
               <% @route.waypoints.each do |w| %>
                 <li class="waypoint" data-id="<%= w.id %>">
-                  <%= w.sight.name%>
                   <i class="fas fa-bars"></i>
+                  <div class="w-sight-name"><%= w.sight.name%></div>
+                  <%= link_to route_sight_path(w.route, w.sight), method: :delete, data: {:confirm => 'Are you sure?'}, class:"far fa-trash-alt" do %><% end %>
                 </li>
               <% end %>
             </ol>
@@ -48,11 +49,8 @@
             <% if !@page.text.nil? %>
               <p class="info_text"><%= @page.text.first(400) %> ...<a href="<%= @page.fullurl%>"><strong> more info.</strong></a></p>
               <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
-
-              <%= button_to "Delete", route_sight_path(@route, @route.sights.last), method: :delete, class:"delete-button"%>
             <% else %>
             <h5>Sorry, we have no information about this item yet ...</h5>
-            <%= button_to "Delete", route_sight_path(@route, @route.sights.last), method: :delete, class:"delete-button"%>
             <% end %>
           <% end %>
         </div>

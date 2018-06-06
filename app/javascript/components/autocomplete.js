@@ -14,6 +14,7 @@ function autocomplete() {
         componentRestrictions: {country: currentCity.innerText}
        };
     }
+
     var element = document.getElementById(id);
     if (element) {
       if (currentCity.innerHTML != "") {
