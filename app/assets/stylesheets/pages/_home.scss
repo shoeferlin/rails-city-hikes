@@ -21,17 +21,17 @@
 .main-search-bar h4 {
   color: white;
   text-align: center;
-  font-size: 38px;
+  font-size: 46px;
 }
 
 .form-control {
   background-color: white;
   opacity: 0.8;
-  border-radius: 7px;
-  border-color: #8aae92;
+  border-radius: 4px 0 0 4px;
   border-width: 2px;
   height: 50px;
   position: relative;
+  border: none;
 }
 
 .homepage-hero-module {
@@ -49,12 +49,9 @@
 //     // display: block !important;
 // }
 .video-container {
-    // position: relative;
-    // bottom: 0%;
-    // left: 0%;
-    // height: 90vh;
-    // width: 100%;
-    // overflow: hidden;
+    height: 85vh;
+    width: 100%;
+    overflow: hidden;
 }
 .video-container .poster img {
     width: 100%;
@@ -88,11 +85,13 @@
 
 .search-button-home-page {
   position: absolute;
+  border-radius: 0 12px 12px 0 !important;
 }
 
 .search-bar-home-page {
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .btn-light {
@@ -506,6 +505,8 @@ $timeline-container-width:100%;
     font-family: $content-font;
   }
 }
+
+
 
 
 
