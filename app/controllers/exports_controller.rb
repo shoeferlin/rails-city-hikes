@@ -79,17 +79,16 @@ class ExportsController < ApplicationController
     return base_url + origin + destination + waypoints + options
   end
 
-  def create_waypoint_url
-    @waypoints = Waypoint.all
-    if @route.waypoint_ids.length <= 2
+ def create_waypoint_url
+    if @route.waypoints.length <= 2
       return ""
     else
       waypoint_url = "&waypoints="
       waypoint_array = @route.waypoint_ids
-      waypoint_array.delete_at(waypoint_array.length - 1)
-      waypoint_array.delete_at(0)
+      waypoint_array.delete(waypoint_array.first)
+      waypoint_array.delete(waypoint_array.last)
       waypoint_array.each do |waypoint|
-        waypoint_url << "#{@waypoints[waypoint].sight.latitude},#{@waypoints[waypoint].sight.longitude}|"
+        waypoint_url << "#{Sight.find(waypoint).latitude},#{Sight.find(waypoint).longitude}|"
       end
       return waypoint_url
     end
