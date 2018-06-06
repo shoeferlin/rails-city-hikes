@@ -4,7 +4,7 @@ class Sight < ApplicationRecord
   has_many :waypoints, dependent: :destroy
   has_many :routes, through: :waypoints
 
-  validates :name, uniqueness: true, presence: true
+  validates :name, presence: true
 
   geocoded_by :name
   after_validation :geocode, if: :will_save_change_to_name?
