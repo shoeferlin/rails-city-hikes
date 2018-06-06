@@ -3,33 +3,26 @@
 <div class="homepage-hero-module">
   <div class="video-container">
     <div class="filter" ></div>
-
-
-
     <div class="col-sm-6 col-sm-offset-3">
-      <div class="main-search-bar" style="margin-top: 30vh"> <!-- SH: Current bug fix -->
+      <div class="main-search-bar" style="margin-top: 20vh">
         <h4>Find inspiration for your city trip</h4>
         <%= form_tag routes_path, method: :get do %>
         <div class="search-bar-home-page">
-         <%= text_field_tag :query, params[:query], class: "form-control style-text", placeholder: "Search a city to hike..." %>
-         <%= submit_tag "Search", class:"btn btn-primary search_button_main_page" %>
-       </div>
-       <% end %>
-     </div>
-   </div>
-
-
-
-
-
-
-
-   <video autoplay loop class="fillWidth">
-    <source src="<%= asset_path "landing-page-video.mp4" %>" type="video/mp4" />
-      <source src="PATH_TO_WEBM" type="video/webm" />
-    </video>
-    <div class="poster hidden">
-      <%= image_tag "landing-page-pic.jpg" %>
+           <%= text_field_tag :query, params[:query], class: "form-control style-text", placeholder: "Search a city to hike..." %>
+            <%= submit_tag "Search", class:"btn btn-light search_button_main_page" %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="full-video-bg">
+    <video autoplay loop class="fillWidth">
+      <source src="<%= asset_path "landing-page-video.mp4" %>" type="video/mp4" />
+        <source src="PATH_TO_WEBM" type="video/webm" />
+      </video>
+      <div class="poster hidden">
+        <%= image_tag "landing-page-pic.jpg" %>
+      </div>
+      </div>
     </div>
   </div>
 </div>

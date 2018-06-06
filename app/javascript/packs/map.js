@@ -92,8 +92,10 @@ function updateRouteDetails(time, distance) {
 
 updateRouteDetails();
 
-if (route) {
-  buildMap();
-}
+
+buildMap();
+// if (!route) {
+
+// }
 
 export default buildMap;

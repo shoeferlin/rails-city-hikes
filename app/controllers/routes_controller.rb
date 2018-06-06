@@ -1,6 +1,6 @@
 class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index, :show, :fetch_wikipedia_data]
+  skip_before_action :authenticate_user!, only: [:index, :edit, :fetch_wikipedia_data]
   protect_from_forgery except: :fetch_wikipedia_data
 
   def index
@@ -26,6 +26,7 @@ class RoutesController < ApplicationController
   def show
     position = 0
     @route_pictures = @route.route_pictures.all
+    # @waypoints = Waypoint.new
     @new_review = Review.new
     @reviews = Review.where(route: @route)
     @waypoints = @route.sights.map do |sight|
@@ -55,7 +56,7 @@ class RoutesController < ApplicationController
           @route_pictures = @route.route_pictures.create!(route_picture: a, route_id: @route.id)
         end
       end
-      redirect_to route_path(@route)
+      redirect_to edit_route_path(@route)
     else
       @cities = City.all
       @route_pictures = @route.route_pictures.build
