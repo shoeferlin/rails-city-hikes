@@ -3,7 +3,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     @routes = policy_scope(Route).all
-    @hiked_routes = @user.hiked_routes # HikedRoute.where(user_id: @user.id)
+    @hiked_routes = HikedRoute.where(user_id: @user.id)
+    @customized_routes = Route.where(public: false).where(user_id: @user.id)
     # current_user.hiked_routes
   end
 
