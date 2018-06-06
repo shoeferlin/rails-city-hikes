@@ -4,11 +4,12 @@ function filterTime() {
   const timeInfo = document.getElementById("timevar")
   const time = document.getElementById("time")
 
-  timeInfo.innerHTML = `${time.value} min`
-
-  time.addEventListener("click", displayDate);
-  function displayDate() {
+  if (time != "undefined") {
     timeInfo.innerHTML = `${time.value} min`
+    time.addEventListener("click", displayDate);
+    function displayDate() {
+      timeInfo.innerHTML = `${time.value} min`
+    }
   }
 }
 

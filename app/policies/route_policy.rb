@@ -21,8 +21,12 @@ class RoutePolicy < ApplicationPolicy
     true
   end
 
+  def destroy?
+    record.user == user
+  end
+
   def update?
-    user?
+    true
   end
 
   def fetch_wikipedia_data?
