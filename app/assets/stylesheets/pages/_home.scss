@@ -31,7 +31,8 @@
   border-width: 2px;
   height: 50px;
   position: relative;
-  border: none;
+  // border: none;
+  // border-width: 2px;
 }
 
 .homepage-hero-module {
@@ -94,6 +95,12 @@
   position: relative;
 }
 
+// .style-text{
+//   border-radius: 7px;
+//   border-color: #8aae92;
+//   border-width: 2px;
+// }
+
 .btn-light {
   background-color: white;
   opacity: 0.8;
@@ -109,12 +116,12 @@
 
 // double down arrow
 .arrows {
-  text-align: center;
+
   color: $dark-green;
-  margin-left: 550px;
-  border: 1px solid $dark-green;
-  border-radius: 50%;
-  padding: 10px;
+  margin-left: 740px;
+  // border: 1px solid $dark-green;
+  // border-radius: 50%;
+  // padding: 10px;
 
 
 }

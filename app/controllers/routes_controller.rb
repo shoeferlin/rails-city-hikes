@@ -29,6 +29,7 @@ class RoutesController < ApplicationController
     # @waypoints = Waypoint.new
     @new_review = Review.new
     @reviews = Review.where(route: @route)
+    authorize @route
     @waypoints = @route.sights.map do |sight|
       position += 1
       { lat: sight.latitude,
@@ -49,6 +50,7 @@ class RoutesController < ApplicationController
     @route = Route.new(params_route)
     @route.city = City.find(params_city[:city])
     @route.user = current_user
+    @route.public = true
     authorize @route
     if @route.save
       unless params['route_pictures'].nil?

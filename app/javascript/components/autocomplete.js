@@ -14,9 +14,9 @@ function autocomplete() {
         componentRestrictions: {country: currentCity.innerText}
        };
     }
+
     var element = document.getElementById(id);
     if (element) {
-      console.log(currentCity)
       if (currentCity.innerHTML != "") {
         var autocomplete = new google.maps.places.Autocomplete(element, options, { types: ['geocode'] });
       }

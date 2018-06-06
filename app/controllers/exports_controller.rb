@@ -88,7 +88,7 @@ class ExportsController < ApplicationController
       waypoint_array.delete(waypoint_array.first)
       waypoint_array.delete(waypoint_array.last)
       waypoint_array.each do |waypoint|
-        waypoint_url << "#{Sight.find(waypoint).latitude},#{Sight.find(waypoint).longitude}|"
+        waypoint_url << "#{Waypoint.find(waypoint).sight.latitude},#{Waypoint.find(waypoint).sight.longitude}|"
       end
       return waypoint_url
     end
@@ -97,5 +97,13 @@ class ExportsController < ApplicationController
   def count_export(route)
     new_no_exports = route.no_exports += 1
     Route.find(route.id).update(no_exports: new_no_exports)
+    add_to_hiked_routes(route)
+  end
+
+  def add_to_hiked_routes(route)
+    # Check if already existing
+    if HikedRoute.where(route: route, user: current_user).empty?
+      HikedRoute.create(route: route, user: current_user)
+    end
   end
 end
