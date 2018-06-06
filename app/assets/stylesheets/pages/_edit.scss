@@ -1,3 +1,31 @@
+.banner-tiny {
+  padding-top: 20px;
+}
+
+.banner-info-route {
+  width: 900px;
+  margin: 20px auto;
+  h3 {
+    font-weight: bolder;
+    font-size: 50px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+  }
+
+}
+.route-info-header {
+  color: white;
+  text-align: center
+  // margin: 15px;
+}
+
+.banner-tiny-text {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  // width: 500px;
+}
+
 .edit-container {
   max-width: 80%;
   margin: auto auto;
@@ -173,16 +201,7 @@
   font-size: 16px;
 }
 
-.route-info-header {
-  color: white;
-  margin: 15px;
-}
 
-#banner-tiny-text {
-  display: flex;
-  justify-content: text-around;
-  text-align: center;
-}
 
 .delete-button {
   margin-top: 10px;
@@ -197,4 +216,10 @@
   opacity: 0.5;
   color: $dark-green;
 
+}
+
+.return-and-save-button {
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 7px;
 }
