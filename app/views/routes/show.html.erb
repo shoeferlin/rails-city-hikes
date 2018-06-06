@@ -20,7 +20,7 @@
     <div class="route-items"><h5>Sightseeing items:</h5></div>
     <ol>
       <% Waypoint.where(route_id: @route.id).each do |w| %>
-        <li class="route-points"><%=w.sight.name %></li>
+      <li class="route-points"><%=w.sight.name %></li>
       <% end %>
     </ol>
     <h5 class="route-information">Route information:</h5>
