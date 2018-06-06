@@ -231,7 +231,6 @@ RoutePicture.create(route_id: 5, remote_route_picture_url: "https://res.cloudina
 # Basel 06
 RoutePicture.create(route_id: 6, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528290593/m8brltlbgtehyvpd2xbu.jpg")
 RoutePicture.create(route_id: 6, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528318457/c5mw2cpwrxwz6utv6jzh.jpg")
-RoutePicture.create(route_id: 6, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528318455/rh2ssdaug5wuzzqix8dl.jpg")
 
 # Barcelona 07
 # missing
