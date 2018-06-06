@@ -25,7 +25,7 @@
             <p><strong><%= @user.first_name %></strong> </p>
             <p class= "username_profile"><%= @user.username  %></p>
             <% if current_user == @user %>
-              <p>email: <strong><%= @user.email %></strong></p>
+              <p><strong><%= @user.email %></strong></p>
             <% end %>
           </div>
           <div class="edit_profile">
@@ -48,7 +48,6 @@
             <div id="menu1" class="tab-pane fade in active tab-1-profile">
               <% @routes.each do |route| %>
                 <% if route.user == @user %>
-                  <% @created_route = Route.where(user_id: @user.id).count %>
                   <%= link_to(route_path(route)) do %>
                     <div class="group-card-profile">
                       <div class="card-title-profile"><%= route.city.locality %></div>
