@@ -209,7 +209,7 @@ RoutePicture.create(route_id: 1, remote_route_picture_url: "http://res.cloudinar
 
 # London 02
 RoutePicture.create(route_id: 2, remote_route_picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528126728/jaj1iprkvgy7brfwz55x.jpg")
-RoutePicture.create(route_id: 2, remote_route_picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528126732/ucehr34wxe74zzew3irr.jpg")
+RoutePicture.create(route_id: 2, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528321133/rlgmrnxxecdmbm0ywtuc.jpg")
 RoutePicture.create(route_id: 2, remote_route_picture_url: "http://res.cloudinary.com/dmatmwg2i/image/upload/v1528126734/mqnsoqx23go2inn08hjn.jpg")
 
 # Zurich 03
@@ -231,6 +231,7 @@ RoutePicture.create(route_id: 5, remote_route_picture_url: "https://res.cloudina
 # Basel 06
 RoutePicture.create(route_id: 6, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528290593/m8brltlbgtehyvpd2xbu.jpg")
 RoutePicture.create(route_id: 6, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528318457/c5mw2cpwrxwz6utv6jzh.jpg")
+RoutePicture.create(route_id: 6, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528321131/o7weo0nkguu3xiwgyc9m.jpg")
 
 # Barcelona 07
 # missing
