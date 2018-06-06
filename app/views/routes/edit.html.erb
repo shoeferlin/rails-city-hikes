@@ -1,11 +1,15 @@
 <div class="banner-tiny" style="background-image: linear-gradient(-225deg, rgba(0,60,20,0.6) 0%, rgba(0,36,80,0.6) 50%), url('<%= image_url 'landing-banner-tiny.jpg' %>')";>
-  <div class="return-button"><%= link_to "Return", route_path(@route), class: "btn btn-primary" %></div>
-  <div class="route-info-header"><h3><%= @route.name %></h3></div>
-  <div id="banner-tiny-text">
-    <div class="route-info-header routeinfo" id="routetime" data-waypoints="<%= @routes%>"><p>Distance: <%= @route.distance %> km</p></div>
-    <div class="route-info-header routeinfo" id="routedistance" data-waypoints="<%= @routes%>"><p>Time: <%= @route.time %> min</p></div>
+  <div class="banner-info-route">
+    <div class="route-info-header">
+      <h3><%= @route.name %></h3>
+    </div>
+    <div class="banner-tiny-text">
+      <div id="route-time" data-waypoints="<%= @routes%>"><p><i class="fas fa-walking"></i>&nbsp;&nbsp; <%= @route.distance %> km</p></div>
+      <div id="route-distance" data-waypoints="<%= @routes%>"><p><i class="far fa-clock"></i>&nbsp;&nbsp; <%= @route.time %> min</p></div>
+    </div>
   </div>
 </div>
+
 
 <div class="edit-container">
   <div class="row">
@@ -27,24 +31,24 @@
         <div class="search-sights edit-card">
           <h4>Add additional sights</h4>
           <%= simple_form_for [@route, @sight] do |f| %>
-            <%= f.input :search %>
-            <%= f.input :name, as: :hidden %>
-            <%= f.input :place_id, as: :hidden %>
-            <%= f.input :url, as: :hidden %>
-            <%= f.input :website, as: :hidden %>
-            <%= f.input :formatted_address, as: :hidden %>
-            <%= f.button :submit, class:"create-sight-btn"%>
-            <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
+          <%= f.input :search %>
+          <%= f.input :name, as: :hidden %>
+          <%= f.input :place_id, as: :hidden %>
+          <%= f.input :url, as: :hidden %>
+          <%= f.input :website, as: :hidden %>
+          <%= f.input :formatted_address, as: :hidden %>
+          <%= f.button :submit, class:"create-sight-btn"%>
+          <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
           <% end %>
           <ul id="results">
             <div id="current_city" class="hide"><%= @route.city.country.downcase %></div>
-            </ul>
+          </ul>
         </div>
         <div class="info-sights edit-card">
           <h4>Info</h4>
           <% if !@route.sights.empty? %>
-            <% @page = Wikipedia.find( @route.sights.last.name ) %>
-            <!-- <p id="infotext" class="hide"> ...</p> -->
+          <% @page = Wikipedia.find( @route.sights.last.name ) %>
+          <!-- <p id="infotext" class="hide"> ...</p> -->
           <!--  FOR NOW -->
             <% if !@page.text.nil? %>
               <p class="info_text"><%= @page.text.first(400) %> ...<a href="<%= @page.fullurl%>"><strong> more info.</strong></a></p>
@@ -54,12 +58,10 @@
             <% end %>
           <% end %>
         </div>
-
-
       </div>
     </div>
   </div>
-
+  <div class="return-and-save-button"><%= link_to "Save route and return", route_path(@route), class: "btn btn-primary" %></div>
   <div class="row">
     <!-- <div id="edit-return-btn">
     </div> -->
@@ -68,6 +70,5 @@
     </div>
   </div>
 </div>
-
 <div data-id="<%= @route.id %>" id="data-edit">
 </div>

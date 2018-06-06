@@ -1,18 +1,19 @@
 /* Main navbar */
 .navbar-wagon {
   margin: 0 auto;
-  background-color: transparent;
+  background-color: #F7F7F7;
   height: 70px;
   width: 100vw;
   padding: 0px 30px 0px 0px;
   display: flex;
   align-items: center;
   position: fixed;
-  z-index: 10;
+  z-index: 100;
   justify-content: space-between;
   text-decoration: none;
   margin-bottom: 10px;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  font-weight:bold;
 
   // transition
 }
