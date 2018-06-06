@@ -39,7 +39,7 @@
         <% if @route.time.nil? || @route.time == 0 %>
           <p>0 min</p>
         <% else %>
-          <p><%= (@route.time / 60).round %> h <%= (@route.time - (@route.time / 60).round).round %> min </p>
+          <p><%= (@route.time / 60).to_i %> h <%= (@route.time % 60).round %> min </p>
         <% end %>
         <p><%= @route.no_exports %> x hiked</p>
       </div>
