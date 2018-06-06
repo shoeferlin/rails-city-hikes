@@ -6,7 +6,7 @@ const route = document.getElementById('data-edit');
 function buildMap()  {
   const mapElement = document.getElementById('map');
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
-    const map = new GMaps({ el: '#map', lat: 0, lng: 0 });
+    const map = new GMaps({ el: '#map', lat: 48.119818, lng: 22.022720, zoom: 4 });
     const markers = JSON.parse(mapElement.dataset.waypoints);
     console.log("----")
     console.log(markers)
@@ -46,10 +46,11 @@ function buildMap()  {
             var distance = 0;
             for (var i=0; i<e[0].legs.length; i++) {
                 time += e[0].legs[i].duration.value;
+                // console.log(time/3600)
                 distance += e[0].legs[i].distance.value;
             }
             // alert((time/60).toFixed(2) + " min" + ", " + (distance/60).toFixed(2) +" km");
-            updateRouteDetails((time/60).toFixed(2), (distance/1000).toFixed(2))
+            updateRouteDetails((time).toFixed(2), (distance/1000).toFixed(2))
 
             if (document.body.contains(route)) {
               const routeData = route.dataset;
@@ -58,7 +59,7 @@ function buildMap()  {
                 url: `/routes/${routeData.id}`,
                 type: "PATCH",
                 // data: `list_nr:${itemNewIndex}`,
-                data: String(`time=${(time/60).toFixed(0)}`) + "&" + String(`distance=${(distance/1000).toFixed(2)}`),
+                data: String(`time=${(time/3600).toFixed(0)}`) + "&" + String(`distance=${(distance/1000).toFixed(2)}`),
                 success: function(data) {
                   document.getElementById("map").dataset.waypoints = JSON.stringify(data);
                   // buildMap();
@@ -82,8 +83,8 @@ function buildMap()  {
 
 function updateRouteDetails(time, distance) {
 
-  var hours = parseInt(time/60)
-  var minutes = parseInt(time % 60)
+  var hours = parseInt(time/3600)
+  var minutes = parseInt(time % 3600)
   const routeTime = document.querySelector("#routetime > p")
   const routeDistance = document.querySelector("#routedistance > p")
 
