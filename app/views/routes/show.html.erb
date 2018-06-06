@@ -9,15 +9,14 @@
       <% end %>
     </div>
     <div class="show-btns">
-      <%= link_to "Return", routes_path, class: "btn btn-primary" %>
-      <%= link_to "Go City Hiking", route_export_path(@route), class: "btn btn-primary btn", style: "width: 40%" %>
+      <%= link_to "Export", route_export_path(@route), class: "btn btn-primary btn", style: "width: 40%" %>
       <% if policy(@route).edit? %>
         <%= link_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
       <% else %>
         <%= link_to "Customize", route_dublicate_path(@route), class: "btn btn-primary" %>
       <% end %>
       <% if policy(@route).destroy? %>
-        <%= link_to route_path(@route), method: :delete, data: {:confirm => 'Are you sure?'}, class:"far fa-trash-alt" do %><% end %>
+      <%= link_to "Delete", route_path(@route), method: :delete, data: {:confirm => 'Are you sure?'}, class: "btn btn-primary" %>
       <% end %>
     </div>
     <h5 class="route-description"><em><%= @route.description %></em></h5>
@@ -31,10 +30,10 @@
       <div class="route-information-box">
         <p><%= @route.distance %> km</p>
         <div>
-          <% @route.avg_rating.round.to_i.times do %>
+          <% @route.avg_rating.round.times do %>
             <i class="fas fa-star"></i>
           <% end %>
-          <% (5 - @route.avg_rating).round.to_i.times do %>
+          <% (5 - @route.avg_rating.round).times do %>
             <i class="far fa-star"></i>
           <% end %>
         </div>
