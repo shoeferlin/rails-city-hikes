@@ -11,7 +11,10 @@
             <%= User.find(params[:id]).created_routes.joins(:reviews).average(:rating) %>
           <% end %>
           <p class="kpi_info">Distance walked:</p>
-          <strong>TBD</strong>
+          <% @hiked_routes.each do |hiked_route| %>
+            <p><%= hiked_route.route.distance %></p>
+         <% end %>
+
           <p class="kpi_info"> Hiked routes: </p>
           <%= HikedRoute.where(user_id: @user.id).count %>
         </div>
@@ -48,17 +51,17 @@
                   <% @created_route = Route.where(user_id: @user.id).count %>
                     <%= link_to(route_path(route)) do %>
                       <div class="group-card-profile">
-                        <div class="card-title-profile">Display Card 1</div>
+                        <div class="card-title-profile"><%= route.city.locality %></div>
                         <div class="overlay-profile"></div>
                         <div class=" mini-banner-profile" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
                         </div>
-                        <p class="card-route-profile>"<%= route.name %></p>
-                        <p class="card-route-profile"> <%= @route.distance %> km</p>
-                        <div>
-                          <% @route.avg_rating.round.to_i.times do %>
+                        <div class="card-route-profile"><%= route.name %></div>
+                        <div class="card-route-profile"><%= route.distance %> km</div>
+                        <div class="card-route-profile">
+                          <% route.avg_rating.round.to_i.times do %>
                             <i class="fas fa-star"></i>
                           <% end %>
-                          <% (5 - @route.avg_rating).round.to_i.times do %>
+                          <% (5 - route.avg_rating).round.to_i.times do %>
                             <i class="far fa-star"></i>
                           <% end %>
                         </div>
