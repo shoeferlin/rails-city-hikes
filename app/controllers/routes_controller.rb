@@ -50,6 +50,7 @@ class RoutesController < ApplicationController
     @route = Route.new(params_route)
     @route.city = City.find(params_city[:city])
     @route.user = current_user
+    @route.public = true
     authorize @route
     if @route.save
       unless params['route_pictures'].nil?

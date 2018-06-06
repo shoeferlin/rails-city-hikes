@@ -11,7 +11,7 @@ class Route < ApplicationRecord
   validates :city, presence: true
   validates :user, presence: true
   validates :name, presence: true
-  validates :description, presence: true, length: { minimum: 20 }
+  validates :description, presence: true, length: { minimum: 10 }
 
   scope :active, -> { where(public: true) }
   scope :owned_by, ->(owner) { where(user: owner) }
