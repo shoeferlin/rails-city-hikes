@@ -18,7 +18,7 @@ class RoutePolicy < ApplicationPolicy
   end
 
   def edit?
-    true
+    record.user == user
   end
 
   def destroy?

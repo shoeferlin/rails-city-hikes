@@ -29,6 +29,7 @@ class RoutesController < ApplicationController
     # @waypoints = Waypoint.new
     @new_review = Review.new
     @reviews = Review.where(route: @route)
+    authorize @route
     @waypoints = @route.sights.map do |sight|
       position += 1
       { lat: sight.latitude,

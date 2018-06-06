@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'dublicates/create'
   devise_for :users
   root to: 'pages#home'
 
@@ -7,7 +8,8 @@ Rails.application.routes.draw do
   resources :routes do
     get '/fetch_wikipedia_data', to: 'routes#fetch_wikipedia_data'
     get '/filter', to: 'routes#filter'
-    get '/save_time_and_date', to: 'routes#save_time_and_date'
+    # get '/save_time_and_date', to: 'routes#save_time_and_date'
+    get '/dublicate', to: 'dublicates#create'
     resources :reviews, only: [:create, :destroy]
     resources :sights, only: [:destroy, :create]
     get 'export', to: 'exports#show', as: :export

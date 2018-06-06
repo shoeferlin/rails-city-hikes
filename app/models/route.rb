@@ -12,4 +12,21 @@ class Route < ApplicationRecord
   validates :user, presence: true
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 20 }
+
+  def duplicate(user)
+    new_route = self.dup
+    new_route.user = user
+    new_route.public = false
+    new_route.no_exports = 0
+    self.waypoints.each do |wp|
+      new_waypoint = wp.dup
+      new_waypoint.route = new_route
+      new_waypoint.save
+    end
+    # self.pictures.each do |p|
+
+    # end
+    new_route.save
+    return new_route
+  end
 end
