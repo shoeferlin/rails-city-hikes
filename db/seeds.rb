@@ -167,18 +167,16 @@ Sight.create(name: "Museumsinsel", description: nil, latitude: 52.5169328, longi
 # 52 Sight - Basel
 Sight.create(name: "Messeplatz", description: nil, latitude: 47.5641988, longitude: 7.6012624, place_id: "ChIJl3N1mLm5kUcRPAfsHAfxa-o", url: "https://maps.google.com/?q=Messepl.,+4058+Basel,+Schweiz&ftid=0x4791b9b998757397:0xea6bf1071cec073c", website: "undefined", formatted_address: "Messepl., 4058 Basel, Schweiz")
 # 53 Sight - Basel
-Sight.create(name: "Mittlere Brücke", description: nil, latitude: 47.5602326, longitude: 7.5899471, place_id: "ChIJ72K5_a65kUcRplJPdA3Y6pE", url: "https://maps.google.com/?q=Mittlere+Br%C3%BCcke,+Basel,+Schweiz&ftid=0x4791b9aefdb962ef:0x91ead80d744f52a6", website: "undefined", formatted_address: "Mittlere Brücke, Basel, Schweiz")
-# 54 Sight - Basel
 Sight.create(name: "Rathaus Basel-Stadt", description: nil, latitude: 47.558214, longitude: 7.5882969, place_id: "ChIJ51SpiK65kUcRxZ7mx38UAeY", url: "https://maps.google.com/?cid=16573550642747317957", website: "http://www.bs.ch/", formatted_address: "Marktpl. 9, 4001 Basel, Schweiz")
-# 55 Sight - Basel
+# 54 Sight - Basel
 Sight.create(name: "Basler Münster", description: nil, latitude: 47.5564619, longitude: 7.5924433, place_id: "ChIJFfY3F7K5kUcRBLOR8yiVdoQ", url: "https://maps.google.com/?q=4051+Basel,+Schweiz&ftid=0x4791b9b21737f615:0x84769528f391b304", website: "undefined", formatted_address: "4051 Basel, Schweiz")
-# 56 Sight - Basel
+# 55 Sight - Basel
 Sight.create(name: "Barfüsserplatz", description: nil, latitude: 47.5547904, longitude: 7.5893222, place_id: "ChIJ2d8Eda25kUcRAY_QVFveWUw", url: "https://maps.google.com/?q=Barf%C3%BCsserpl.,+Basel,+Schweiz&ftid=0x4791b9ad7504dfd9:0x4c59de5b54d08f01", website: "undefined", formatted_address: "Barfüsserpl., Basel, Schweiz")
-# 57 Sight - Basel
+# 56 Sight - Basel
 Sight.create(name: "Tinguely Brunnen", description: nil, latitude: 47.5536929, longitude: 7.5906116, place_id: "ChIJq_FIbq25kUcRN7BLbnUILUY", url: "https://maps.google.com/?cid=5056707257061584951", website: "https://www.basel.com/de/Media/Attraktionen/Sehenswuerdigkeiten/Tinguely-Brunnen", formatted_address: "Klostergasse 7, 4051 Basel, Schweiz")
-# 58 Sight - Basel
+# 57 Sight - Basel
 Sight.create(name: "Kunstmuseum", description: nil, latitude: 47.5540319, longitude: 7.5941927, place_id: "ChIJlSWhqbO5kUcR9L7iGbS--_w", url: "https://maps.google.com/?cid=18229373597449895668", website: "undefined", formatted_address: "4051 Basel, Schweiz")
-# 59 Sight - Basel
+# 58 Sight - Basel
 Sight.create(name: "Fähribödeli", description: nil, latitude: 47.5567677, longitude: 7.593131, place_id: "ChIJUashJLK5kUcRofmf8rnEcao", url: "https://maps.google.com/?q=F%C3%A4hrib%C3%B6deli,+4051+Basel,+Schweiz&ftid=0x4791b9b22421ab51:0xaa71c4b9f29ff9a1", website: "undefined", formatted_address: "Fähribödeli, 4051 Basel, Schweiz")
 
 ### ROUTES ###
@@ -191,13 +189,14 @@ Route.create(name: "The City", time: 122, distance: 9.5, no_exports: 38, avg_rat
 # Zurich 03
 Route.create(name: "Picturesque Zurich", time: 15, distance: 1.1, no_exports: 23, avg_rating: 0.0, description: "The city of Zurich, a global center for banking and finance, lies at the north end of Lake Zurich in northern Switzerland. The picturesque lanes of the central Altstadt (Old Town), on either side of the Limmat River, reflect its pre-medieval history. Waterfront promenades like the Limmatquai follow the river toward the 17th-century Rathaus (town hall).", public: true, user_id: 2, city_id: 7)
 # Berlin 04
-Route.create(name: "Traditional tour", no_exports: 53, avg_rating: 4.0, description: "Most iconic sightseeing spots of Germany's capital.", public: true, user_id: 5, city_id: 1)
+Route.create(name: "Traditional tour", time: 183, distance: 14.6, no_exports: 53, avg_rating: 4.0, description: "Most iconic sightseeing spots of Germany's capital.", public: true, user_id: 5, city_id: 1)
 # Berlin 05
-Route.create(name: "Historic Berlin and 'Kietz' Tour", no_exports: 45, avg_rating: 5.0, description: "Historic sites such like the East Side Galery and truely Berlin places like the Mauerpark", public: true, user_id: 1, city_id: 1)
+Route.create(name: "Historic Berlin and 'Kietz' Tour", time: 201, distance: 16.1, no_exports: 45, avg_rating: 5.0, description: "Historic sites such like the East Side Galery and truely Berlin places like the Mauerpark", public: true, user_id: 1, city_id: 1)
 # Basel 06
-Route.create(name: "Tour through Basel", no_exports: 14, description: "Basel is a city on the Rhine River in northwest Switzerland, close to the country’s borders with France and Germany. Its medieval old town centers around Marktplatz, dominated by the 16th-century, red-sandstone Town Hall. Its 12th-century Gothic cathedral has city views, and contains the tomb of the 16th-century Dutch scholar, Erasmus. The city’s university houses some of Erasmus’ works.", public: true, user_id: 7, city_id: 10)
+Route.create(name: "Tour through Basel", time: 50, distance: 3.8, no_exports: 14, avg_rating: 4.33, description: "Basel is a city on the Rhine River in northwest Switzerland, close to the country’s borders with France and Germany. Its medieval old town centers around Marktplatz, dominated by the 16th-century, red-sandstone Town Hall. Its 12th-century Gothic cathedral has city views, and contains the tomb of the 16th-century Dutch scholar, Erasmus. The city’s university houses some of Erasmus’ works.", public: true, user_id: 7, city_id: 10)
 # Barcelona 07
 # missing
+
 
 ### ROUTE PICTURES ###
 puts "Generating route pictures ..."
@@ -297,13 +296,21 @@ Waypoint.create(route_id: 5, sight_id: 48)
 Waypoint.create(route_id: 5, sight_id: 49)
 Waypoint.create(route_id: 5, sight_id: 50)
 Waypoint.create(route_id: 5, sight_id: 51)
+# Basel 06
+Waypoint.create(route_id: 6, sight_id: 52)
+Waypoint.create(route_id: 6, sight_id: 53)
+Waypoint.create(route_id: 6, sight_id: 54)
+Waypoint.create(route_id: 6, sight_id: 55)
+Waypoint.create(route_id: 6, sight_id: 56)
+Waypoint.create(route_id: 6, sight_id: 57)
+Waypoint.create(route_id: 6, sight_id: 58)
 
 ### REVIEWS ###
 
 puts "Generating reviews ..."
 
 # Munich 01
-Review.create(user_id: 1, content: "Indeed a great route for my home town.", rating: 8, route_id: 1)
+Review.create(user_id: 8, content: "Indeed a great route for my home town.", rating: 5, route_id: 1)
 Review.create(user_id: 3, content: "A bit short but besides that nice.", rating: 4, route_id: 1)
 # London 02
 Review.create(user_id: 2, content: "Too touristic in my opinion.", rating: 3, route_id: 2)
