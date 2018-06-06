@@ -14,10 +14,10 @@
             <div class="route-information-box">
               <p><%= @route.distance %> km</p>
               <div>
-                <% @route.avg_rating.round.to_i.times do %>
+                <% @route.avg_rating.round.times do %>
                   <i class="fas fa-star"></i>
                 <% end %>
-                <% (5 - @route.avg_rating).round.to_i.times do %>
+                <% (5 - @route.avg_rating.round).times do %>
                   <i class="far fa-star"></i>
                 <% end %>
               </div>
