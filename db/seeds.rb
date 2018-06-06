@@ -97,6 +97,40 @@ Sight.create(name: "Fraumünster", description: nil, latitude: 47.3697263, longi
 Sight.create(name: "Paradeplatz", description: nil, latitude: 47.3697169, longitude: 8.5389227, place_id: "ChIJHYeS-AAKkEcRqsyc1rHPZN4", url: "https://maps.google.com/?cid=16025161736807828650", website: "http://www.zuerich.com/de/besuchen/sehenswuerdigkeiten/paradeplatz", formatted_address: "8001 Zürich, Schweiz")
 # 22 Sight - Zurich
 Sight.create(name: "Bellevueplatz", description: nil, latitude: 47.3674026, longitude: 8.5452856, place_id: "ChIJ1eMiRKugmkcRItG-L2hqlHs", url: "https://maps.google.com/?q=Bellevuepl.,+8001+Z%C3%BCrich,+Schweiz&ftid=0x479aa0ab4422e3d5:0x7b946a682fbed122", website: "undefined", formatted_address: "Bellevuepl., 8001 Zürich, Schweiz")
+# # 23 Sight - Berlin
+# Sight.create(name: "U-Bahnhof Kurfürstendamm", description: nil, latitude: 52.5034297, longitude: 13.3308759, place_id: "ChIJuywrwv5QqEcRAtmMnjiQ3go", url: "https://maps.google.com/?cid=783221958061644034", website: "http://www.bvg.de/", formatted_address: "Kurfürstendamm 18, 10719 Berlin, Deutschland")
+# # 24 Sight - Berlin
+# Sight.create(name: "Kaufhaus des Westens", description: nil, latitude: 52.5016021, longitude: 13.340993, place_id: "ChIJYb9yIlRQqEcR7A7Zwwy7q-0", url: "https://maps.google.com/?cid=17125987671506226924", website: "http://www.kadewe.de/", formatted_address: "Tauentzienstraße 21-24, 10789 Berlin, Deutschland")
+# # 25 Sight - Berlin
+# Sight.create(name: "Lützowplatz", description: nil, latitude: 52.5049577, longitude: 13.3517555, place_id: "ChIJ0ed9p1JQqEcR9o9tj4yuBD0", url: "https://maps.google.com/?q=L%C3%BCtzowpl.,+10785+Berlin,+Deutschland&ftid=0x47a85052a77de7d1:0x3d04ae8c8f6d8ff6", website: "undefined", formatted_address: "Lützowpl., 10785 Berlin, Deutschland")
+# # 26 Sight - Berlin
+# Sight.create(name: "Berliner Philharmonie", description: nil, latitude: 52.5100319, longitude: 13.369693, place_id: "ChIJK_QFBbZRqEcRZgBlwtwfnv0", url: "https://maps.google.com/?cid=18275079370930716774", website: "http://www.berliner-philharmoniker.de/", formatted_address: "Herbert-von-Karajan-Straße 1, 10785 Berlin, Deutschland")
+# # 27 Sight - Berlin
+# Sight.create(name: "Topographie des Terrors", description: nil, latitude: 52.5066836, longitude: 13.3837024, place_id: "ChIJx3iXOMxRqEcRSGbJBczVSzc", url: "https://maps.google.com/?cid=3984513367586465352", website: "http://www.topographie.de/", formatted_address: "Niederkirchnerstraße 8, 10963 Berlin, Deutschland")
+# # 28 Sight - Berlin
+
+# # 29 Sight - Berlin
+# Sight.create(name: "Gendarmenmarkt", description: nil, latitude: 52.5137224, longitude: 13.3926698, place_id: "ChIJ4ZsybtpRqEcRkDdXJvRC7Wk", url: "https://maps.google.com/?cid=7632830559845562256", website: "http://www.berlin.de/sehenswuerdigkeiten/3560277-3558930-gendarmenmarkt.html", formatted_address: "Gendarmenmarkt, 10117 Berlin, Deutschland")
+# # 30 Sight - Berlin
+# Sight.create(name: "Alexanderplatz", description: nil, latitude: 52.5223199, longitude: 13.4130839, place_id: "ChIJbygR2x5OqEcRbhbkZsMB_DA", url: "https://maps.google.com/?cid=3529698146708100718", website: "http://www.berlin.de/orte/sehenswuerdigkeiten/alexanderplatz/index.en.php", formatted_address: "10178 Berlin, Deutschland")
+# # 31 Sight - Berlin
+# Sight.create(name: "Rotes Rathaus", description: nil, latitude: 52.5182775, longitude: 13.4086443,  place_id: "ChIJ-wu_VyBOqEcREIpNwwVGbM8", url: "https://maps.google.com/?q=Rathausstra%C3%9Fe+15,+10178+Berlin,+Deutschland&ftid=0x47a84e2057bf0bfb:0xcf6c4605c34d8a10", website: "undefined", formatted_address: "Rathausstraße 15, 10178 Berlin, Deutschland")
+# # 32 Sight - Berlin
+# Sight.create(name: "DDR Museum", description: nil, latitude: 52.5196077, longitude: 13.4027331, place_id: "ChIJVzpGU95RqEcRZJgnyr-ZDC0", url: "https://maps.google.com/?cid=3246138480436680804", website: "http://www.ddr-museum.de/", formatted_address: "Karl-Liebknecht-Str. 1, 10178 Berlin, Deutschland")
+# # 33 Sight - Berlin
+# Sight.create(name: "Berliner Dom", description: nil, latitude: 52.5190608, longitude: 13.401078, place_id: "ChIJS9HC895RqEcR_IovsNVoDng", url: "https://maps.google.com/?cid=8650967201218530044", website: "http://www.berlinerdom.de/", formatted_address: "Am Lustgarten, 10178 Berlin, Deutschland")
+# # 34 Sight - Berlin
+# Sight.create(name: "Humboldt-Universität zu Berlin", description: nil, latitude: 52.517883, longitude: 13.3936551, place_id: "ChIJI0K8KtZNqEcRxSbyV3Fx5Kk", url: "https://maps.google.com/?cid=12242034418720581317", website: "http://www.hu-berlin.de/", formatted_address: "Unter den Linden 6, 10099 Berlin, Deutschland")
+# # 35 Sight - Berlin
+# Sight.create(name: "Reichstag/Bundestag (Berlin)", description: nil, latitude: 52.5186202, longitude: 13.3761872, place_id: "ChIJ3ZW8FcdRqEcR_Sr2-JA2adA", url: "https://maps.google.com/?cid=15017594428723702525", website: "undefined", formatted_address: "10557 Berlin, Deutschland")
+# # 36 Sight - Berlin
+# Sight.create(name: "Washingtonplatz/Hauptbahnhof (Berlin)", description: nil, latitude: 52.5237268, longitude: 13.3705458, place_id: "ChIJJ1TEEr5RqEcRcksOsreSXZc", url: "https://maps.google.com/?cid=10907035190225161074", website: "undefined", formatted_address: "10557 Berlin, Deutschland")
+# # 37 Sight - Berlin
+# Sight.create(name: "Schloss Bellevue (Berlin)", description: nil, latitude: 52.5175726, longitude: 13.3527928, place_id: "ChIJsV82gqVRqEcRlcNO0FcZ31w", url: "https://maps.google.com/?cid=6692095436243518357", website: "undefined", formatted_address: "10557 Berlin, Deutschland")
+# # 38 Sight - Berlin
+# Sight.create(name: "Siegessäule", description: nil, latitude: 52.5145434, longitude: 13.3501189, place_id: "ChIJgQruLq9RqEcRwS0DyIYw7V0", url: "https://maps.google.com/?q=Tiergarten,+10557+Berlin,+Deutschland&ftid=0x47a851af2eee0a81:0x5ded3086c8032dc1", website: "undefined", formatted_address: "Tiergarten, 10557 Berlin, Deutschland")
+# # 39 Sight - Berlin
+# Sight.create(name: "Zoologischer Garten Berlin", description: nil, latitude: 52.5079196, longitude: 13.3377547, place_id: "ChIJaW_IvapRqEcRfq6A6TrrOYE", url: "https://maps.google.com/?cid=9311732342823366270", website: "http://www.zoo-berlin.de/", formatted_address: "Hardenbergplatz 8, 10787 Berlin, Deutschland")
 
 
 ### ROUTES ###
@@ -108,7 +142,9 @@ Route.create(name: "Beautiful Munich in one afternoon", time: 132, distance: 9.9
 Route.create(name: "The City", time: 122, distance: 9.5, no_exports: 38, avg_rating: 4.0, description: "London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations. Across the Thames River, the London Eye observation wheel provides panoramic views of the South Bank cultural complex, and the entire city.", public: true, user_id: 4, city_id: 4)
 # Zurich 03
 Route.create(name: "Picturesque Zurich", time: 15, distance: 1.1, no_exports: 23, avg_rating: 0.0, description: "The city of Zurich, a global center for banking and finance, lies at the north end of Lake Zurich in northern Switzerland. The picturesque lanes of the central Altstadt (Old Town), on either side of the Limmat River, reflect its pre-medieval history. Waterfront promenades like the Limmatquai follow the river toward the 17th-century Rathaus (town hall).", public: true, user_id: 2, city_id: 7)
-
+# # Berlin 04
+# Route.create(name: "Traditional tour", no_exports: 53, description: "Most iconic sightseeing spots of Germany's capital.", public: true, user_id: 4, city_id: 1)
+# # Berlin 05
 
 ### ROUTE PICTURES ###
 puts "Generating route pictures ..."
@@ -126,6 +162,10 @@ RoutePicture.create(route_id: 2, remote_route_picture_url: "http://res.cloudinar
 
 # Zurich 03
 RoutePicture.create(route_id: 3, remote_route_picture_url: "https://images.pexels.com/photos/161138/grossmunster-church-tower-church-tower-161138.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+
+# Berlin 04
+
+# Berlin 05
 
 ### WAYPOINTS ###
 puts "Generating waypoints ..."
