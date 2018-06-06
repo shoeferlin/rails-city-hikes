@@ -1,7 +1,8 @@
 class RoutePolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.active.or(scope.owned_by(user))
+      # scope.where(public: true).or(scope.where(public: false, user: user))
     end
   end
 

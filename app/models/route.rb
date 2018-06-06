@@ -13,6 +13,9 @@ class Route < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 20 }
 
+  scope :active, -> { where(public: true) }
+  scope :owned_by, ->(owner) { where(user: owner) }
+
   def duplicate(user)
     new_route = self.dup
     new_route.user = user
@@ -23,9 +26,11 @@ class Route < ApplicationRecord
       new_waypoint.route = new_route
       new_waypoint.save
     end
-    # self.pictures.each do |p|
-
-    # end
+    self.route_pictures.each do |p|
+      @dup_p = p.dup
+      @dup_p.route = new_route
+      @dup_p.save
+    end
     new_route.save
     return new_route
   end
