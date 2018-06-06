@@ -5,7 +5,7 @@
     <div class="filter" ></div>
     <div class="col-sm-6 col-sm-offset-3">
       <div class="main-search-bar" style="margin-top: 30vh">
-        <h4>Find inspiration for your city trip</h4>
+        <h4>Get inspired on your journey</h4>
         <%= form_tag routes_path, method: :get do %>
         <div class="search-bar-home-page">
            <%= text_field_tag :query, params[:query], class: "form-control style-text", placeholder: "Search a city to hike..." %>
@@ -14,15 +14,8 @@
         <% end %>
       </div>
     </div>
-    <div class="full-video-bg">
-    <video autoplay loop class="fillWidth">
-      <source src="<%= asset_path "landing-page-video.mp4" %>" type="video/mp4" />
-        <source src="PATH_TO_WEBM" type="video/webm" />
-      </video>
-      <div class="poster hidden">
-        <%= image_tag "landing-page-pic.jpg" %>
-      </div>
-      </div>
+    <div class="full-video-bg"  style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.4) 50%, rgba(150,150,150,0.6) 90%), url('<%= image_url 'background-planning-trip' %>');">
+      <img src="landing-page-pic.jpg" alt="">
     </div>
   </div>
 </div>
