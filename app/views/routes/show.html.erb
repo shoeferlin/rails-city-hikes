@@ -11,7 +11,11 @@
     <div class="show-btns">
       <%= link_to "Return", routes_path, class: "btn btn-primary" %>
       <%= link_to "Go City Hiking", route_export_path(@route), class: "btn btn-primary btn", style: "width: 40%" %>
-      <%= link_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
+      <% if policy(@route).edit? %>
+        <%= link_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to "Customize", route_dublicate_path(@route), class: "btn btn-primary" %>
+      <% end %>
       <% if policy(@route).destroy? %>
         <%= link_to route_path(@route), method: :delete, data: {:confirm => 'Are you sure?'}, class:"far fa-trash-alt" do %><% end %>
       <% end %>

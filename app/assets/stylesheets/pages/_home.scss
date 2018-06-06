@@ -31,7 +31,8 @@
   border-width: 2px;
   height: 50px;
   position: relative;
-  border: none;
+  // border: none;
+  // border-width: 2px;
 }
 
 .homepage-hero-module {
@@ -92,6 +93,12 @@
   display: flex;
   flex-direction: row;
   position: relative;
+}
+
+.style-text{
+  border-radius: 7px;
+  border-color: #8aae92;
+  border-width: 2px;
 }
 
 .btn-light {
