@@ -22,11 +22,11 @@
     </div>
     <h5 class="route-description"><em><%= @route.description %></em></h5>
     <div class="route-items"><h5>Sightseeing items:</h5></div>
-    <% Waypoint.where(route_id: @route.id).each do |w| %>
-    <ul>
+    <ol>
+      <% Waypoint.where(route_id: @route.id).each do |w| %>
       <li class="route-points"><%=w.sight.name %></li>
-    </ul>
-    <% end %>
+      <% end %>
+    </ol>
     <h5 class="route-information">Route information:</h5>
       <div class="route-information-box">
         <p><%= @route.distance %> km</p>
@@ -43,7 +43,7 @@
         <% if @route.time.nil? || @route.time == 0 %>
           <p>0 min</p>
         <% else %>
-          <p><%= (@route.time / 60).round %> h <%= (@route.time - (@route.time / 60).round).round %> min </p>
+          <p><%= (@route.time / 60).to_i %> h <%= (@route.time % 60).round %> min </p>
         <% end %>
         <p><%= @route.no_exports %> x hiked</p>
       </div>

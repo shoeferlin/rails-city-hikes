@@ -78,7 +78,7 @@
                 <% if route.time.nil? || route.time == 0 %>
                    <p id="route-duration">0 min </p>
                 <% else %>
-                  <p id="route-duration"><%= (route.time / 60).round %> h <%= (route.time - (route.time / 60).round * 60).round %> min </p>
+                  <p id="route-duration"><%= (route.time / 60).to_i %> h <%= (route.time % 60).round %> min </p>
                 <% end %>
                 <p id="route-nr-exports"><%= route.no_exports %> x hiked</p>
               </div>

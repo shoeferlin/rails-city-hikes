@@ -1,20 +1,37 @@
 <div class="container">
   <div class="row">
-    <div class="filterbox">
-        <%= form_tag filtered_routes_path, method: "get", class: "form-inline", remote: true do %>
-          <%= label_tag "Max Duration" %>
-          <div id="timevar">Duration</div>
-          <%= range_field_tag 'time', params[:time], in: 0...360, step: 10%>
-          <%= label_tag "Max Distance" %>
-          <div id="distancevar">Distance</div>
-          <%= range_field_tag 'distance', params[:distance], in: 0...30, step: 1%>
-          <%#= text_field_tag :distance, params[:distance], class: "form-control style-text", placeholder: "Search for distance" %>
-          <%= label_tag "City" %>
-          <%= select_tag :city, options_for_select(@cities.collect{|u| [u.locality]}, params[:locality].to_i)%>
-          <%= label_tag "Min Rating" %>
-          <%= select_tag :rating, options_for_select([["0",0.00],["1",1.00],["2",2.00],["3",3.00],["4",4.00],["5",5.00]], params[:rating].to_i)%>
-          <%= submit_tag "Filter", name: nil %>
-        <% end %>
+    <div class="filter">
+      <%= form_tag filtered_routes_path, method: "get", class: "form-inline", remote: true do %>
+      <div class="filter-duration">
+        <%= label_tag "Max Duration" %>
+        <div id="timevar">Duration</div>
+        <%= range_field_tag 'time', params[:time], in: 0...360, step: 10%>
+      </div>
+
+      <div class="filter-distance">
+        <%= label_tag "Max Distance" %>
+        <div id="distancevar">Distance</div>
+        <%= range_field_tag 'distance', params[:distance], in: 0...30, step: 1%>
+        <%#= text_field_tag :distance, params[:distance], class: "form-control style-text", placeholder: "Search for distance" %>
+      </div>
+
+
+      <div class="row-city">
+        <div class="filter-details">
+          <div class="filter-city">
+            <%= label_tag "City" %>
+            <%= select_tag :city, options_for_select(@cities.collect{|u| [u.locality]}, params[:locality].to_i)%>
+          </div>
+          <div class="filter-rating">
+            <%= label_tag "Rating" %>
+            <%= select_tag :rating, options_for_select([["0 stars",0.00],["1 stars",1.00],["2 stars",2.00],["3 stars",3.00],["4 stars",4.00],["5 stars",5.00]], params[:rating].to_i)%>
+          </div>
+          <% end %>
+        </div>
+        <div class="filter-button">
+          <%= submit_tag "Apply", name: nil, class:"btn btn-primary"%>
+        </div>
+      </div>
     </div>
   </div>
 </div>
