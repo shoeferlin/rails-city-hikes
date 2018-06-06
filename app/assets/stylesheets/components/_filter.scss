@@ -1,0 +1,84 @@
+.filterbox {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.form-inline {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.filter-bars {
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.filter-duration {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 20px;
+  label {
+    color: $dark-green;
+    font-size: 18px;
+  }
+}
+
+.filter-distance {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 20px;
+  label {
+    color: $dark-green;
+    font-size: 18px;
+  }
+}
+
+.filter-details {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+.filter-city {
+  display: flex;
+  flex-direction: column;
+  padding-right: 50px;
+  label {
+    padding-bottom: 5px;
+    color: $dark-green;
+    font-size: 18px;
+  }
+}
+
+.filter-rating {
+  display: flex;
+  flex-direction: column;
+  padding-right: 80px;
+  label {
+    padding-bottom: 5px;
+    color: $dark-green;
+    font-size: 18px;
+  }
+}
+
+.row-city {
+  display: flex;
+  justify-content: space-around;
+}
+
+.filter-button {
+  padding-top: 35px;
+
+}
+
+
+
+
+
+
+
