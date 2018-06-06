@@ -224,13 +224,14 @@ RoutePicture.create(route_id: 4, remote_route_picture_url: "https://res.cloudina
 
 # Berlin 05
 RoutePicture.create(route_id: 5, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528290567/nhjn5xxryd1jbtnl5euo.jpg") # East Side Gallery
-RoutePicture.create(route_id: 5, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528290574/ro7zychmprhigyoavooc1.jpg") # Mauerparm
+RoutePicture.create(route_id: 5, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528290574/ro7zychmphigyoavooc1.jpg") # Mauerpark
 RoutePicture.create(route_id: 5, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528290565/avmwx8uzvneku7ouof1y.jpg") # Berghain
 RoutePicture.create(route_id: 5, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528290576/clx2ht3ygiyjnhgzrq2f.jpg") # East Side Gallery Art
 RoutePicture.create(route_id: 5, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528290560/sfr5xtyval6zqjgcrkn6.jpg") # Oberbaumbruecke
 
 # Basel 06
 RoutePicture.create(route_id: 6, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528290593/m8brltlbgtehyvpd2xbu.jpg")
+RoutePicture.create(route_id: 6, remote_route_picture_url: "https://images.unsplash.com/photo-1526572728358-228f6b8ca29b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=899c82e8b46ab8a6a6c1fd2aa7247a36&auto=format&fit=crop&w=2596&q=80")
 
 # Barcelona 07
 # missing
