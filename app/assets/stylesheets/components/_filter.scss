@@ -4,6 +4,12 @@
 
 }
 
+label {
+  color: $dark-green;
+  font-size: 18px;
+  font-weight: lighter;
+}
+
 .form-inline {
   display: flex;
   justify-content: space-around;
@@ -21,10 +27,6 @@
   flex-direction: column;
   width: 300px;
   margin-top: 20px;
-  label {
-    color: $dark-green;
-    font-size: 18px;
-  }
 }
 
 .filter-distance {
@@ -32,10 +34,6 @@
   flex-direction: column;
   width: 300px;
   margin-top: 20px;
-  label {
-    color: $dark-green;
-    font-size: 18px;
-  }
 }
 
 .filter-details {
@@ -47,23 +45,13 @@
 .filter-city {
   display: flex;
   flex-direction: column;
-  padding-right: 50px;
-  label {
-    padding-bottom: 5px;
-    color: $dark-green;
-    font-size: 18px;
-  }
+  padding-right: 60px;
 }
 
 .filter-rating {
   display: flex;
   flex-direction: column;
   padding-right: 80px;
-  label {
-    padding-bottom: 5px;
-    color: $dark-green;
-    font-size: 18px;
-  }
 }
 
 .row-city {
@@ -76,8 +64,27 @@
 
 }
 
+#timevar {
+  color: gray;
+  opacity: 0.8;
+  font-weight: lighter;
+  font-size: 16px;
+}
 
+#distancevar {
+  color: gray;
+  opacity: 0.8;
+  font-weight: lighter;
+  font-size: 16px;
+}
 
+#city {
+  padding-top: 20px;
+}
+
+#rating {
+  padding-top: 20px;
+}
 
 
 
