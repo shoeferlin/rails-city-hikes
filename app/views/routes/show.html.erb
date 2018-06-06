@@ -18,11 +18,11 @@
     </div>
     <h5 class="route-description"><em><%= @route.description %></em></h5>
     <div class="route-items"><h5>Sightseeing items:</h5></div>
-    <% Waypoint.where(route_id: @route.id).each do |w| %>
-    <ul>
-      <li class="route-points"><%=w.sight.name %></li>
-    </ul>
-    <% end %>
+    <ol>
+      <% Waypoint.where(route_id: @route.id).each do |w| %>
+        <li class="route-points"><%=w.sight.name %></li>
+      <% end %>
+    </ol>
     <h5 class="route-information">Route information:</h5>
       <div class="route-information-box">
         <p><%= @route.distance %> km</p>
