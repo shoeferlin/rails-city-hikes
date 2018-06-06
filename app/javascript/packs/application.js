@@ -4,10 +4,10 @@ import "./map";
 import "./timeline";
 import "./carousel";
 import "../components/getinfo"
-import "./filter"
-// import "../components/draganddrop.js"
-// import { Sortable } from '@shopify/draggable';
-import { draganddrop } from '../components/draganddrop';
+// import "./filter"
+import "../components/draganddrop"
+import { Sortable } from '@shopify/draggable';
+// import { draganddrop } from '../components/draganddrop';
 
 
 // import scaleVideoContainer from "./banner"
