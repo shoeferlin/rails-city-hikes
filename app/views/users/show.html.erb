@@ -37,21 +37,32 @@
             <% if current_user == @user %>
               <li><a data-toggle="tab" href="#menu2">Hiked Routes</a></li>
             <% end %>
+            <% if current_user == @user %>
+              <li><a data-toggle="tab" href="#menu3">Customized Routes</a></li>
+            <% end %>
           </ul>
           <div class="tab-content">
-            <div id="menu1" class="tab-pane fade in active">
+            <div id="menu1" class="tab-pane fade in active tab-1-profile">
               <% @routes.each do |route| %>
                   <% if route.user == @user %>
                   <% @created_route = Route.where(user_id: @user.id).count %>
                     <%= link_to(route_path(route)) do %>
-                        <div class="group-card-profile">
-                          <div class="card-title-profile">Display Card 1</div>
-                          <div class="overlay-profile"></div>
-                          <div class=" mini-banner-profile" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
-                          </div>
-                          <div class="card-route-profile "><%= route.name %></div>
-                          <div class="card-route-profile "><%= route.description %></div>
-                       </div>
+                      <div class="group-card-profile">
+                        <div class="card-title-profile">Display Card 1</div>
+                        <div class="overlay-profile"></div>
+                        <div class=" mini-banner-profile" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
+                        </div>
+                        <p class="card-route-profile>"<%= route.name %></p>
+                        <p class="card-route-profile"> <%= @route.distance %> km</p>
+                        <div>
+                          <% @route.avg_rating.round.to_i.times do %>
+                            <i class="fas fa-star"></i>
+                          <% end %>
+                          <% (5 - @route.avg_rating).round.to_i.times do %>
+                            <i class="far fa-star"></i>
+                          <% end %>
+                        </div>
+                      </div>
                     <% end %>
                   <% end %>
                 <% end %>
@@ -62,7 +73,6 @@
                   <div class="card-title-profile">Display Card 1</div>
                   <div class="overlay-profile"></div>
                   <div class=" mini-banner-profile" style="background-image: url('<%=
-
                    %>');">
                   </div>
                   <div class="card-route-profile "><%= hiked_route.name %></div>
@@ -70,6 +80,8 @@
                   <div class="card-route-profile "><%= hiked_route.city %></div>
                 </div>
               <% end %>
+            </div>
+            <div id="menu3" class="tab-pane fade">
             </div>
           </div>
         <div>
