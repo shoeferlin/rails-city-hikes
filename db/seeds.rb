@@ -145,6 +145,7 @@ Route.create(name: "Picturesque Zurich", time: 15, distance: 1.1, no_exports: 23
 # # Berlin 04
 # Route.create(name: "Traditional tour", no_exports: 53, description: "Most iconic sightseeing spots of Germany's capital.", public: true, user_id: 4, city_id: 1)
 # # Berlin 05
+# # Basel 06
 
 ### ROUTE PICTURES ###
 puts "Generating route pictures ..."
