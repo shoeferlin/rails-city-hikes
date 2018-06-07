@@ -18,6 +18,11 @@
   text-align: center
 }
 
+.sightsearch{
+  display: flex;
+  justify-content: space-around;
+}
+
 .banner-tiny-text {
   display: flex;
   justify-content: space-around;
@@ -204,11 +209,7 @@
   opacity: 0.9;
 }
 
-#sight_search {
-  padding: 0 10px 0 10px;
-  width: 600px;
-  margin: 25px auto;
-}
+
 
 #dragdrop {
   height: calc(100vh - 40px);
@@ -306,4 +307,22 @@
   .grid-container {
     display: block;
   }
+}
+
+
+#sightsubmit{
+  margin: 5px 0px 0px 15px;
+  height: 20px;
+  flex-grow: 2;
+  text-align: center;
+}
+
+#sightsearch {
+  padding: 0 10px 0 10px;
+  // width: 600px;
+  margin: 10px 0px 0px 15px;
+  width: 400px;
+  text-align: center;
+  flex-grow: 6;
+  border-radius: 25px;
 }
