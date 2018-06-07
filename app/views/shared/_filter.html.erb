@@ -2,26 +2,35 @@
   <div class="row">
     <div class="filter">
       <%= form_tag filtered_routes_path, method: "get", class: "form-inline", remote: true do %>
-      <div class="filter-duration">
-        <%= label_tag "max duration" %>
-        <div id="timevar">Duration</div>
-        <%= range_field_tag :time, nil, in: 0...360, step: 2%>
+      <div class="sliders-from-hell">
+        <div class="slider-tag">
+          Max Duration: <div id="timevar">Duration</div>
+        </div>
+        <div id="slider">
+          <div class="filter-duration">
+            <%= range_field_tag :time, nil, in: 0...360, step: 2%>
+          </div>
+        </div>
       </div>
 
-      <div class="filter-distance">
-        <%= label_tag "max distance" %>
-        <div id="distancevar">Distance</div>
-        <%= range_field_tag :distance, nil, in: 0...20, step: 1%>
-        <%#= text_field_tag :distance, params[:distance], class: "form-control style-text", placeholder: "Search for distance" %>
+      <div class="sliders-from-hell">
+        <div class="slider-tag">
+          Max Duration: <div id="distancevar"> Distance</div>
+        </div>
+        <div id="slider">
+          <div class="filter-distance">
+            <%#= text_field_tag :distance, params[:distance], class: "form-control style-text", placeholder: "Search for distance" %>
+            <%= range_field_tag :distance, nil, in: 0...20, step: 1%>
+          </div>
+        </div>
       </div>
-
 
       <div class="row-city">
         <div class="filter-details">
           <div class="filter-city">
             <%= label_tag "City" %>
             <% if @city == "We don't know about this city yet" %>
-              <% @city = "" %>
+            <% @city = "" %>
             <% end %>
             <%= select_tag :city, options_for_select(@cities.collect{|u| [u.locality]}.push(""), @city)%>
           </div>
