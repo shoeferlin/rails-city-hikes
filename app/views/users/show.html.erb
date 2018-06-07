@@ -5,13 +5,13 @@
           <%= cl_image_tag @user.picture_url, height: 230, width: 230, crop: :fill, class: "profile_picture"%>
         </div>
         <div class="KPI">
-          <% if User.find(params[:id]).created_routes.joins(:reviews).average(:rating).nil? %>
+         <% if User.find(params[:id]).created_routes.joins(:reviews).average(:rating).nil? %>
           <% else %>
             <p class="kpi_info">Routes review:</p>
             <%= User.find(params[:id]).created_routes.joins(:reviews).average(:rating) %>
           <% end %>
           <p class="kpi_info">Distance walked:</p>
-           <p> <%= User.find(params[:id]).routes.sum(:distance) %> km</p>
+          <p> <%= User.find(params[:id]).routes.sum(:distance)%> km</p>
           <p class="kpi_info"> Exported routes: </p>
           <%= HikedRoute.where(user_id: @user.id).count %>
         </div>
