@@ -75,12 +75,12 @@ function autocomplete() {
       // List items from Search result
       const list = document.querySelector("#results");
       console.log(list.innerText)
-        list.insertAdjacentHTML("afterbegin", `<li id="searchfor">${type_name.value}</li>`);
+        // list.insertAdjacentHTML("afterbegin", `<li id="searchfor">${type_name.value}</li>`);
         // list.insertAdjacentHTML("beforeend", `<li><a href="${type_url.value}">${type_url.value}</a></li>`);
-        list.insertAdjacentHTML("beforeend", `<li>${type_formatted_address.value}</li>`);
+        list.insertAdjacentHTML("beforeend", `<p>${type_formatted_address.value}</p>`);
         if (type_website.value) {
           // console.log(type_website.value)
-          list.insertAdjacentHTML("beforeend", `<p><a href="${type_website.value}" class="btn btn-primary">Link to homepage</a></p>`)
+          list.insertAdjacentHTML("beforeend", `<p><a href="${type_website.value}" class="btn-sm">Link to homepage</a></p>`)
         };
       }
   }
