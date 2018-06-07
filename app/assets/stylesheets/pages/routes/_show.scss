@@ -25,6 +25,7 @@
   padding: 50px;
   background-color: $light-gray;
   margin-top: 20px;
+  margin-right: 16px;
   // width: calc(100vh - 400px);
 }
 
@@ -33,6 +34,9 @@
   justify-content: space-between;
   border-bottom: 2px solid gray;
   padding-bottom: 20px;
+  strong {
+    letter-spacing: 2px;
+  }
 }
 
 .route-name {
@@ -85,6 +89,7 @@
   margin-top: 20px;
   padding-top: 8px;
   border-top: 0.5px solid lightgray;
+  letter-spacing: 2px;
 }
 
 .show-btns {

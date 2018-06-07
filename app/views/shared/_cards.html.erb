@@ -77,13 +77,13 @@
               <% end %>
               <div class="card-description"><%= route.description %></div>
               <div class="route-details">
-                <p id="route-length"><%= route.distance%> km</p>
+                <p id="route-length"><%= route.distance%> km&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                 <% if route.time.nil? || route.time == 0 %>
-                   <p id="route-duration">0 min </p>
+                   <p id="route-duration">0 min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                 <% else %>
-                  <p id="route-duration"><%= (route.time / 60).to_i %> h <%= (route.time % 60).round %> min </p>
+                  <p id="route-duration"><%= (route.time / 60).to_i %> h <%= (route.time % 60).round %> min&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                 <% end %>
-                <p id="route-nr-exports"><%= route.no_exports %> x hiked</p>
+                <p id="route-nr-exports"><%= route.no_exports %> x hiked&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
               </div>
             </div>
           <% end %>

@@ -3,13 +3,13 @@
     <div class="filter">
       <%= form_tag filtered_routes_path, method: "get", class: "form-inline", remote: true do %>
       <div class="filter-duration">
-        <%= label_tag "Max Duration" %>
+        <%= label_tag "max duration" %>
         <div id="timevar">Duration</div>
         <%= range_field_tag :time, nil, in: 0...360, step: 2%>
       </div>
 
       <div class="filter-distance">
-        <%= label_tag "Max Distance" %>
+        <%= label_tag "max distance" %>
         <div id="distancevar">Distance</div>
         <%= range_field_tag :distance, nil, in: 0...20, step: 1%>
         <%#= text_field_tag :distance, params[:distance], class: "form-control style-text", placeholder: "Search for distance" %>
