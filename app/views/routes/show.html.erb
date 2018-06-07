@@ -9,7 +9,7 @@
       <% end %>
     </div>
     <div class="show-btns">
-      <%= link_to "Export", route_export_path(@route), class: "btn btn-primary btn", style: "width: 40%" %>
+      <%= link_to "Export", route_export_path(@route), class: "btn btn-primary btn" %>
       <% if policy(@route).edit? %>
         <%= link_to "Edit", edit_route_path(@route), class: "btn btn-primary" %>
       <% else %>
