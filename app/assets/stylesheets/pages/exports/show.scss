@@ -114,12 +114,13 @@
 }
 
 #export-box {
-.export-share-area {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 30px;
-  .row {
-    margin-top: -48px;
+  .export-share-area {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+    .row {
+      margin-top: -48px;
+    }
   }
 }
 
@@ -130,10 +131,3 @@
 .export-info-container {
   margin-bottom: 13px;
 }
-
-
-
-
-
-
-
