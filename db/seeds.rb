@@ -178,6 +178,27 @@ Sight.create(name: "Tinguely Brunnen", description: nil, latitude: 47.5536929, l
 Sight.create(name: "Kunstmuseum", description: nil, latitude: 47.5540319, longitude: 7.5941927, place_id: "ChIJlSWhqbO5kUcR9L7iGbS--_w", url: "https://maps.google.com/?cid=18229373597449895668", website: "undefined", formatted_address: "4051 Basel, Schweiz")
 # 58 Sight - Basel
 Sight.create(name: "Fähribödeli", description: nil, latitude: 47.5567677, longitude: 7.593131, place_id: "ChIJUashJLK5kUcRofmf8rnEcao", url: "https://maps.google.com/?q=F%C3%A4hrib%C3%B6deli,+4051+Basel,+Schweiz&ftid=0x4791b9b22421ab51:0xaa71c4b9f29ff9a1", website: "undefined", formatted_address: "Fähribödeli, 4051 Basel, Schweiz")
+# 59 Sight - Barcelona
+Sight.create(name: "Park Güell", description: nil, latitude: 41.4144948, longitude: 2.1526945, place_id: "ChIJq0HUUq6ipBIRWM6qGqALmok", url: "https://maps.google.com/?cid=9915250311879642712", website: "https://www.parkguell.cat/", formatted_address: "08024 Barcelona, Provinz Barcelona, Spanien")
+# 60 Sight - Barcelona
+Sight.create(name: "Casa Milà", description: nil, latitude: 41.3953805, longitude: 2.1619614, place_id: "ChIJV12ImpOipBIRoBA6qjgbTiQ", url: "https://maps.google.com/?cid=2616058363736887456", website: "https://www.lapedrera.com/", formatted_address: "Passeig de Gràcia, 92, 08008 Barcelona, Spanien")
+# 61 Sight - Barcelona
+Sight.create(name: "Casa Batlló", description: nil, latitude: 41.3916384, longitude: 2.1647698, place_id: "ChIJYUFLSe2ipBIRD04uni940kA", url: "https://maps.google.com/?cid=4670927909449256463", website: "https://www.casabatllo.es/", formatted_address: "Passeig de Gràcia, 43, 08007 Barcelona, Spanien")
+# 62 Sight - Barcelona
+Sight.create(name: "Plaça Reial", description: nil, latitude: 41.3801988, longitude: 2.175513, place_id: "ChIJJ86B5VeipBIRZnGoGQns3JA", url: "https://maps.google.com/?q=Pla%C3%A7a+Reial,+08002+Barcelona,+Spanien&ftid=0x12a4a257e581ce27:0x90dcec0919a87166", website: "undefined", formatted_address: "Plaça Reial, 08002 Barcelona, Spanien")
+# 63 Sight - Barcelona
+Sight.create(name: "Palau Güell", description: nil, latitude: 41.3788851, longitude: 2.1742398, place_id: "ChIJ3fHTIFiipBIRpKXCn_E_oJY", url: "https://maps.google.com/?cid=10853745408962897316", website: "http://palauguell.cat/", formatted_address: "Carrer Nou de la Rambla, 3-5, 08001 Barcelona, Spanien")
+# 64 Sight - Barcelona
+Sight.create(name: "Mirador de Colom", description: nil, latitude: 41.3758075, longitude: 2.1777689, place_id: "ChIJSwC911aipBIRt2zr380K3Co", url: "https://maps.google.com/?cid=3088355323810639031", website: "http://www.barcelonaturisme.com/", formatted_address: "Plaça Portal de la pau, s/n, 08001 Barcelona, Spanien")
+# 65 Sight - Barcelona
+Sight.create(name: "Parliament of Catalonia", description: nil, latitude: 41.3881296, longitude: 2.1889826, place_id: "ChIJx3A5fwOjpBIRPUlPCmDpgok", url: "https://maps.google.com/?cid=9908738728867612989", website: "http://www.parlament.cat/", formatted_address: "Parc de la Ciutadella, s/n, 08003 Barcelona, Spanien")
+# 66 Sight - Barcelona
+Sight.create(name: "Arc de Triomf", description: nil, latitude: 41.3910524, longitude: 2.1806449, place_id: "ChIJoXZqNuOipBIRsZU39a8r_qk", url: "https://maps.google.com/?cid=12249276071227659697", website: "http://www.barcelonaturisme.com/wv3/ca/page/1211/.html", formatted_address: "Passeig de Lluís Companys, 08003 Barcelona, Spanien")
+# 67 Sight - Barcelona
+Sight.create(name: "Museu Picasso", description: nil, latitude: 41.385216, longitude: 2.1808927, place_id: "ChIJa-K8mf6ipBIRY8wAB3EeASc", url: "https://maps.google.com/?cid=2810561113253530723", website: "http://www.museupicasso.bcn.cat/", formatted_address: "Carrer Montcada, 15-23, 08003 Barcelona, Spanien")
+# 68 Sight - Barcelona
+Sight.create(name: "Roman Catholic Archdiocese of Barcelona", description: nil, latitude: 41.383952, longitude: 2.1762531, place_id: "ChIJsYUkpPmipBIRuykk5iJXUME", url: "https://maps.google.com/?q=Roman+Catholic+Archdiocese+of+Barcelona&ftid=0x12a4a2f9a42485b1:0xc1505722e62429bb", website: "undefined", formatted_address: "Arzobispado de Barcelona, Carrer del Bisbe, 5, 08002 Barcelona, Spanien")
+
 
 ### ROUTES ###
 puts "Generating routes ..."
@@ -195,7 +216,7 @@ Route.create(name: "Historic Berlin and 'Kietz' Tour", time: 201, distance: 16.1
 # Basel 06
 Route.create(name: "Tour through Basel", time: 50, distance: 3.8, no_exports: 14, avg_rating: 4.33, description: "Basel is a city on the Rhine River in northwest Switzerland, close to the country’s borders with France and Germany. Its medieval old town centers around Marktplatz, dominated by the 16th-century, red-sandstone Town Hall. Its 12th-century Gothic cathedral has city views, and contains the tomb of the 16th-century Dutch scholar, Erasmus. The city’s university houses some of Erasmus’ works.", public: true, user_id: 7, city_id: 10)
 # Barcelona 07
-# missing
+Route.create(name: "Bella Barcelona", time: 121, distance: 10.0, no_export: 32, avg_rating: 5.00, description:  "A tour through the beautiful Barcelona", public: true, user_id: 5, city_id: 5)
 
 
 ### ROUTE PICTURES ###
@@ -234,7 +255,9 @@ RoutePicture.create(route_id: 6, remote_route_picture_url: "https://res.cloudina
 RoutePicture.create(route_id: 6, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528321131/o7weo0nkguu3xiwgyc9m.jpg")
 
 # Barcelona 07
-# missing
+RoutePicture.create(route_id: 7, remote_picture_url_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528364744/o9e3wxtsm9lvexdizvna.jpg") # Barcelona Marina
+RoutePicture.create(route_id: 7, remote_picture_url_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528364740/c2g64x3psrf7uizldbof.jpg") # Gaudi house
+RoutePicture.create(route_id: 7, remote_picture_url_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528364742/x4bsb3bvnimisoz8b3c1.jpg") # Nice House in Barcelona
 
 
 ### WAYPOINTS ###
@@ -304,6 +327,18 @@ Waypoint.create(route_id: 6, sight_id: 55)
 Waypoint.create(route_id: 6, sight_id: 56)
 Waypoint.create(route_id: 6, sight_id: 57)
 Waypoint.create(route_id: 6, sight_id: 58)
+# Barcelona 07
+Waypoint.create(route_id: 7, sight_id: 59)
+Waypoint.create(route_id: 7, sight_id: 60)
+Waypoint.create(route_id: 7, sight_id: 61)
+Waypoint.create(route_id: 7, sight_id: 62)
+Waypoint.create(route_id: 7, sight_id: 63)
+Waypoint.create(route_id: 7, sight_id: 64)
+Waypoint.create(route_id: 7, sight_id: 65)
+Waypoint.create(route_id: 7, sight_id: 66)
+Waypoint.create(route_id: 7, sight_id: 67)
+Waypoint.create(route_id: 7, sight_id: 68)
+
 
 ### REVIEWS ###
 
@@ -322,9 +357,13 @@ Review.create(user_id: 6, content: "Too much walking.", rating: 3, route_id: 4)
 # Berlin 05
 Review.create(user_id: 7, content: "Enjoyed to see the less touristic spots.", rating: 5, route_id: 5)
 # Basel 06
-Review.create(user_id: 5, content: "Thanks for that nice tour, really enjoyed it", rating: 5, route_id: 6)
-Review.create(user_id: 8, content: "Liked it, but Tinguely Museum is missing", rating: 4, route_id: 6)
+Review.create(user_id: 5, content: "Thanks for that nice tour, really enjoyed it.", rating: 5, route_id: 6)
+Review.create(user_id: 8, content: "Liked it, but Tinguely Museum is missing.", rating: 4, route_id: 6)
 Review.create(user_id: 6, content: "Definitively a good route.", rating: 4, route_id: 6)
+# Barcelona 07
+Review.create(user_id: 6, content: "Good route", rating: 4, route_id: 7)
+Review.create(user_id: 7, content: "Absolutely enjoyed this City Hike!", rating: 5, route_id: 7)
+Review.create(user_id: 8, content: "Awesome city and route recommendation.", rating: 5, route_id: 7)
 
 
 ### COMPLETED ###
