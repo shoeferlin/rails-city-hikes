@@ -11,7 +11,7 @@
             <%= User.find(params[:id]).created_routes.joins(:reviews).average(:rating) %>
           <% end %>
           <p class="kpi_info">Distance walked:</p>
-            <%= User.find(params[:id]).routes.sum(:distance) %>
+           <p> <%= User.find(params[:id]).routes.sum(:distance) %> km</p>
           <p class="kpi_info"> Exported routes: </p>
           <%= HikedRoute.where(user_id: @user.id).count %>
         </div>
@@ -19,26 +19,28 @@
       <div class="right-box-user-profile">
         <div class="user-info">
           <div class="font-weight-bold">
-            <p><strong><%= @user.first_name %></strong> </p>
-            <p class= "username_profile"><%= @user.username  %></p>
+            <p ><strong ><%= @user.first_name %></strong> </p>
+            <p> <em> <%= @user.username  %> </em> </p>
             <% if current_user == @user %>
-              <p><strong><%= @user.email %></strong></p>
+              <div class= "info_profile">
+                <p><%= @user.email %></p>
+              </div>
             <% end %>
           </div>
           <div class="edit_profile">
             <% if current_user == @user %>
-              <i class="far fa-edit"><%= link_to "Edit", edit_user_path(current_user), class: "button-edit-profile"%></i>
+              <%= link_to " ", edit_user_path(current_user), class: "far fa-edit"%>
             <% end %>
           </div>
         </div>
         <div class="routes-user-profile">
           <ul class="nav nav-tabs">
-            <li><a data-toggle="tab" href="#menu1">Created Routes</a></li>
+            <li><a data-toggle="tab" href="#menu1" class="tab_profile">Created Routes</a></li>
             <% if current_user == @user %>
-              <li><a data-toggle="tab" href="#menu2">Exported Routes</a></li>
+              <li><a data-toggle="tab" href="#menu2" class="tab_profile">Exported Routes</a></li>
             <% end %>
             <% if current_user == @user %>
-              <li><a data-toggle="tab" href="#menu3">Customized Routes</a></li>
+              <li><a data-toggle="tab" href="#menu3" class="tab_profile">Customized Routes</a></li>
             <% end %>
           </ul>
           <div class="tab-content">
@@ -51,9 +53,9 @@
                       <div class="overlay-profile"></div>
                       <div class=" mini-banner-profile">
                        <% if route.route_pictures.empty? %>
-                        <% image_url "card-example.jpg"  %>
+                        <%= image_tag "og-city-hikes.jpg" ,class: "image_loaded" %>
                       <% else %>
-                        <% route.route_pictures[0].route_picture.url  %>
+                        <%= image_tag route.route_pictures.first.route_picture.url, class: "image_uploaded"  %>
                       <% end%>
                       </div>
                       <div class="card-route-profile"><%= route.name %></div>
@@ -77,7 +79,12 @@
                     <div class="group-card-profile">
                       <div class="card-title-profile"><%= h_route.route.city.locality %></div>
                       <div class="overlay-profile"></div>
-                      <div class=" mini-banner-profile" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
+                      <div class=" mini-banner-profile">
+                        <% if User.find(@user.id).hiked_routes.first.route.route_pictures.empty? %>
+                          <%= image_tag "og-city-hikes.jpg" ,class: "image_loaded" %>
+                         <% else %>
+                          <%= image_tag User.find(@user).hiked_routes.first.route.route_pictures, class: "image_uploaded"  %>
+                         <% end  %>
                       </div>
                       <div class="card-route-profile "><%= h_route.route.name %></div>
                       <div class="card-route-profile "><%= h_route.route.distance %> km</div>
@@ -99,7 +106,12 @@
                     <div class="group-card-profile">
                       <div class="card-title-profile"><%= route.city.locality %></div>
                       <div class="overlay-profile"></div>
-                      <div class=" mini-banner-profile" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
+                      <div class=" mini-banner-profile">
+                        <% if route.route_pictures.empty? %>
+                        <%= image_tag "og-city-hikes.jpg" ,class: "image_loaded" %>
+                      <% else %>
+                        <%= image_tag route.route_pictures.first.route_picture.url, class: "image_uploaded"  %>
+                      <% end%>
                       </div>
                       <div class="card-route-profile "><%= route.name %></div>
                       <div class="card-route-profile "><%= route.distance %> km</div>
