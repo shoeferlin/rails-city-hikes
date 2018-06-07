@@ -216,7 +216,7 @@ Route.create(name: "Historic Berlin and 'Kietz' Tour", time: 201, distance: 16.1
 # Basel 06
 Route.create(name: "Tour through Basel", time: 50, distance: 3.8, no_exports: 14, avg_rating: 4.33, description: "Basel is a city on the Rhine River in northwest Switzerland, close to the country’s borders with France and Germany. Its medieval old town centers around Marktplatz, dominated by the 16th-century, red-sandstone Town Hall. Its 12th-century Gothic cathedral has city views, and contains the tomb of the 16th-century Dutch scholar, Erasmus. The city’s university houses some of Erasmus’ works.", public: true, user_id: 7, city_id: 10)
 # Barcelona 07
-Route.create(name: "Bella Barcelona", time: 121, distance: 10.0, no_exports: 32, avg_rating: 5.00, description:  "A tour through the beautiful Barcelona", public: true, user_id: 5, city_id: 5)
+Route.create(name: "Barcelona in one day", time: 123, distance: 10.0, no_exports: 32, avg_rating: 5.00, description:  "Barcelona, the cosmopolitan capital of Spain’s Catalonia region, is known for its art and architecture. The fantastical Sagrada Família church and other modernist landmarks designed by Antoni Gaudí dot the city. Museu Picasso and Fundació Joan Miró feature modern art by their namesakes.", public: true, user_id: 5, city_id: 5)
 
 
 ### ROUTE PICTURES ###
