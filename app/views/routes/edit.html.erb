@@ -11,64 +11,85 @@
 </div>
 
 
-<div class="edit-container">
-  <div class="row">
-    <div class="grid-container">
-      <div class="col-xs-5 col-sm-6 col-lg-4 edit-view">
-        <div class="current-sights edit-card" id="dragdrop">
-          <h4>Sightseeing items:</h4>
-          <h6 id="explanation">(Drag and drop for optimizing the route)</h6>
-            <ol class="edit-list-moveable" id="movable">
-              <% @route.waypoints.each do |w| %>
-                <li class="waypoint" data-id="<%= w.id %>">
-                  <i class="fas fa-bars"></i>
-                  <div class="w-sight-name"><%= w.sight.name%></div>
-                  <%= link_to route_sight_path(w.route, w.sight), method: :delete, data: {:confirm => 'Are you sure?'}, class:"far fa-trash-alt" do %><% end %>
-                </li>
-              <% end %>
-            </ol>
-        </div>
-        <div class="search-sights edit-card">
-          <h4>Add additional sights</h4>
-          <%= simple_form_for [@route, @sight] do |f| %>
-          <%= f.input :search %>
-          <%= f.input :name, as: :hidden %>
-          <%= f.input :place_id, as: :hidden %>
-          <%= f.input :url, as: :hidden %>
-          <%= f.input :website, as: :hidden %>
-          <%= f.input :formatted_address, as: :hidden %>
-          <%= f.button :submit, class:"create-sight-btn"%>
-          <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
-          <% end %>
-          <ul id="results">
-            <div id="current_city" class="hide"><%= @route.city.country.downcase %></div>
-          </ul>
-        </div>
-        <div class="info-sights edit-card">
-          <h4>Info</h4>
-          <% if !@route.sights.empty? %>
-          <% @page = Wikipedia.find( @route.sights.last.name ) %>
-          <!-- <p id="infotext" class="hide"> ...</p> -->
-          <!--  FOR NOW -->
-            <% if !@page.text.nil? %>
-              <p class="info_text"><%= @page.text.first(400) %> ...<a href="<%= @page.fullurl%>"><strong> more info.</strong></a></p>
+<div class="grid-container text-center flex-none">
+  <div class="grid-search">
+    <div class="search-sights edit-card">
+      <h4>Add additional sights</h4>
+      <%= simple_form_for [@route, @sight] do |f| %>
+      <%= f.input :search, label: false %>
+      <%= f.input :name, as: :hidden %>
+      <%= f.input :place_id, as: :hidden %>
+      <%= f.input :url, as: :hidden %>
+      <%= f.input :website, as: :hidden %>
+      <%= f.input :formatted_address, as: :hidden %>
+      <%= f.button :submit, 'Pin Sight', class:"create-sight-btn" %>
+      <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
+      <% end %>
+      <ul id="results">
+        <div id="current_city" class="hide"><%= @route.city.country.downcase %></div>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="grid-info">
+    <div class="info-sights edit-card flex-none">
+      <h4>Info</h4>
+      <div class="row">
+      <% if !@route.sights.empty? %>
+            <% @page = Wikipedia.find( @route.sights.last.name ) %>
+            <div class="col-lg-5 col-offset-6">
               <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
-            <% else %>
-            <h5>Sorry, we have no information about this item yet ...</h5>
+          </div>
+
+        <div class="col-lg-7 col-offset-0">
+
+              <!-- <p id="infotext" class="hide"> ...</p> -->
+              <!--  FOR NOW -->
+            <% if !@page.text.nil? %>
+              <div>
+               <p class="info_text"><%= @page.text.first(800) %><a href="<%= @page.fullurl%>"><strong>&nbsp;&nbsp;read more.</strong></a></p>
+              </div>
+                   <% else %>
+              <h5>Sorry, we have no information about this item yet ...</h5>
             <% end %>
+          </div>
+
+
+       <% end %>
+      </div>
+    </div>
+  </div>
+
+
+    <div class="grid-list">
+      <div class="current-sights edit-card flex-none" id="dragdrop">
+        <div class="sights-header">
+        <h4>Sightseeing items</h4>
+        <h6 id="explanation">(Drag and drop for optimizing the route)</h6>
+        </div>
+        <ol class="edit-list-moveable" id="movable">
+          <% @route.waypoints.each do |w| %>
+          <li class="waypoint" data-id="<%= w.id %>">
+            <i class="fas fa-bars"></i>
+            <div class="w-sight-name"><%= w.sight.name%></div>
+            <%= link_to route_sight_path(w.route, w.sight), method: :delete, data: {:confirm => 'Are you sure?'}, class:"far fa-trash-alt" do %><% end %>
+          </li>
           <% end %>
+        </ol>
+      </div>
+    </div>
+
+    <div class="grid-map">
+      <div class="mapd-sights edit-card flex-none">
+        <div class="map-box">
+          <div id="map" data-waypoints="<%= @waypoints.to_json %>"></div>
         </div>
       </div>
     </div>
   </div>
-  <div class="return-and-save-button"><%= link_to "Save route", route_path(@route), class: "btn btn-primary" %></div>
-  <div class="row">
-    <!-- <div id="edit-return-btn">
-    </div> -->
-    <div class="map-box">
-      <div id="map" data-waypoints="<%= @waypoints.to_json %>"></div>
-    </div>
+  <div class="return-and-save-button">
+    <%= link_to "Save route", route_path(@route), class: "btn btn-primary" %>
   </div>
-</div>
-<div data-id="<%= @route.id %>" id="data-edit">
-</div>
+
+  <div data-id="<%= @route.id %>" id="data-edit"></div>
