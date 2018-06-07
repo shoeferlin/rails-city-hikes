@@ -9,6 +9,7 @@ function filterTime() {
     time.addEventListener("click", displayDate);
     function displayDate() {
       timeInfo.innerHTML = `${time.value} min`
+      timeInfo.style.color = "black";
     }
   }
 }
@@ -23,6 +24,7 @@ function filterDistance() {
   distance.addEventListener("click", displayDate);
   function displayDate() {
     distanceInfo.innerHTML = `${distance.value} km`
+    distanceInfo.style.color = "black";
   }
 
 }

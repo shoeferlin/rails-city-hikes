@@ -69,6 +69,11 @@
 
 }
 
+.card-name-and-city {
+  display: flex;
+  justify-content: space-between;
+}
+
 .route-details {
   display: flex;
   justify-content: space-between;

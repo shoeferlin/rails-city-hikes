@@ -5,13 +5,13 @@
       <div class="filter-duration">
         <%= label_tag "Max Duration" %>
         <div id="timevar">Duration</div>
-        <%= range_field_tag 'time', params[:time], in: 0...360, step: 10%>
+        <%= range_field_tag :time, nil, in: 0...360, step: 2%>
       </div>
 
       <div class="filter-distance">
         <%= label_tag "Max Distance" %>
         <div id="distancevar">Distance</div>
-        <%= range_field_tag 'distance', params[:distance], in: 0...30, step: 1%>
+        <%= range_field_tag :distance, nil, in: 0...20, step: 1%>
         <%#= text_field_tag :distance, params[:distance], class: "form-control style-text", placeholder: "Search for distance" %>
       </div>
 
@@ -20,11 +20,14 @@
         <div class="filter-details">
           <div class="filter-city">
             <%= label_tag "City" %>
-            <%= select_tag :city, options_for_select(@cities.collect{|u| [u.locality]}, params[:locality].to_i)%>
+            <% if @city == "We don't know about this city yet" %>
+              <% @city = "" %>
+            <% end %>
+            <%= select_tag :city, options_for_select(@cities.collect{|u| [u.locality]}.push(""), @city)%>
           </div>
           <div class="filter-rating">
             <%= label_tag "Rating" %>
-            <%= select_tag :rating, options_for_select([["0 stars",0.00],["1 stars",1.00],["2 stars",2.00],["3 stars",3.00],["4 stars",4.00],["5 stars",5.00]], params[:rating].to_i)%>
+            <%= select_tag :rating, options_for_select([["0 stars",0.00],["1 stars",1.00],["2 stars",2.00],["3 stars",3.00],["4 stars",4.00],["5 stars",5.00]], ["3 stars",3.00])%>
           </div>
           <% end %>
         </div>

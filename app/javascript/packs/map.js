@@ -53,6 +53,7 @@ function buildMap()  {
                   console.log(distance)
               }
               // alert((time/60).toFixed(2) + " min" + ", " + (distance/60).toFixed(2) +" km");
+
               updateRouteDetails((time).toFixed(2), (distance/1000).toFixed(2))
 
               if (document.body.contains(route)) {
@@ -83,10 +84,11 @@ function buildMap()  {
     }
   }
 
+   // updateRouteDetails();
+
 }
 
 function updateRouteDetails(time, distance) {
-
   var hours = parseInt(time/3600)
   var minutes = parseInt((time % 3600)/60)
   const routeTime = document.querySelector("#route-time > p")
@@ -98,12 +100,8 @@ function updateRouteDetails(time, distance) {
   }
 }
 
-updateRouteDetails();
-
 
 buildMap();
-// if (!route) {
 
-// }
 
 export default buildMap;
