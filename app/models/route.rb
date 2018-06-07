@@ -21,6 +21,7 @@ class Route < ApplicationRecord
     new_route.user = user
     new_route.public = false
     new_route.no_exports = 0
+    new_route.avg_rating = 0
     self.waypoints.each do |wp|
       new_waypoint = wp.dup
       new_waypoint.route = new_route
