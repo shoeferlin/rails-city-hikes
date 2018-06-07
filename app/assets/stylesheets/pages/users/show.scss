@@ -16,11 +16,11 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  color: black;
+  color: #8aae92;
   font-size: 22px;
   flex-grow: 1;
   padding-bottom: 60px;
-  padding-top: 79px;
+  padding-top: 69px;
 }
 
 .container-box-user-profile{
@@ -43,6 +43,7 @@
 
 .background-image-profile {
   padding-top: 83px;
+  padding-bottom: 10px;
 }
 
 .title-profile {
@@ -89,11 +90,12 @@
   padding: 38px;
 }
 
-.kpi_info .username_profile {
- padding-top: 8px;
- margin-bottom: 0px;
- font-size: 15px;
- color: #a2a6aa;
+.kpi_info {
+  padding-top: 8px;
+  margin-bottom: 0px;
+  color: #8aae92;
+  font-size: 20px;
+  margin-top: 14px;
 }
 
 .button-edit-profile:hover {
@@ -112,8 +114,8 @@
 .group-card-profile {
   float: left;
   margin: 10px;
-  width: 220px;
-  height: 265px;
+  width: 208px;
+  height: 241px;
   border-radius: 5px;
   background-color: white;
 }
@@ -130,8 +132,8 @@
 
 .overlay-profile{
   position: absolute;
-  width: 220px;
-  height: 86px;
+  width: 208px;
+  height: 95px;
   border-radius: 3px 3px 0 0 ;
   background: rgba(28,36,46,0.55);
 }
@@ -158,4 +160,24 @@
 .tab-1-profile {
   display: flex;
   flex-direction: row;
+}
+
+.image_loaded {
+  height: 94px;
+  width: 208px;
+}
+
+.image_uploaded {
+  height: 95px;
+  width: 209px;
+}
+
+.tab_profile {
+ font-family: Roboto;
+ color: #7b7d7b;
+
+}
+
+.info-profile {
+  font-size: 22px;
 }
