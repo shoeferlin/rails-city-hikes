@@ -11,7 +11,34 @@
 </div>
 
 <div class="grid-container text-center flex-none">
-  <div class="grid-search">
+
+    <div class="grid-list">
+      <div class="current-sights edit-card flex-none" id="dragdrop">
+        <div class="sights-header">
+        <h4>Sightseeing items</h4>
+        <h6 id="explanation">(Drag and drop for optimizing the route)</h6>
+        </div>
+        <ol class="edit-list-moveable" id="movable">
+          <% @route.waypoints.each do |w| %>
+          <li class="waypoint" data-id="<%= w.id %>">
+            <i class="fas fa-bars"></i>
+            <div class="w-sight-name"><%= w.sight.name%></div>
+            <%= link_to route_sight_path(w.route, w.sight), method: :delete, data: {:confirm => 'Are you sure?'}, class:"far fa-trash-alt" do %><% end %>
+          </li>
+          <% end %>
+        </ol>
+      </div>
+    </div>
+
+    <div class="grid-map">
+      <div class="mapd-sights edit-card flex-none">
+        <div class="map-box">
+          <div id="map" data-waypoints="<%= @waypoints.to_json %>"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-search">
     <div class="search-sights edit-card">
       <h4>Add additional sights</h4>
       <%= simple_form_for [@route, @sight] do |f| %>
@@ -37,7 +64,7 @@
   </div>
 
 
-  <div class="grid-info">
+    <div class="grid-info">
     <div class="info-sights edit-card flex-none">
       <% @page = Wikipedia.find( @route.sights.last.name ) %>
       <h4>Info</h4>
@@ -49,7 +76,6 @@
 
           <div class="col-lg-5 col-offset-6">
             <% if !@page.image_urls[1].empty? %>
-              <!-- <img class="info_image" src="<%= @page.image_urls[0] %>" alt="No image"> -->
               <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
             <% end %>
           </div>
@@ -66,7 +92,6 @@
     </div>
   <% end %>
   </div>
-
 
     <div class="grid-list">
       <div class="current-sights edit-card flex-none" id="dragdrop">
