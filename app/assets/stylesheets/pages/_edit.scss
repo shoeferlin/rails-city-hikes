@@ -214,6 +214,7 @@
 #dragdrop {
   height: calc(100vh - 40px);
   text-align: center;
+  overflow: scroll;
 }
 
 #movable {
@@ -280,18 +281,8 @@
   padding: 5px;
 }
 
-.grid-search {
-  grid-row: 1 / span 100%;
-  grid-column: 1 / span 2;
-}
-
-.grid-info {
-  grid-row: 2 / span 100%;
-  grid-column: 1 / span 2;
-}
-
 .grid-list {
-  grid-row: 3 / span 35%;
+  grid-row: 1 / span 35%;
   grid-column: 1 / span 1;
   height: calc(100vh - 40px);
   margin-right: 20px;
@@ -299,10 +290,19 @@
 }
 
 .grid-map {
-  grid-row: 3 / span 65%;
+  grid-row: 1 / span 65%;
   grid-column: 2 / span 1;
 }
 
+.grid-search {
+  grid-row: 2 / span 100%;
+  grid-column: 1 / span 2;
+}
+
+.grid-info {
+  grid-row: 3 / span 100%;
+  grid-column: 1 / span 2;
+}
 @media(max-width) {
   .grid-container {
     display: block;
