@@ -5,7 +5,7 @@
 </div>
 <div class="fa fa-angle-double-down arrows"></div>
 <!-- carousel -->
-<div class="heading"><h1>Explore our most recommended City Hikes</h1></div>
+<div class="heading"><h1>Discover these cities with City Hikes</h1></div>
 <div class="carousel-container">
   <div class="ui-card" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.4) 50%, rgba(150,150,150,0.6) 90%), url('<%= image_url 'madrid-carousel.jpg' %>');"><h3>Madrid</h3></div>
   <div class="ui-card" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.4) 50%, rgba(150,150,150,0.6) 90%), url('<%= image_url 'berlin-carousel.jpg' %>');"><h3 style="center">Berlin</h3></div>
@@ -20,14 +20,14 @@
 <div class="timeline-container" id="timeline-1">
   <div class="timeline-header">
     <h2 id="timeline-header__title">Meet City Hikes</h2>
-    <h5 id="timeline-header__subtitle">Hiking has never been so easy</h5>
+    <h5 id="timeline-header__subtitle">Sightseeing has never been so easy</h5>
   </div>
   <div class="timeline">
     <div class="timeline-item data-text="City Hikes"">
       <div class="timeline__content">
         <h2 class="timeline__content-title">Choose a City</h2>
         <p class="timeleine__content-desc">Select from a list of amazing cities, which have already been hiked. If yours is not listed, feel free to create an own city and be the first hiker.</p>
-        <i class="fas fa-map-pin"></i>
+        <%= image_tag "city-hikes-landing-icon-world.png", class: "explanation-icons" %>
         <img class="timeline__img" src="" alt="">
       </div>
     </div>
@@ -35,6 +35,7 @@
       <div class="timeline__content">
         <h2 class="timeline__content-title">Select a Route</h2>
         <p class="timeleine__content-desc">Go and choose from handpicked routes configured by locals and fellow hikers. If you have any tips you want to share, create your own hike.</p>
+        <%= image_tag "city-hikes-landing-icon-map.png", class: "explanation-icons" %>
         <img class="timeline__img" src="" alt="">
       </div>
     </div>
@@ -42,7 +43,7 @@
       <div class="timeline__content">
         <h2 class="timeline__content-title">Customize your Route</h2>
         <p class="timeleine__content-desc">Add special locations, or sights, which you always wanted to hike and create new individual routes just for you and/or your friends.</p>
-        <i class="far fa-edit"></i>
+        <%= image_tag "city-hikes-landing-icon-dividers.png", class: "explanation-icons" %>
         <img class="timeline__img" src="" alt="">
       </div>
     </div>
@@ -50,7 +51,7 @@
       <div class="timeline__content">
         <h2 class="timeline__content-title">Export your Route</h2>
         <p class="timeleine__content-desc">With only one click, you can export your final route and immediately start hiking.</p>
-        <i class="fas fa-mobile-alt"></i>
+        <%= image_tag "city-hikes-landing-icon-mobile-hiker.png", class: "explanation-icons" %>
         <img class="timeline__img" src="" alt="">
       </div>
     </div>
