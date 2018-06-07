@@ -20,7 +20,8 @@
   font-size: 22px;
   flex-grow: 1;
   padding-bottom: 60px;
-  padding-top: 69px;
+  padding-top: 17px;
+  font-family: Pathway Gothic One;
 }
 
 .container-box-user-profile{
@@ -84,6 +85,7 @@
   width: 797px;
   border-top: 2px solid #E0E1E2;
   border-width: 2px;
+  margin-top: 5px;
 }
 
 .edit_profile {
@@ -96,6 +98,7 @@
   color: #8aae92;
   font-size: 20px;
   margin-top: 14px;
+  font-family: Pathway Gothic One;
 }
 
 .button-edit-profile:hover {
@@ -122,12 +125,15 @@
 
 .card-title-profile {
   position: absolute;
-  padding: 30px 0 0 15px;
+  padding: 12px 0 0 15px;
   color: white;
   font-family: proxima nova;
   font-weight: bold;
   font-size: 1em;
   z-index: 1;
+  font-family: Pathway Gothic One;
+  font-size: 24px;
+  padding: 24px 0 0 15px;
 }
 
 .overlay-profile{
@@ -136,6 +142,7 @@
   height: 95px;
   border-radius: 3px 3px 0 0 ;
   background: rgba(28,36,46,0.55);
+  margin-top: 19px;
 }
 
 .mini-banner-profile {
@@ -145,6 +152,7 @@
   background-size: cover;
   background-position: center;
   z-index: 0;
+  padding-top: 20px;
 }
 
 .card-route-profile {
@@ -154,7 +162,8 @@
   font-family: proxima nova;
   font-weight: normal;
   font-size: 16px;
-  line-height: 20px;
+  font-family: Pathway Gothic One;
+  padding: 8px;
 }
 
 .tab-1-profile {
@@ -179,5 +188,17 @@
 }
 
 .info-profile {
+    font-size: 34px;
+    margin-bottom: 13px;
+    color: #625e5e;
+}
+
+.email-profile {
+  font-size: 20px;
+  font-family: Pathway Gothic One;
+}
+
+.tab_profile{
   font-size: 22px;
+  font-family: Pathway Gothic One !important;
 }
