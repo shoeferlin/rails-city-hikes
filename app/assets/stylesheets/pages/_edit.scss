@@ -18,10 +18,6 @@
   text-align: center
 }
 
-.sightsearch{
-  display: flex;
-  justify-content: space-around;
-}
 
 .banner-tiny-text {
   display: flex;
@@ -164,6 +160,8 @@
 
 
 #results {
+  display: flex;
+  justify-content: space-around;
   list-style-type: none;
   padding: 8px;
 }
@@ -311,18 +309,30 @@
 
 
 #sightsubmit{
-  margin: 5px 0px 0px 15px;
   height: 20px;
-  flex-grow: 2;
+  flex-grow: 1;
   text-align: center;
+  width: 100px;
+  margin: 5px 20px 0px 0px;
 }
 
+
+.sightsearch{
+    width: 400px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+}
+
+
 #sightsearch {
+  height: 20px;
   padding: 0 10px 0 10px;
   // width: 600px;
   margin: 10px 0px 0px 15px;
   width: 400px;
   text-align: center;
-  flex-grow: 6;
+  flex-grow: 4;
   border-radius: 25px;
 }

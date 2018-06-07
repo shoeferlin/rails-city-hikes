@@ -2,6 +2,7 @@
 </div>
 <div class="main-container">
   <div class="route-box">
+    <h4 class="route-name"><%= @route.city.locality %></h4>
     <div class="route-header">
       <h3 class="route-name"><strong><%= @route.name %></strong></h3>
       <% unless current_user.nil? %>
