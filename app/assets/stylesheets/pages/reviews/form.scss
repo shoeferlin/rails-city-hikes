@@ -9,7 +9,11 @@
 }
 
 .new-review-box {
-  display: flex;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.37);
 }
 
 .show-review-box {
@@ -25,9 +29,11 @@
   padding: 10px;
 }
 
-.review_rating {
- legend {
-  color: #8aae92;
+
+
+.review_rating > legend {
+  font-weight: bold;
+  font-family: "Open Sans", "Helvetica", "sans-serif";
   font-size: 18px;
   font-weight: lighter;
   font-family: "Open Sans", "Helvetica", "sans-serif";
@@ -41,7 +47,7 @@
 
 .review-button {
   height: 39px;
-  margin: 40px 30px;
+  margin: 15px;
 }
 
 .review {
@@ -50,6 +56,7 @@
   border-radius: 5px;
   border: 2px solid #9FBBA5;
   margin: 10px 0px;
+  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.37);
   // display: flex;
   // justify-content: space-between;
 }
@@ -60,8 +67,9 @@
 }
 
 .review_content {
-  width: 50%;
-  margin-top: 6px;
+
+  width: 70%
+
 }
 
 #review-content {

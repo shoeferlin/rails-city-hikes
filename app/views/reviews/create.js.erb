@@ -1,5 +1,5 @@
 function refreshReviewForm(innerHTML) {
-  const newReviewForm = document.getElementById('new_review');
+  const newReviewForm = document.getElementById('new-review-box');
   newReviewForm.innerHTML = innerHTML;
 }
 
@@ -15,4 +15,7 @@ function addReview(reviewHTML) {
   refreshReviewForm('<%= j render "reviews/form", route: @route, review: @new_review %>');
 <% end %>
 
-document.querySelector("[data-route-id='<%= @route.id %>']").remove();
+rating()
+
+// document.querySelector("[data-route-id='<%= @route.id %>']").remove();
+
