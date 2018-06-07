@@ -15,50 +15,57 @@
               <p><%= @route.distance %> km</p>
               <div>
                 <% @route.avg_rating.round.times do %>
-                  <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
                 <% end %>
                 <% (5 - @route.avg_rating.round).times do %>
-                  <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
                 <% end %>
               </div>
             </div>
             <div class="route-information-box">
               <% if @route.time.nil? || @route.time == 0 %>
-                <p>0 min</p>
+              <p>0 min</p>
               <% else %>
-                <p><%= (@route.time / 60).round %> h <%= (@route.time - (@route.time / 60).round).round %> min </p>
+              <p><%= (@route.time / 60).round %> h <%= (@route.time - (@route.time / 60).round).round %> min </p>
               <% end %>
               <p><%= @route.no_exports %> x hiked</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-10 col-xs-offset-1">
-          <div class="export-button-area">
-            <a href=" <%= @gmaps_url %> " target="_blank" class="btn btn-primary export-button">Open with Google Maps</a>
-            <%= button_to "Send route to my email", route_send_route_email_path(@route), class: "btn btn-primary export-button" %>
-            <%= button_to "Copy route to clipboard", route_send_route_clipboard_path(@route), class: "btn btn-primary export-button" %>
+
+
+      <div class="export-share-area">
+        <div class="row row-buttons">
+          <div class="col-xs-10 col-xs-offset-1 export-info-container">
+            <div class="export-button-area">
+              <a href=" <%= @gmaps_url %> " target="_blank" class="btn btn-primary export-button">Open with Google Maps</a>
+              <%= button_to "Send route to my email", route_send_route_email_path(@route), class: "btn btn-primary export-button" %>
+              <%= button_to "Copy route to clipboard", route_send_route_clipboard_path(@route), class: "btn btn-primary export-button" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1">
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-10 col-xs-offset-1" id="export-box">
+            <div id="share-header">
+              <h3 style="text-align: center;">Share route with a friend</h3>
+            </div>
+            <%= form_tag(route_send_route_friend_path(@route), method: "post", class: "send-route-friend") do %>
+            <%= email_field_tag(:friend_email, nil, placeholder: "Your friend's email", class: "invite-friend") %>
+            <%= text_field_tag(:friend_name, nil, placeholder: "Your friend's name", class: "invite-friend") %>
+            <br>
+            <%= submit_tag("Send route", class: "btn btn-primary submit-export-friend") %>
+            <% end %>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-10 col-xs-offset-1">
-          <div id="share-header">
-            <h3 style="text-align: center;">Share route with a friend</h3>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-10 col-xs-offset-1" id="export-box">
-          <%= form_tag(route_send_route_friend_path(@route), method: "post", class: "send-route-friend") do %>
-          <%= email_field_tag(:friend_email, nil, placeholder: "Your friend's email", class: "invite-friend") %>
-          <%= text_field_tag(:friend_name, nil, placeholder: "Your friend's name", class: "invite-friend") %>
-          <br>
-          <%= submit_tag("Send route", class: "btn btn-primary submit-export-friend") %>
-          <% end %>
-        </div>
-      </div>
+
+
     </div>
   </div>
 </div>
