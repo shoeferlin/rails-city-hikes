@@ -8,9 +8,6 @@ function buildMap()  {
   if (mapElement) { // don't try to build a map if there's no div#map to inject in
     const map = new GMaps({ el: '#map', lat: 48.119818, lng: 22.022720, zoom: 4 });
     const markers = JSON.parse(mapElement.dataset.waypoints);
-    console.log("----")
-    console.log(markers)
-    console.log("----")
     const waypoints = markers.map((point) => {
       const lnglat = new google.maps.LatLng(point)
       return({
