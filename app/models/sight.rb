@@ -6,8 +6,8 @@ class Sight < ApplicationRecord
 
   validates :name, presence: true
 
-  geocoded_by :name
-  after_validation :geocode, if: :will_save_change_to_name?
+  geocoded_by :formatted_address
+  after_validation :geocode, if: :will_save_change_to_formatted_address?
 
   mount_uploader :photo, PhotoUploader
 end

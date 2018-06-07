@@ -32,7 +32,7 @@ function autocomplete() {
     var place = this.getPlace();
     const currentCity = document.getElementById("current_city");
     // debugger
-    // console.log(place);  // Uncomment this line to view the full object returned by Google API.
+    console.log(place);  // Uncomment this line to view the full object returned by Google API.
 
     // FOR CITIES - STORE COUNTRY CODE AND CITY
       for (var i in place.address_components) {
