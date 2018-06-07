@@ -92,8 +92,8 @@ function updateRouteDetails(time, distance) {
   const routeDistance = document.querySelector("#route-distance > p")
 
   if (routeTime && routeDistance) {
-    routeTime.innerHTML = `<i class="fas fa-walking"></i>&nbsp;&nbsp; ${hours}h ${minutes}min</p>`
-    routeDistance.innerHTML = `<i class="far fa-clock"></i>&nbsp;&nbsp; ${distance} km</p>`
+    routeTime.innerHTML = `<i class="far fa-clock"></i>&nbsp;&nbsp; ${hours}h ${minutes}min</p>`
+    routeDistance.innerHTML = `<i class="fas fa-walking"></i>&nbsp;&nbsp; ${distance} km</p>`
   }
 }
 
