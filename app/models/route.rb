@@ -2,7 +2,7 @@ class Route < ApplicationRecord
   belongs_to :user
   belongs_to :city
   has_many :waypoints, -> { order(list_nr: :asc) }
-  has_many :sights, through: :waypoints, dependent: :destroy
+  has_many :sights, through: :waypoints
   has_many :reviews, dependent: :destroy
   has_many :route_pictures, dependent: :destroy
   has_many :reviews
