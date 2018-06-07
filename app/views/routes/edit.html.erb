@@ -39,7 +39,9 @@
       <% if !@route.sights.empty? %>
             <% @page = Wikipedia.find( @route.sights.last.name ) %>
             <div class="col-lg-5 col-offset-6">
-              <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
+              <% if !@page.image_urls.nil? %>
+                <img class="info_image" src="<%= @page.image_urls[0] %>" alt="No image">
+              <% end %>
           </div>
 
         <div class="col-lg-7 col-offset-0">
