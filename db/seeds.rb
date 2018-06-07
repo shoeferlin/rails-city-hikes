@@ -255,9 +255,11 @@ RoutePicture.create(route_id: 6, remote_route_picture_url: "https://res.cloudina
 RoutePicture.create(route_id: 6, remote_route_picture_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528321131/o7weo0nkguu3xiwgyc9m.jpg")
 
 # Barcelona 07
-RoutePicture.create(route_id: 7, remote_picture_url_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528364744/o9e3wxtsm9lvexdizvna.jpg") # Barcelona Marina
-RoutePicture.create(route_id: 7, remote_picture_url_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528364740/c2g64x3psrf7uizldbof.jpg") # Gaudi house
-RoutePicture.create(route_id: 7, remote_picture_url_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528364742/x4bsb3bvnimisoz8b3c1.jpg") # Nice House in Barcelona
+RoutePicture.create(route_id: 7, remote_picture_url_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528365624/usxvybuyowoebhkguuqc.jpg") # Pexels or Unplash picture
+RoutePicture.create(route_id: 7, remote_picture_url_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528365626/x7exod0vyveknahguqg0.jpg") # Pexels or Unplash picture
+# RoutePicture.create(route_id: 7, remote_picture_url_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528364744/o9e3wxtsm9lvexdizvna.jpg") # Barcelona Marina
+# RoutePicture.create(route_id: 7, remote_picture_url_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528364740/c2g64x3psrf7uizldbof.jpg") # Gaudi house
+# RoutePicture.create(route_id: 7, remote_picture_url_url: "https://res.cloudinary.com/dmatmwg2i/image/upload/v1528364742/x4bsb3bvnimisoz8b3c1.jpg") # Nice House in Barcelona
 
 
 ### WAYPOINTS ###
