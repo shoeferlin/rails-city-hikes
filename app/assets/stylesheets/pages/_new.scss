@@ -1,0 +1,30 @@
+.cre-ro-ci{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.ccity{
+  text-align: center;
+  margin: 0px 0px 20px;
+}
+
+.form-inline {
+  margin:0;
+  padding:0;
+}
+
+.citysearch{
+  flex-grow: 400px;
+  height: 80px;
+}
+
+.c-r-pic {
+  // display: flex;
+  // justify-content: space-around;
+  // margin: 20px;
+  padding: 8px;
+  font-size: 14px;
+  text-align: center;
+}
