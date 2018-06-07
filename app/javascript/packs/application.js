@@ -4,6 +4,7 @@ import "./map";
 import "./timeline";
 import "./carousel";
 import "../components/getinfo"
+import "./rating";
 // import "./filter"
 import "../components/draganddrop"
 import { Sortable } from '@shopify/draggable';
@@ -16,3 +17,4 @@ import scaleBannerVideoSize from "./banner"
 
 
 
+import "jquery-bar-rating"

@@ -1,7 +1,11 @@
+
+<!-- <script src="jquery.barrating.min.js"></script> -->
+
 <%= simple_form_for([ route, review ], remote: true) do |form| %>
   <div class="new-review-box">
-  <%= form.input :content, label: "Comment", class: "review-form review-form-text"%>
-  <%= form.input :rating, label: "Rating", as: :radio_buttons, collection: [['5', '5'], ['4', '4'], ['3', '3'], ['2', '2'], ['1', '1']], class: "review-form" %>
+  <%= form.input :content, placeholder: "Comment", label: false, class: "review-form review-form-text"%>
+  <%= form.input :rating, label: "Rating", as: :select, collection: [['1', '1'], ['2', '2'], ['3', '3'], ['4', '4'], ['5', '5']], class: "fa fa-star" %>
   <%= form.button :submit, class: "btn btn-primary review-button"%>
 <% end %>
 </div>
+

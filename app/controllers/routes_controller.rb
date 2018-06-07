@@ -34,6 +34,7 @@ class RoutesController < ApplicationController
       position += 1
       { lat: sight.latitude,
         lng: sight.longitude,
+        # icon: ActionController::Base.helpers.asset_path('markers/marker.png'),
         label: { text: "#{position.to_s}", color: 'white'},
       }
     end
@@ -76,6 +77,7 @@ class RoutesController < ApplicationController
       { lat: sight.latitude,
         lng: sight.longitude,
         label: { text: "#{position.to_s}", color: 'white'},
+        # icon: ActionController::Base.helpers.asset_path('markers/marker.png')
         # infoWindow: { content: render_to_string(partial: "#{sight.description}", locals: { location: location })},
         # fillColor: '#8aae92'
         # icon: image_tag("marker.svg"),
