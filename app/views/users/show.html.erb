@@ -11,10 +11,7 @@
             <%= User.find(params[:id]).created_routes.joins(:reviews).average(:rating) %>
           <% end %>
           <p class="kpi_info">Distance walked:</p>
-          <% @hiked_routes.each do |hiked_route| %>
-            <p><%= hiked_route.route.distance %></p>
-         <% end %>
-
+            <%= User.find(params[:id]).routes.sum(:distance) %>
           <p class="kpi_info"> Exported routes: </p>
           <%= HikedRoute.where(user_id: @user.id).count %>
         </div>
@@ -52,7 +49,12 @@
                     <div class="group-card-profile">
                       <div class="card-title-profile"><%= route.city.locality %></div>
                       <div class="overlay-profile"></div>
-                      <div class=" mini-banner-profile" style="background-image: url('<%= image_url 'card-example.jpg' %>');">
+                      <div class=" mini-banner-profile">
+                       <% if route.route_pictures.empty? %>
+                        <% image_url "card-example.jpg"  %>
+                      <% else %>
+                        <% route.route_pictures[0].route_picture.url  %>
+                      <% end%>
                       </div>
                       <div class="card-route-profile"><%= route.name %></div>
                       <div class="card-route-profile"><%= route.distance %> km</div>
