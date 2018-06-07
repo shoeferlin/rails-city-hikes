@@ -16,14 +16,20 @@
     <div class="search-sights edit-card">
       <h4>Add additional sights</h4>
       <%= simple_form_for [@route, @sight] do |f| %>
-      <%= f.input :search, label: false %>
-      <%= f.input :name, as: :hidden %>
-      <%= f.input :place_id, as: :hidden %>
-      <%= f.input :url, as: :hidden %>
-      <%= f.input :website, as: :hidden %>
-      <%= f.input :formatted_address, as: :hidden %>
-      <%= f.button :submit, 'Pin Sight', class:"create-sight-btn" %>
-      <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
+      <div class="sightsearch">
+        <div id="sightsearch">
+          <%= f.input :search, label: false %>
+        </div>
+          <%= f.input :name, as: :hidden %>
+          <%= f.input :place_id, as: :hidden %>
+          <%= f.input :url, as: :hidden %>
+          <%= f.input :website, as: :hidden %>
+          <%= f.input :formatted_address, as: :hidden %>
+        <div id="sightsubmit">
+          <%= f.button :submit, 'Add To Route', class:"create-sight-btn" %>
+        </div>
+          <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
+      </div>
       <% end %>
       <ul id="results">
         <div id="current_city" class="hide"><%= @route.city.country.downcase %></div>
@@ -43,8 +49,8 @@
         <% if !@route.sights.empty? %>
 
           <div class="col-lg-5 col-offset-6">
-            <% if !@page.image_urls.nil? %>
-              <img class="info_image" src="<%= @page.image_urls[0] %>" alt="No image">
+            <% if !@page.image_urls[1].empty? %>
+              <!-- <img class="info_image" src="<%= @page.image_urls[0] %>" alt="No image"> -->
               <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
             <% end %>
           </div>
