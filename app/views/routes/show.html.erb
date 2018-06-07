@@ -5,7 +5,7 @@
     <div class="route-header">
       <h3 class="route-name"><strong><%= @route.name %></strong></h3>
       <% unless current_user.nil? %>
-        <%= image_tag @route.user.picture_url.url, class: "review-avatar"%>
+        <%=# image_tag @route.user.picture_url.url, class: "review-avatar"%>
       <% end %>
     </div>
     <div class="show-btns">
