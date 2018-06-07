@@ -34,33 +34,32 @@
 
   <div class="grid-info">
     <div class="info-sights edit-card flex-none">
+      <% @page = Wikipedia.find( @route.sights.last.name ) %>
       <h4>Info</h4>
+      <% if @page.text.nil? %>
+        <h5 class="wiki-error-text">Sorry, we have no information about this item yet ...</h5>
+      <% end %>
       <div class="row">
-      <% if !@route.sights.empty? %>
-            <% @page = Wikipedia.find( @route.sights.last.name ) %>
-            <div class="col-lg-5 col-offset-6">
-              <% if !@page.image_urls.nil? %>
-                <img class="info_image" src="<%= @page.image_urls[0] %>" alt="No image">
-              <% end %>
-          </div>
+        <% if !@route.sights.empty? %>
 
-        <div class="col-lg-7 col-offset-0">
-
-              <!-- <p id="infotext" class="hide"> ...</p> -->
-              <!--  FOR NOW -->
-            <% if !@page.text.nil? %>
-              <div>
-               <p class="info_text"><%= @page.text.first(800) %><a href="<%= @page.fullurl%>"><strong>&nbsp;&nbsp;read more.</strong></a></p>
-              </div>
-                   <% else %>
-              <h5>Sorry, we have no information about this item yet ...</h5>
+          <div class="col-lg-5 col-offset-6">
+            <% if !@page.image_urls.nil? %>
+              <img class="info_image" src="<%= @page.image_urls[0] %>" alt="No image">
+              <img class="info_image" src="<%= @page.image_urls[1] %>" alt="No image">
             <% end %>
           </div>
-
-
-       <% end %>
+          <div class="col-lg-7 col-offset-0">
+              <!-- <p id="infotext" class="hide"> ...</p> -->
+              <!--  FOR NOW -->
+          <% if !@page.text.nil? %>
+            <div>
+              <p class="info_text"><%= @page.text.first(800) %><a href="<%= @page.fullurl%>"><strong>&nbsp;&nbsp;read more.</strong></a></p>
+            </div>
+          <% end %>
+          </div>
       </div>
     </div>
+  <% end %>
   </div>
 
 

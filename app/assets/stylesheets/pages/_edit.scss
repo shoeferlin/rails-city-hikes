@@ -25,6 +25,12 @@
   // width: 500px;
 }
 
+.wiki-error-text{
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
 .edit-container {
   max-width: 80%;
   margin: auto auto;
@@ -71,9 +77,7 @@
   }
 }
 
-.search-sights{
-  // flex-grow: 2;
-}
+
 
 .info-sights {
   // flex-grow: 1.5;
@@ -86,6 +90,11 @@
   font-weight: lighter;
   line-height: 25px;
   align-items: center;
+
+}
+
+.edit-card  h4 {
+  margin-bottom: 25px;
 }
 
 .list-inline {
@@ -117,6 +126,7 @@
   background-color: #8aae92;
   color: white;
   border-radius: 10px;
+  margin: 10px;
 }
 
 .sight-li {

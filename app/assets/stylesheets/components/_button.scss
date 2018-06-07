@@ -27,8 +27,18 @@
   border-radius: 10px;
   background-color: $dark-green;
   color: white;
+
 }
 
 .small-button:hover {
   color: black;
 }
+
+.button-small {
+    height: 20px;
+    padding: 0px 5px 23px 5px;
+      background: white;
+    color: #8aae92;
+    border: white;
+}
+

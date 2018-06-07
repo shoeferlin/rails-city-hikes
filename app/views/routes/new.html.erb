@@ -4,18 +4,27 @@
       <div class="login-form">
         <h3>Add your route to the city hike's community</h3>
         <%= simple_form_for(@route) do |f| %>
-        <%= f.input :city, collection: @cities, :label_method => :locality, class:"form-inline city-form", id:"city-form" %>
+        <div class="cre-ro-ci">
+          <div class="citysearch">
+          <%= f.input :city, collection: @cities, :label_method => :locality, class:"form-inline", id:"city-form" %>
+          </div>
+          <div class="ccity">
+          <%= link_to "Create New City", new_city_path, class: "btn btn-primary btn-sm button-small" %>
+          </div>
+        </div>
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.fields_for :route_pictures do |p| %>
                     <div class="field">
                       <%= p.label :route_pictures %><br>
+                      <div class="c-r-pic">
                       <%= p.file_field :route_picture, :multiple => true, name:     "route_pictures[route_pictures][]" %>
                       </div>
+                    </div>
         <% end %>
         <div class="buttons-new">
-          <%= link_to "Create City", new_city_path, class: "btn btn-primary btn-lg" %>
-          <%= f.button :submit, class: "btn btn-primary btn-lg" %>
+
+          <%= f.button :submit, class: "btn btn-primary btn-sm" %>
           <% end %>
         </div>
       </div>
