@@ -16,12 +16,12 @@
     <div class="current-sights edit-card flex-none" id="dragdrop">
       <div class="sights-header">
         <h4>Sightseeing items</h4>
-
         <%= simple_form_for [@route, @sight] do |f| %>
         <div class="sightsearch">
           <div id="sightsearch">
             <%= f.input :search, label: false, placeholder: 'Add A New Sight' %>
           </div>
+
           <%= f.input :name, as: :hidden %>
           <%= f.input :place_id, as: :hidden %>
           <%= f.input :url, as: :hidden %>

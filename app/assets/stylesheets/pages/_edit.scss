@@ -126,10 +126,10 @@
   border: 2px solid #8aae92;
   background-color: #8aae92;
   color: white;
-  border-radius: 0px 2px 2px 0px;
+  border-radius: 2px;
   margin-top: 5px;
   height: 40px;
-  margin-right: 13px;
+  margin-right: 24px;
 }
 
 .sight-li {
@@ -280,6 +280,11 @@
 
 }
 
+#last-padding {
+  // width: 200px;
+  // padding: 10px;
+}
+
 // Grid Design
 
 .grid-container {
@@ -339,9 +344,7 @@
 #sight_search {
   height: 40px;
   padding: 0 10px 0 10px;
-  // width: 600px;
   margin: 10px 0px 0px 15px;
-  width: 300px;
   text-align: center;
   flex-grow: 4;
   border-radius: 2px 0px 0px 2px;
