@@ -8,7 +8,7 @@ function draganddrop() {
       handle: 'i',
       // plugins: [],
     });
-    sortable.on('sortable:stop', (event) => updateListNr(event));
+    sortable.on('sortable:sorted', (event) => updateListNr(event));
     // sortable.on('sortable:out', (event) => deleteListNr(event));
   });
 }
