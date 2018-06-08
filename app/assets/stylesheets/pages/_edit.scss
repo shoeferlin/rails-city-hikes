@@ -43,7 +43,7 @@
 
 .grid-container h4 {
   text-align: center;
-  padding-top: 16px;
+  // padding-top: 16px;
   font-size: 32px;
   letter-spacing: 2px;
   h6 {
@@ -165,8 +165,9 @@
     display: flex;
     justify-content: space-between;
     /* list-style-type: none; */
-    padding: 15px;
+    // padding: 15px;
     flex-wrap: wrap;
+    padding: 0px 20px 0px 25px
 }
 
 #results a {
@@ -329,7 +330,8 @@
 .sightsearch {
   display: flex;
   justify-content: space-around;
-  margin-left: 30px;
+  padding-top: 12px;
+  margin-left: 10px;
 }
 
 #sight_search {
@@ -341,4 +343,9 @@
   text-align: center;
   flex-grow: 4;
   border-radius: 2px 0px 0px 2px;
+}
+
+#new_sight {
+  margin-bottom:0px;
+  padding-bottom:0px;
 }

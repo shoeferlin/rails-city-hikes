@@ -28,7 +28,8 @@
           <%= f.input :website, as: :hidden %>
           <%= f.input :formatted_address, as: :hidden %>
           <div id="sightsubmit">
-            <%= f.button :submit, 'Add', class:"btn-sm create-sight-btn" %>
+            <%= button_tag(type: 'submit', class: "btn-sm create-sight-btn") do %><i class="fas fa-plus"></i><% end %>
+            <%#= f.button :submit, 'Add', class:"btn-sm create-sight-btn" %>
           </div>
           <%#= link_to 'Create Sight', route_sights_path(@route), :class => "create-sight-btn btn btn-primary" %>
         </div>
@@ -39,7 +40,7 @@
 
 
 
-        <h6 id="explanation">(Drag and drop for optimizing the route)</h6>
+        <h6 id="explanation">(Drag and drop to optimize your route)</h6>
       </div>
       <ol class="edit-list-moveable" id="movable">
         <% @route.waypoints.each do |w| %>
