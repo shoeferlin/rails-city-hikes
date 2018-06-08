@@ -160,10 +160,20 @@
 
 
 #results {
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
-  padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    /* list-style-type: none; */
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+#results a {
+    padding: 0px;
+    margin: 0px;
+}
+
+#results p {
+  margin: 0px;
 }
 
 #results li {
