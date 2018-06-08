@@ -1,5 +1,5 @@
 .export-background {
-  height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px);
 }
 
 .export-container {
@@ -51,8 +51,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
-  margin-left: 70px;
+  // margin-top: 30px;
+  // margin-left: 70px;
 }
 
 .export-button {
@@ -118,11 +118,12 @@
     display: flex;
     justify-content: space-evenly;
     margin-top: 30px;
-    .row {
-      margin-top: -48px;
-    }
   }
 }
+
+.export-share-area {
+    margin-top: 30px;
+  }
 
 .submit-export-friend {
   margin-top: 24px;

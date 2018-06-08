@@ -37,30 +37,27 @@
 
       <div class="export-share-area">
         <div class="row row-buttons">
-          <div class="col-xs-10 col-xs-offset-1 export-info-container">
-            <div class="export-button-area">
-              <a href=" <%= @gmaps_url %> " target="_blank" class="btn btn-primary export-button">Open with Google Maps</a>
-              <%= button_to "Send route to my email", route_send_route_email_path(@route), class: "btn btn-primary export-button" %>
-              <%= button_to "Copy route to clipboard", route_send_route_clipboard_path(@route), class: "btn btn-primary export-button" %>
+          <div class="col-xs-5 col-xs-offset-1">
+            <div class="export-info-container">
+              <div class="export-button-area">
+                <a href=" <%= @gmaps_url %> " target="_blank" class="btn btn-primary export-button">Open with Google Maps</a>
+                <%= button_to "Send route to my email", route_send_route_email_path(@route), class: "btn btn-primary export-button" %>
+                <%= button_to "Copy route to clipboard", route_send_route_clipboard_path(@route), class: "btn btn-primary export-button" %>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-10 col-xs-offset-1">
-
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-10 col-xs-offset-1" id="export-box">
-            <div id="share-header">
-              <h3 style="text-align: center;">Share route with a friend</h3>
+          <div class="col-xs-5 col-xs-offset-1">
+            <div id="export-box">
+              <div id="share-header">
+                <h3 style="text-align: center;">Share route with a friend</h3>
+              </div>
+              <%= form_tag(route_send_route_friend_path(@route), method: "post", class: "send-route-friend") do %>
+              <%= email_field_tag(:friend_email, nil, placeholder: "Your friend's email", class: "invite-friend") %>
+              <%= text_field_tag(:friend_name, nil, placeholder: "Your friend's name", class: "invite-friend") %>
+              <br>
+              <%= submit_tag("Send route", class: "btn btn-primary submit-export-friend") %>
+              <% end %>
             </div>
-            <%= form_tag(route_send_route_friend_path(@route), method: "post", class: "send-route-friend") do %>
-            <%= email_field_tag(:friend_email, nil, placeholder: "Your friend's email", class: "invite-friend") %>
-            <%= text_field_tag(:friend_name, nil, placeholder: "Your friend's name", class: "invite-friend") %>
-            <br>
-            <%= submit_tag("Send route", class: "btn btn-primary submit-export-friend") %>
-            <% end %>
           </div>
         </div>
       </div>
