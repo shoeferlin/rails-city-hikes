@@ -1,6 +1,7 @@
 .banner-tiny {
   background-size: cover !important;
-  height: 20vh;
+  height: 30vh;
+  margin-top: -23px;
 }
 
 .return-button {
@@ -8,6 +9,9 @@
   margin-left: 20px;
 }
 
+.banner-tiny-text {
+  margin-top: 64px;
+}
 
 // .banner-tiny h1 {
 //   font-size: 50px;

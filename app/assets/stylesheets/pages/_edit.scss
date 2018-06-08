@@ -6,7 +6,7 @@
   width: 90%;
   margin: 0px auto;
   h3 {
-    padding-top: 30px;
+    padding-top: 52px;
     font-weight: bolder;
     font-size: 50px;
     text-transform: uppercase;
@@ -126,8 +126,10 @@
   border: 2px solid #8aae92;
   background-color: #8aae92;
   color: white;
-  border-radius: 10px;
-  margin: 10px;
+  border-radius: 0px 2px 2px 0px;
+  margin-top: 5px;
+  height: 40px;
+  margin-right: 13px;
 }
 
 .sight-li {
@@ -160,10 +162,20 @@
 
 
 #results {
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
-  padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    /* list-style-type: none; */
+    padding: 15px;
+    flex-wrap: wrap;
+}
+
+#results a {
+    padding: 0px;
+    margin: 0px;
+}
+
+#results p {
+  margin: 0px;
 }
 
 #results li {
@@ -206,8 +218,6 @@
   font-size: 24px;
   opacity: 0.9;
 }
-
-
 
 #dragdrop {
   height: calc(100vh - 40px);
@@ -316,23 +326,19 @@
   margin: 5px 20px 0px 0px;
 }
 
-
-.sightsearch{
-    width: 400px;
-    font-size: 16px;
-    display: flex;
-    justify-content: space-around;
-    height: 50px;
+.sightsearch {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 30px;
 }
 
-
-#sightsearch {
-  height: 20px;
+#sight_search {
+  height: 40px;
   padding: 0 10px 0 10px;
   // width: 600px;
   margin: 10px 0px 0px 15px;
-  width: 400px;
+  width: 300px;
   text-align: center;
   flex-grow: 4;
-  border-radius: 25px;
+  border-radius: 2px 0px 0px 2px;
 }

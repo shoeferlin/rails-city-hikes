@@ -47,21 +47,21 @@ function updateListNr(event) {
 
 }
 
-function deleteListNr(event) {
-  const item_id = event.data.dragEvent.data.originalSource.dataset.id
-  console.log('Thiiiiiis')
-  console.log(this)
-  item_id.draggable('destroy');
+// function deleteListNr(event) {
+//   const item_id = event.data.dragEvent.data.originalSource.dataset.id
+//   console.log('Thiiiiiis')
+//   console.log(this)
+//   item_id.draggable('destroy');
 
-  Rails.ajax({
-    url: `/waypoints/${item_id}`,
-    type: "DELETE",
-    // data: `list_nr:${itemNewIndex}`,
-    // data: String(`list_nr=${itemNewIndex}`),
-    success: function(data) {
-    }
-  });
-}
+//   Rails.ajax({
+//     url: `/waypoints/${item_id}`,
+//     type: "DELETE",
+//     // data: `list_nr:${itemNewIndex}`,
+//     // data: String(`list_nr=${itemNewIndex}`),
+//     success: function(data) {
+//     }
+//   });
+// }
 
 
 export { draganddrop };
