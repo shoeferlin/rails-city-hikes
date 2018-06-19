@@ -8,13 +8,12 @@
   <!-- Right Navigation -->
   <!-- Login and Sign up button on mobile and desktop if not logged in-->
 
-    <% if !user_signed_in? %>
-      <div class="navbar-login-buttons">
-        <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-        <%= link_to "Sign up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      </div>
-    <% end %>
-
+  <% if !user_signed_in? %>
+    <div class="navbar-login-buttons">
+      <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
+  <% end %>
 
   <!-- Find Route and Create Route only displayed on desktop, on mobile shown in dropdown -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
