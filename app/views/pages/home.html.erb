@@ -1,63 +1,19 @@
-<div class="landing-page" style="min-height: calc(100vh - 110px); padding: 0px; margin: 0px">
-
-  <%= render 'pages/landing-video' %>
-
-</div>
-<!-- carousel -->
-<div class="heading"><h1>Explore Cities</h1>
-<h5 class="heading_subheading">Check out our most recommended Hikes</h5>
-</div>
-<div class="carousel-container">
-  <div class="ui-card" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.4) 50%, rgba(150,150,150,0.6) 90%), url('<%= image_url 'madrid-carousel.jpg' %>');"><h3>Madrid</h3></div>
-  <div class="ui-card" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.4) 50%, rgba(150,150,150,0.6) 90%), url('<%= image_url 'london-carousel.jpg' %>');"><h3 style="center">London</h3></div>
-  <div class="ui-card" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.4) 50%, rgba(150,150,150,0.6) 90%), url('<%= image_url 'paris-carousel.jpg' %>');"><h3>Paris</h3></div>
-  <div class="ui-card" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.4) 50%, rgba(150,150,150,0.6) 90%), url('<%= image_url 'berlin-carousel.jpg' %>');"><h3>Berlin</h3></div>
-  <div class="ui-card" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.4) 50%, rgba(150,150,150,0.6) 90%), url('<%= image_url 'florence-carousel.jpg' %>');"><h3>Florence</h3></div>
-  <div class="ui-card" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.4) 50%, rgba(150,150,150,0.6) 90%), url('<%= image_url 'milan-carousel.jpg' %>');"><h3>Milan</h3></div>
-  <div class="ui-card" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.4) 50%, rgba(150,150,150,0.6) 90%), url('<%= image_url 'lisbon-carousel.jpg' %>');"><h3>Lisbon</h3></div>
-</div>
-
-<!-- timeline -->
-<div class="timeline-container" id="timeline-1">
-  <div class="timeline-header">
-    <h2 id="timeline-header__title">Meet City Hikes</h2>
-    <h5 id="timeline-header__subtitle">Sightseeing has never been so easy</h5>
-  </div>
-  <div class="timeline">
-    <div class="timeline-item data-text="City Hikes"">
-      <div class="timeline__content">
-        <h2 class="timeline__content-title">Choose a City</h2>
-        <p class="timeleine__content-desc">Select from a list of amazing cities, which have already been hiked. If yours is not listed, feel free to create an own city and be the first hiker.</p>
-        <%= image_tag "city-hikes-landing-icon-world.png", class: "explanation-icons" %>
-        <img class="timeline__img" src="" alt="">
-      </div>
-    </div>
-    <div class="timeline-item data-text="City Hikes"">
-      <div class="timeline__content">
-        <h2 class="timeline__content-title">Select a Route</h2>
-        <p class="timeleine__content-desc">Go and choose from handpicked routes configured by locals and fellow hikers. If you have any tips you want to share, create your own hike.</p>
-        <%= image_tag "city-hikes-landing-icon-map.png", class: "explanation-icons" %>
-        <img class="timeline__img" src="" alt="">
-      </div>
-    </div>
-    <div class="timeline-item data-text="City Hikes"">
-      <div class="timeline__content">
-        <h2 class="timeline__content-title">Customize your Route</h2>
-        <p class="timeleine__content-desc">Add special locations, or sights, which you always wanted to hike and create new individual routes just for you and/or your friends.</p>
-        <%= image_tag "city-hikes-landing-icon-dividers.png", class: "explanation-icons" %>
-        <img class="timeline__img" src="" alt="">
-      </div>
-    </div>
-    <div class="timeline-item data-text="City Hikes"">
-      <div class="timeline__content">
-        <h2 class="timeline__content-title">Export your Route</h2>
-        <p class="timeleine__content-desc">With only one click, you can export your final route and immediately start hiking.</p>
-        <%= image_tag "city-hikes-landing-icon-mobile-hiker.png", class: "explanation-icons" %>
-        <img class="timeline__img" src="" alt="">
+<div class="landing-page-banner" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.6), rgba(20,20,20,0.6)), url('https://res.cloudinary.com/dmatmwg2i/image/upload/f_auto,q_auto/v1529446235/Assets/background-planning-trip.jpg')">
+  <div class="bo-align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-xl-6 col-xl-offset-3">
+          <div>
+            <h4 class="landing-page-banner-slogan">Get inspired on your journey</h4>
+              <%= form_tag routes_path, method: :get do %>
+            <div class="landing-page-search-bar">
+              <%= text_field_tag :query, params[:query], class: "form-control style-text", placeholder: "Search for a city ..." %>
+              <%= submit_tag "Search", class:"btn btn-primary landing-page-search-button" %>
+            </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</div>
-
-
