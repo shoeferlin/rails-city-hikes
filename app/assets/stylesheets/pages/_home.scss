@@ -10,6 +10,18 @@
   font-size: 24pt;
 }
 
+@media(min-width: 640pt) {
+  .landing-page-banner-slogan  {
+    font-size: 32pt;
+  }
+}
+
+@media(min-width: 1280pt) {
+  .landing-page-banner-slogan  {
+    font-size: 48pt;
+  }
+}
+
 .bo-align-items-center {
   height: 100% !important;
   display: flex !important;
@@ -20,3 +32,61 @@
   display: flex;
   flex-direction: row;
 }
+
+.landing-page-grid {
+  display: grid;
+  grid-column-gap: 40px;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: auto auto;
+}
+
+.landing-page-city-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@media(max-width: 640pt) {
+  .landing-page-city-grid {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+
+  .landing-page-map-grid {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+.landing-page-city {
+  background-size: cover;
+  width: 300px;
+  height: 200px;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  h2 {
+    color: white;
+    text-shadow: 1px 1px black;
+  }
+}
+
+#landing-page-map {
+  position: sticky !important; /* !important to override Gmaps inline CSS */
+  top: 0 !important;
+}
+
+.test-div {
+  background-color: purple;
+  width: 100%;
+  height: 30vh;
+}
+
+.test-box {
+  background-color: blue;
+  width: 100px;
+  height: 50px;
+}
+

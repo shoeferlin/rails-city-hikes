@@ -17,3 +17,29 @@
     </div>
   </div>
 </div>
+
+<br>
+
+<div class="container-fluid">
+  <div class="landing-page-grid">
+    <div class="landing-page-city-grid">
+      <% @cities.each do |city| %>
+        <%= link_to routes_path(query: city.locality) do %>
+          <div class="landing-page-city" style="background-image: linear-gradient(-225deg, rgba(20,20,20,0.4), rgba(20,20,20,0.4)), url(<%= cloudinary_url(city.photo.file.filename, :width=>600, :quality=>"auto", :fetch_format=>:auto, :crop=>"scale") %>)">
+            <h2><%= city.locality %></h2>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="landing-page-map-grid">
+      <div class="landing-page-map"
+        id="map"
+        style="width: 100%;
+        height: calc(100vh - 110px);"
+        data-markers="<%= @landing_page_markers.to_json %>"
+      ></div>
+    </div>
+  </div>
+</div>
+
+<br>
