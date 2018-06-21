@@ -43,7 +43,8 @@
 .landing-page-city-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  align-content: flex-start;
+  justify-content: space-between;
 }
 
 @media(max-width: 640pt) {
