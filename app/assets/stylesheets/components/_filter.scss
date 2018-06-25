@@ -226,5 +226,10 @@ display: flex;
 }
 
 
+// __________________________________________
 
-
+@media(max-width: 900pt) {
+  #hide-filter-on-mobile {
+    display: none;
+  }
+}
