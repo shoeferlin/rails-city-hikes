@@ -1,9 +1,14 @@
-.main-container {
-  width: 90%;
-  margin: 0px auto;
-  display: flex;
-  justify-content: space-between;
-  // align-items: center;
+.route-box {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  min-height: calc(100vh - 40px);
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  padding: 50px;
+  background-color: $light-gray;
+  margin-top: 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #map {
@@ -12,22 +17,11 @@
   position: sticky !important;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   top: 0 !important;
-  margin-left: 50px;
   margin-top: 20px;
+  margin-bottom: 20px;
+
 }
 
-.route-box {
-  border: 1px solid lightgray;
-  width: calc(100vw - 550px);
-  border-radius: 4px;
-  min-height: calc(100vh - 60px);
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  padding: 50px;
-  background-color: $light-gray;
-  margin-top: 20px;
-  margin-right: 16px;
-  // width: calc(100vh - 400px);
-}
 
 .route-header {
   display: flex;

@@ -1,12 +1,13 @@
 <%= render 'shared/banner-small' %>
-<%= render 'shared/filter', routes: @city%>
+
+<div id="hide-filter-on-mobile">
+  <%= render 'shared/filter', routes: @city%>
+</div>
 
 <div class="container">
-  <!-- <div class="row">
-    <div class="create_new_route_btn"><%#= link_to "Create new Route", new_route_path, class: "btn btn-primary" %></div>
-  </div> -->
   <div class="row" id="row-for-cards">
     <%= render 'shared/cards', routes: @routes %>
   </div>
 </div>
+
 <%= javascript_pack_tag "filter" %>
