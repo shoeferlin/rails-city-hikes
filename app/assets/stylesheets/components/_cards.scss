@@ -2,7 +2,6 @@
   position: relative;
   color: black;
   min-height: 300px;
-  width: auto;
   height: auto;
   margin: 10px;
   border-radius: 5px;
@@ -11,7 +10,7 @@
 }
 
 .card-image {
-  width: 50%;
+  width: 100%;
   background-size: cover !important;
   padding: 10px;
   border-radius: 5px;
@@ -21,7 +20,9 @@
   font-family: 'Quicksand', sans-serif;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 30px 20px 20px 10px;
+  min-height: 445px;
 }
 
 .card-details:hover {
@@ -76,7 +77,6 @@
 }
 
 .route-details {
-  position: absolute;
   display: flex;
   justify-content: space-between;
   bottom: 10px;
