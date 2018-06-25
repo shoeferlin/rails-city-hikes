@@ -58,19 +58,17 @@
   border: 2px solid light-gray;
   margin: 10px 0px;
   box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.37);
-  // display: flex;
-  // justify-content: space-between;
+}
+
+
+@media(min-width: 740pt){
+  .review-content {
+    padding-top: 27px;
+  }
 }
 
 .review-content {
- padding: 27px;
- margin-top: 6px;
-}
-
-.review_content {
-
-  width: 70%
-
+  margin-top: 6px;
 }
 
 #review-content {
@@ -99,3 +97,12 @@
 .form-group {
   margin-bottom: 36px;
 }
+
+.disabled-review-trash {
+  color: transparent;
+}
+
+.abled-review-trash {
+  color: $gray;
+}
+
