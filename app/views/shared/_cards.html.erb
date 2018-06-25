@@ -31,12 +31,12 @@
                     <% route.route_pictures.each do |rp| %>
                     <% if picture_counter == 0 %>
                       <div class="carousel-image item active">
-                        <%= image_tag rp.route_picture.url %>
+                        <%= cl_image_tag(rp.route_picture.full_public_id, :quality=>"auto", :fetch_format=>:auto, :crop=>"scale") %>
                         <% picture_counter += 1 %>
                       </div>
                     <% else %>
                       <div class="carousel-image item">
-                        <%= image_tag rp.route_picture.url %>
+                        <%= cl_image_tag(rp.route_picture.full_public_id, :quality=>"auto", :fetch_format=>:auto, :crop=>"scale") %>
                       </div>
                     <% end %>
                   <% end %>
