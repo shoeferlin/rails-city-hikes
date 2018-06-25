@@ -16,13 +16,13 @@
   <% end %>
 
   <!-- Find Route and Create Route only displayed on desktop, on mobile shown in dropdown -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <% if user_signed_in? %>
+    <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <%= link_to "Find Route", routes_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Create Route", new_route_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Find Route", routes_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Create Route", new_route_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
   <!-- Profile picture with dropdown list -->
-    <% if user_signed_in? %>
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <img  class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown" <%= cl_image_tag current_user.picture_url %>
@@ -32,11 +32,9 @@
           </ul>
         </div>
       </div>
-    <% end %>
-  </div>
+    </div>
 
   <!-- Dropdown appearing on mobile only -->
-  <% if user_signed_in? %>
     <div class="navbar-wagon-item hidden-md hidden-lg" id="navbar-wagon-dropdown-icon">
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>

@@ -67,10 +67,15 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  border-radius: 2px;
 
   h2 {
     color: white;
     text-shadow: 1px 1px black;
+  }
+
+  &:hover {
+    filter: brightness(0.7);
   }
 }
 
